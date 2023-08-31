@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculadora de Armazenamento de Café</title>
+</head>
+<body>
+  <div>
+    <!-- Título -->
+    <h1>Calculadora Financeira</h1>
+  
+    <!-- Campos de entrada -->
+    <!-- Input para a quantidade de armazéns -->
+    <input type="number" id="quantity" placeholder="Quantidade de Armazéns" required><br><br>
+    <!-- Input para a produção mensal em sacas -->
+    <input type="number" id="production" placeholder="Produção Mensal em Sacas" required><br><br>
+    <!-- Input para a quantidade de sacas perdidas -->
+    <input type="number" id="loss" placeholder="Quantidade de Sacas Perdidas" required><br><br>
+    <!-- Input para a quantidade de hectares de plantação -->
+    <input type="number" id="hectares" placeholder="Quantos Hectares de Plantação" required><br><br>
+    <!-- Botão para calcular -->
+    <button type="button" id="calculate" onclick="calculate()">Calcular</button>
+
+    <!-- Resultado -->
+    <h2>Resultado:</h2>
+    <!-- Div para exibir o resultado -->
+    <div id="result"></div>
+  </div>
+
+  <!-- Script para calcular e exibir o resultado -->
+  <script>
+    // Função que calcula e exibe o resultado
+    function calculate() {
+      // Entradas
+      var quantidadeArmazens = +quantity.value; // Captura a quantidade de armazéns informada
+      var producaoMensal = +production.value; // Captura a produção mensal informada
+      var sacasPerdidas = +loss.value; // Captura a quantidade de sacas perdidas informada
+      var hectaresPlantacao = +hectares.value; // Captura a quantidade de hectares informada
+      var pesoSaca = 60; // Peso padrão de uma saca em kg
+      
+      // Constantes
+      var tamanhoPadraoArmazem = 1000; // Tamanho padrão de um armazém em m²
+      var areaSupridaSensor = 500; // Área suprida por um sensor em m²
+      var precoSensor = 419; // Preço de um sensor em Reais
+
+      // Cálculos
+      var sacasPerdidasMensais = sacasPerdidas; // Quantidade mensal de sacas perdidas
+      var porcentagemPerda = (sacasPerdidas / producaoMensal) * 100; // Porcentagem de perda em relação à produção
+      var perdaTotal = sacasPerdidasMensais * hectaresPlantacao * pesoSaca; // Perda total em kg
+      var hectaresPerdidos = perdaTotal / (pesoSaca * 60); // Área perdida em hectares
+      var totalArmazens = quantidadeArmazens; // Total de armazéns
+      var sensoresNecessarios =(tamanhoPadraoArmazem / areaSupridaSensor) * totalArmazens; // Número total de sensores necessários
+      var custoSensores = sensoresNecessarios * precoSensor; // Custo total dos sensores
+      
+      if (sensoresNecessarios > 12) {
+        custoSensores *= 0.95; // Aplicação do desconto de 5% caso necessário
+      }
+
+      // Texto de resultado
+      var resultadoTexto = `<p><b>O senhor perde ${sacasPerdidasMensais} sacas de café por mês,</b></p>`;
+      resultadoTexto += `<p><b>${porcentagemPerda}% da sua produção, cerca de ${perdaTotal} kg devido ao mal armazenamento.</b></p>`;
+      resultadoTexto += `<p><b>Isso equivale a uma perda de aproximadamente ${hectaresPerdidos} hectares de plantação.</b></p>`;
+      resultadoTexto += `<p><b>Cada um dos seus armazéns possui ${tamanhoPadraoArmazem}m² e nossos sensores cobrem ${areaSupridaSensor}m² cada.</b></p>`;
+      resultadoTexto += `<p><b>Portanto, será necessário ${sensoresNecessarios} sensores no total, ou seja, ${(sensoresNecessarios / totalArmazens)} sensores por armazém. O custo total dos sensores é de R$${custoSensores}.</b></p>`;
+
+      // Inserção do resultado
+      result.innerHTML = resultadoTexto;
+    }
+  </script> 
+
+  <!-- Estilos para centralizar e ajustar tamanhos -->
+  <style>
+    /* Centralizar tudo no meio da página */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    /* Estilização para diminuir o tamanho dos inputs e div de resultado */
+    input {
+      width: 60%;
+    }
+    #result {
+      width: 60%;
+    }
+    /* Estilização para aplicar negrito ao resultado */
+    #result b {
+      font-weight: bold;
+    }
+  </style>
+</body>
+</html>
