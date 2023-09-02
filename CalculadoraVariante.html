@@ -10,21 +10,25 @@
   
     <!-- Campos de entrada -->
     <!-- Input para a quantidade de armazéns -->
-    <input type="number" id="quantity" placeholder="Quantidade de Armazéns"><br><br>
-    <!-- Input para a produção mensal em sacas -->
-    <input type="number" id="production" placeholder="Produção Mensal em Sacas"><br><br>
+    <input type="number" id="quantity" style="width: 200px;" placeholder="Quantidade de Armazéns"><br><br>
+    <!-- Input para a quantidade de tamanho do armazém -->
+    <input type="number" id="tamanho" style="width: 200px;" placeholder="Tamanho do armazém em m²"><br><br>
+    <!-- Input para a produção mensal em sacas --> 
+    <input type="number" id="production" style="width: 200px;" placeholder="Produção Mensal em Sacas"><br><br>
     <!-- Input para a quantidade de sacas perdidas -->
-    <input type="number" id="loss" placeholder="Quantidade de Sacas Perdidas"><br><br>
+    <input type="number" id="loss" style="width: 200px;" placeholder="Quantidade de Sacas Perdidas"><br><br>
     <!-- Input para a quantidade de hectares de plantação -->
-    <input type="number" id="hectares" placeholder="Quantos Hectares de Plantação"><br><br>
+    <input type="number" id="hectares" style="width: 202px;" placeholder="Quantos Hectares de Plantação"><br><br>
+   
     <!-- Botão para calcular -->
     <button type="button" id="calculate" onclick="calculate()">Calcular</button>
 
     <!-- Resultado -->
-    <h2>Resultado:</h2>
+    <h3>Resultado:</h3>
     <!-- Div para exibir o resultado -->
     <div id="result"></div>
   </div>
+
    <!-- Segunda Calculadora - Conversão de Toneladas para Sacas -->
    <h2>Conversão de Toneladas para Sacas</h2>
 
@@ -37,6 +41,7 @@
     <!-- Resultado da conversão -->
     <h3>Resultado da Conversão:</h3>
     <div id="resultadoConversao"></div>
+
   <!-- Script para calcular e exibir o resultado -->
   <script>
     // Função que calcula e exibe o resultado
@@ -49,7 +54,7 @@
       var pesoSaca = 60; // Peso padrão de uma saca em kg
       
       // Constantes
-      var tamanhoPadraoArmazem = 225; // Tamanho padrão de um armazém em m²
+      var tamanhoPadraoArmazem = Number(tamanho.value); // Tamanho padrão de um armazém em m²
       var areaSupridaSensor = 10; // Área suprida por um sensor em m²
       var precoSensor = 121.90; // Preço de um sensor em Reais
 
@@ -63,7 +68,7 @@
       var custoSensores = sensoresNecessarios * precoSensor; // Custo total dos sensores
       
       if (sensoresNecessarios > 12) {
-        custoSensores *= 0.95; // Aplicação do desconto de 5% caso necessário
+        custoSensores *= 0.90; // Aplicação do desconto de 10% caso necessário
       }
 
       // Texto de resultado
@@ -76,23 +81,24 @@
       // Inserção do resultado
       result.innerHTML = resultadoTexto;
     }
-      // Função para converter toneladas em sacas
-      function convertToneladasToSacas() {
-      // Entrada de toneladas
-      var toneladas = Number(input_toneladas.value);
 
-      // Constante: Peso de uma saca em kg
-      var pesoSaca = 60;
+    // Função para converter toneladas em sacas
+    function convertToneladasToSacas() {
+    // Entrada de toneladas
+    var toneladas = Number(input_toneladas.value);
 
-      // Cálculo da conversão
-      var sacas = toneladas * 1000 / pesoSaca; // 1 tonelada = 1000 kg
+    // Constante: Peso de uma saca em kg
+    var pesoSaca = 60;
 
-      // Texto de resultado
-      var resultado2 = `<p>${toneladas} toneladas equivalem a aproximadamente ${sacas} sacas de café.</p>`; 
+    // Cálculo da conversão
+    var sacas = toneladas * 1000 / pesoSaca; // 1 tonelada = 1000 kg
 
-      // Inserção do resultado
-      resultadoConversao.innerHTML = resultado2;
+    // Texto de resultado
+    var resultado2 = `<p>${toneladas} toneladas equivalem a aproximadamente ${sacas} sacas de café.</p>`; 
+
+    // Inserção do resultado
+    resultadoConversao.innerHTML = resultado2;
     }
-  </script> 
+    </script> 
 </body>
 </html>
