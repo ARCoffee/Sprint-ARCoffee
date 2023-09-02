@@ -91,7 +91,7 @@
     var pesoSaca = 60;
 
     // Cálculo da conversão
-    var sacas = toneladas / pesoSaca; // 1 tonelada = 1000 kg
+    var sacas = toneladas * 1000 / pesoSaca; // 1 tonelada = 1000 kg
 
     // Texto de resultado
     var resultado2 = `<p>${toneladas} toneladas equivalem a aproximadamente ${sacas} sacas de café.</p>`; 
