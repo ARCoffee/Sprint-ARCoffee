@@ -46,7 +46,7 @@
       var pesoSaca = 60; // Peso padrão de uma saca em kg
       
       // Constantes
-      var tamanhoPadraoArmazem = 225; // Tamanho padrão de um armazém em m²
+      var tamanhoPadraoArmazem = 100; // Tamanho padrão de um armazém em m²
       var areaSupridaSensor = 10; // Área suprida por um sensor em m²
       var precoSensor = 121.90; // Preço de um sensor em Reais
       
@@ -60,16 +60,22 @@
       var custoSensores = sensoresNecessarios * precoSensor; // Custo total dos sensores
       var instalacao = 95 * sensoresNecessarios
 
-      if (sensoresNecessarios > 12) {
+      if (sensoresNecessarios > 15) {
         custoSensores *= 0.95; // Aplicação do desconto de 5% caso necessário
       }
 
-      // Texto de resultado
-      var resultadoTexto = `<p><b>O senhor perde ${sacasPerdidasMensais} sacas de café por mês,</b></p>`;
-      resultadoTexto += `<p><b>${porcentagemPerda}% da sua produção, cerca de ${perdaTotal} kg devido ao mal armazenamento.</b></p>`;
-      resultadoTexto += `<p><b>Cada um dos seus armazéns possui ${tamanhoPadraoArmazem}m² e nossos sensores cobrem ${areaSupridaSensor}m² cada.</b></p>`;
-      resultadoTexto += `<p><b>Portanto, será necessário ${sensoresNecessarios} sensores no total. O custo total dos sensores é de R$${custoSensores}.</b></p>`;
+      if (sensoresNecessarios > 15) {
+        custoInstalacao = 0;  // Aplicação da isenção de instalação
+      }
 
+      // Texto de resultado
+      var resultadoTexto = `<p><b>Você perde ${sacasPerdidasMensais} sacas de café por mês,</b></p>`;
+      resultadoTexto += `<p><b>${porcentagemPerda}% da sua produção, cerca de ${perdaTotal} kg devido ao mal armazenamento.</b></p>`;
+      resultadoTexto += `<p><b>Serão necessários ${sensoresNecessarios} sensores para total aproveitamento da monitoração, ou seja, ${(sensoresNecessarios / totalArmazens)} sensores por armazém. O custo total será de R$${(custoSensores + custoInstalacao)}.</b></p>`;
+
+      if (custoInstalacao == 0) {
+        resultadoTexto+= `<p><b>Sua instalação será gratuita</b></p>`
+      }
       // Inserção do resultado
       result.innerHTML = resultadoTexto;
     }
@@ -85,7 +91,7 @@
       var sacas = toneladas * 1000 / pesoSaca; // 1 tonelada = 1000 kg
 
       // Texto de resultado
-      var resultado2 = `<p>${toneladas} toneladas equivalem a aproximadamente ${sacas} sacas de café.</p>`; 
+      var resultado2 = `<p><b>${toneladas} toneladas equivalem a aproximadamente ${sacas} sacas de café.</p></b>`; 
 
       // Inserção do resultado
       resultadoConversao.innerHTML = resultado2;
