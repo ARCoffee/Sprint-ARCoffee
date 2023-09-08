@@ -10,15 +10,15 @@
   
     <!-- Campos de entrada -->
     <!-- Input para a quantidade de armazéns -->
-    <input type="number" id="quantity" style="width: 200px;" placeholder="Quantidade de Armazéns"><br><br>
+    <input type="number" id="quantidade" style="width: 200px;" placeholder="Quantidade de Armazéns"><br><br>
     <!-- Input para a quantidade de tamanho do armazém -->
     <input type="number" id="tamanho" style="width: 200px;" placeholder="Tamanho do armazém em m²"><br><br>
     <!-- Input para a produção mensal em sacas --> 
-    <input type="number" id="production" style="width: 200px;" placeholder="Produção Mensal em Sacas"><br><br>
+    <input type="number" id="producao" style="width: 200px;" placeholder="Produção Mensal em Sacas"><br><br>
     <!-- Input para a quantidade de sacas perdidas -->
-    <input type="number" id="loss" style="width: 200px;" placeholder="Quantidade de Sacas Perdidas"><br><br>
-    <!-- Input para a quantidade de hectares de plantação -->
-    <input type="number" id="hectares" style="width: 202px;" placeholder="Quantos Hectares de Plantação"><br><br>
+    <input type="number" id="perda" style="width: 200px;" placeholder="Quantidade de Sacas Perdidas"><br><br>
+  
+   
    
     <!-- Botão para calcular -->
     <button type="button" id="calculate" onclick="calculate()">Calcular</button>
@@ -47,10 +47,9 @@
     // Função que calcula e exibe o resultado
     function calculate() {
       // Entradas
-      var quantidadeArmazens = +quantity.value; // Captura a quantidade de armazéns informada
-      var producaoMensal = +production.value; // Captura a produção mensal informada
-      var sacasPerdidas = +loss.value; // Captura a quantidade de sacas perdidas informada
-      var hectaresPlantacao = +hectares.value; // Captura a quantidade de hectares informada
+      var quantidadeArmazens = +quantidade.value; // Captura a quantidade de armazéns informada
+      var producaoMensal = +producao.value; // Captura a produção mensal informada
+      var sacasPerdidas = +perda.value; // Captura a quantidade de sacas perdidas informada
       var pesoSaca = 60; // Peso padrão de uma saca em kg
       
       // Constantes
@@ -62,10 +61,10 @@
       var sacasPerdidasMensais = sacasPerdidas; // Quantidade mensal de sacas perdidas
       var porcentagemPerda = (sacasPerdidas / producaoMensal) * 100; // Porcentagem de perda em relação à produção
       var perdaTotal = sacasPerdidasMensais * pesoSaca; // Perda total em kg
-      var hectaresPerdidos = perdaTotal / (pesoSaca * hectaresPlantacao); // Área perdida em hectares
       var totalArmazens = quantidadeArmazens; // Total de armazéns
       var sensoresNecessarios =(tamanhoPadraoArmazem / areaSupridaSensor) * totalArmazens; // Número total de sensores necessários
       var custoSensores = sensoresNecessarios * precoSensor; // Custo total dos sensores
+      var instalacao = (sensoresNecessarios * 95) // Custo total da instalação
       
       if (sensoresNecessarios > 12) {
         custoSensores *= 0.90; // Aplicação do desconto de 10% caso necessário
@@ -74,9 +73,7 @@
       // Texto de resultado
       var resultadoTexto = `<p><b>O senhor perde ${sacasPerdidasMensais} sacas de café por mês,</b></p>`;
       resultadoTexto += `<p><b>${porcentagemPerda}% da sua produção, cerca de ${perdaTotal} kg devido ao mal armazenamento.</b></p>`;
-      resultadoTexto += `<p><b>Isso equivale a uma perda de aproximadamente ${hectaresPerdidos} hectares de plantação.</b></p>`;
-      resultadoTexto += `<p><b>Cada um dos seus armazéns possui ${tamanhoPadraoArmazem}m² e nossos sensores cobrem ${areaSupridaSensor}m² cada.</b></p>`;
-      resultadoTexto += `<p><b>Portanto, será necessário ${sensoresNecessarios} sensores no total, ou seja, ${(sensoresNecessarios / totalArmazens)} sensores por armazém. O custo total dos sensores é de R$${custoSensores}.</b></p>`;
+      resultadoTexto += `<p><b>Será necessário ${sensoresNecessarios} sensores para total aproveitamento do monitoramento, ou seja, ${(sensoresNecessarios / totalArmazens)} sensores por armazém. O custo total dos sensores é de R$${(custoSensores + instalacao)}.</b></p>`;
 
       // Inserção do resultado
       result.innerHTML = resultadoTexto;
