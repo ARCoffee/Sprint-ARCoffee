@@ -67,13 +67,17 @@
       var instalacao = (sensoresNecessarios * 95) // Custo total da instalação
       
       if (sensoresNecessarios > 12) {
-        custoSensores *= 0.90; // Aplicação do desconto de 10% caso necessário
+        custoSensores *= 0.95; // Aplicação do desconto de 10% caso necessário
+      }
+
+      if (sensoresNecessarios > 12) {
+        instalacao *= 0.0; 
       }
 
       // Texto de resultado
       var resultadoTexto = `<p><b>O senhor perde ${sacasPerdidasMensais} sacas de café por mês,</b></p>`;
       resultadoTexto += `<p><b>${porcentagemPerda}% da sua produção, cerca de ${perdaTotal} kg devido ao mal armazenamento.</b></p>`;
-      resultadoTexto += `<p><b>Será necessário ${sensoresNecessarios} sensores para total aproveitamento do monitoramento, ou seja, ${(sensoresNecessarios / totalArmazens)} sensores por armazém. O custo total dos sensores é de R$${(custoSensores + instalacao)}.</b></p>`;
+      resultadoTexto += `<p><b>Será necessário ${sensoresNecessarios} sensores para total aproveitamento do monitoramento , ou seja, ${(sensoresNecessarios / totalArmazens)} sensores por armazém. O custo total dos sensores é de R$${(custoSensores + instalacao)}.</b></p>`;
 
       // Inserção do resultado
       result.innerHTML = resultadoTexto;
