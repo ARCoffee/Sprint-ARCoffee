@@ -17,7 +17,7 @@ body {
 }
   
 .header h1 {
-    color: white;
+ color: white;
 }
   
 .header ul {
@@ -28,7 +28,7 @@ body {
 }
   
 .header ul li {
-    padding: 2px;
+    padding: 5px;
 }
   
 .header ul li:hover {
@@ -37,3 +37,20 @@ body {
     border-radius: 5px;
     cursor: pointer;
 }
+
+.grudado {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+  
+.conteudo {
+    display: block;
+    padding-top: none;
+    padding-left: 19px;
+}
+  
+.sticky + .conteudo {
+    padding-top: 102px;
+}
+  
