@@ -1,13 +1,12 @@
 -- Inserindo valores na tabela cliente
-insert into cliente (nome, cpf_cnpjCliente, contato, areaContratada, idPlano) values
-    ('Renato Santos Drummond', '78906784226','11987017701', 10, 1),
-    ('Gilberto Pascoal', '19890476112', '12977450864', 210, 1),
-    ('Sandra Ximenes Brasil', '88541827431','62978109733',200, 3),
-    ('Coperativa Jean e Filho', '1290385478573', '11963980337', 420, 3),
-    ('Grupo Jennifer Silva', '7596788456138', '71923679948', 840, 2),
-    ('Ivanice Ferreira', '99879473773', '73987609943', 220, 2),    
-    ('Juvenal Costa Brito', '87290313773', '31946788431', 40, 1);
-
+insert into cliente (nome, cpf_cnpjCliente, contato, areaContratada, Plano) values
+    ('Renato Santos Drummond', '78906784226','11987017701', 10, "Basic"),
+    ('Gilberto Pascoal', '19890476112', '12977450864', 210, "Basic"),
+    ('Sandra Ximenes Brasil', '88541827431','62978109733',200, "Pro Plus"),
+    ('Coperativa Jean e Filho', '1290385478573', '11963980337', 420, "Pro Plus"),
+    ('Grupo Jennifer Silva', '7596788456138', '71923679948', 840, "Pro"),
+    ('Ivanice Ferreira', '99879473773', '73987609943', 220, "Pro"),    
+    ('Juvenal Costa Brito', '87290313773', '31946788431', 40, "Basic");
 
 -- Inserindo valores na tabela estoque
 insert into estoque (localizacaoEstq, volumeEstoque,codEstq,idCliente)values
@@ -80,56 +79,15 @@ insert into usuario (login,senha,idCliente) values
     ('Laura91', '20060121', 6),
     ('Juvenal', 'senha', 7);
     
-    -- Inserindo valores na tabela pesquisa
-insert into pesquisa (nome, telefone, email, estado, duvidas) values
-    ('João Carlos Medeiros', '31945997610','CarlosCoopMG@hotmail.com', 'MG','Quantos metros quadrados são o minimo necessario para contratar o serviço? Tenho um pequeno armazem de tulha mas pretendo expandir no futuro proximo, qual é o suporte da empresa em relação a isso?'),
-    ('Patricia Mota', null, 'PatriciaMota81@gmail.com', 'BA', 'Qual é o suporte oferecido em relação a implementação de automação no processo de secagem?'),
-    ('Maria Eduarda Santos', '67918297741', 'CooperativaScarpa@agro.com', 'MS', 'Quantos clientes utilizam o plano pro plus? e além do que é apresentado no site o que é oferecido?'),
-    ('Jonas Rodrigues', '71910896623', 'JohnSnowRd1@outlook.com', 'BA', 'Em relação a quantidade de sensores no armazem é possivel utilizar os sensores em bloco para monitorar a media de temperatura em uma area maior e utilizar as metricas dos mesmos para diminuir a quantidade de sensores instalados?'),
-    ('Ivan Silva Borges', null, 'GrupoServit@yahoo.com', 'SP', 'Já adquiri uma solução de tecnologia na minha produção mas tenho problemas com utilizar computadores, no plano pro plus a consulta semestral me ajuda a organizar os dados e desenvolver uma solução?');
 
 -- Inserindo valores na tabela sensor
-insert into sensor (localSensor, idCliente, idEstq) values
-    ( 'Unico sensor na tulha', 1, 1),
-    ( 'Primeiro sensor da ala esquerda', 2, 2),
-    ( 'Segundo sensor da ala esquerda', 2, 2),
-    ( 'Terceiro sensor da ala esquerda', 2, 2),
-    ( 'Quarto sensor da ala esquerda', 2, 2),
-    ( 'Quinto sensor da ala esquerda', 2, 2),
-    ( 'Sexto sensor da ala esquerda', 2, 2),
-    ( 'Setimo sensor da ala esquerda', 2, 2),
-    ( 'Primeiro sensor do centro', 2, 2),
-    ( 'Segundo sensor do centro', 2, 2),
-    ( 'Terceiro sensor do centro', 2, 2),
-    ( 'Quarto sensor do centro', 2, 2),
-    ( 'Quinto sensor do centro', 2, 2),
-    ( 'Primeiro sensor da ala direita', 2, 2),
-    ( 'Segundo sensor da ala direita', 2, 2),
-    ( 'Terceiro sensor da ala direita', 2, 2),
-    ( 'Quarto sensor da ala direita', 2, 2),
-    ( 'Quinto sensor da ala direita', 2, 2),
-    ( 'Sexto sensor da ala direita', 2, 2),
-    ( 'Setimo sensor da ala direita', 2, 2),
-    ( 'Primeiro sensor da ala esquerda', 3, 3),
-    ( 'Segundo sensor da ala esquerda', 3, 3),
-    ( 'Terceiro sensor da ala esquerda', 3, 3),
-    ( 'Quarto sensor da ala esquerda', 3, 3),
-    ( 'Quinto sensor da ala esquerda', 3, 3),
-    ( 'Sexto sensor da ala esquerda', 3, 3),
-    ( 'Setimo sensor da ala esquerda', 3, 3),
-    ( 'Oitavo sensor da ala esquerda', 3, 3),
-    ( 'Nono sensor da ala esquerda', 3, 3),
-    ( 'Decimo sensor da ala esquerda', 3, 3),
-    ( 'Primeiro sensor da ala direita', 3, 3),
-    ( 'Segundo sensor da ala direita', 3, 3),
-    ( 'Terceiro sensor da ala direita', 3, 3),
-    ( 'Quarto sensor da ala direita', 3, 3),
-    ( 'Quinto sensor da ala direita', 3, 3),
-    ( 'Sexto sensor da ala direita', 3, 3),
-    ( 'Setimo sensor da ala direita', 3, 3),
-    ( 'Oitavo sensor da ala direita', 3, 3),
-    ( 'Nono sensor da ala direita', 3, 3),
-    ( 'Decimo sensor da ala direita', 3, 3);
+insert into sensor (idCliente, idEstq) values
+    (1, 2),
+    (2, 4),
+    (3, 6),
+    (4, 8),
+    (5, 9);
+    
 
 
 

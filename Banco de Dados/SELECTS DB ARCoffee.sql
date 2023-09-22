@@ -7,13 +7,7 @@ select * from tipoCafe;
 
 select * from leitura;
 
-select * from tipoEstoque;
-
-select * from plano;
-
 select * from usuario;
-
-select * from pesquisa;
 
 select * from sensor;
 

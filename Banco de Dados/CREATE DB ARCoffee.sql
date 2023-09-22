@@ -11,7 +11,7 @@ create table cliente (
     cpf_cnpjCliente varchar(14) not null,
     contato varchar(11),
     areaContratada float,
-    idPlano int,
+    Plano varchar(15),
     fk_codCafe int
 );
 
@@ -41,27 +41,6 @@ create table leitura (
     idCliente int
 );
 
--- Criando tabela tipoEstoque
--- create table tipoEstoque (
---    codEstq int primary key auto_increment,
---    tipoEstq varchar (50),
---    volumeEstq float
--- );
-
--- PERGUNTAR SOBRE 	
-		-- Criando tabela plano
-		create table plano(
-			idPlano int primary key auto_increment,
-			nome varchar(50)
-		);
-
-		-- Inserindo valores na tabela plano
-		insert into plano values
-			(null, 'Basic'),
-			(null, 'Pro'),
-			(null, 'Pro Plus');
-
-
 -- Criando tabela usuario
 create table usuario(
     idUsuario int primary key auto_increment,
@@ -70,20 +49,9 @@ create table usuario(
     idCliente int
 );
 
--- Criado tabela pesquisa
-create table pesquisa(
-    idPesquisa int primary key auto_increment,
-    nome varchar(50),
-    telefone varchar(20),
-    email varchar(40),
-    estado varchar(10),
-    duvidas varchar(1000)
-);
-
 -- Criando tabela sensor
 create table sensor(
     idSensor int primary key auto_increment,
-    localSensor varchar (50),
     idCliente int,
     idEstq int
 );
