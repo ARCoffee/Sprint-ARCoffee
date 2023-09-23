@@ -41,7 +41,7 @@ a {
     color: rgb(160, 160, 160);
     box-shadow: 0px 0px 1px 1px;
     background-color: #7d4727;
-    border-radius: 5px;
+    border-radius: 150px;
     cursor: pointer;
 }
 
@@ -70,9 +70,24 @@ a {
     height: 5vw;
 }
 
+.registroHome {
+    display: flex;
+    position: inherit;
+    background-color: #995c38   ;
+    border-radius: 150px;
+}
+
+#li_homeSignIn:hover {
+    background-color: #7d4727;
+}
+
 #li_homeLogIn {
     border: #c39b62 solid thin;
-    border-radius: 5px;
+    border-radius: 150px;
+}
+
+#li_homeLogIn:hover {
+    
 }
 
 /* Página Login */
