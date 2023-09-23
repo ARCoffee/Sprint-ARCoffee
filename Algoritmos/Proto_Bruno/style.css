@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+}
+  
+.header {
+    background-color: darkgoldenrod;
+    margin: 0px 0px 3px 0px;
+    border-bottom: solid grey;
+}    
+  
+.header .container{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+.header h1 {
+ color: white;
+}
+  
+.header ul {
+    justify-content: space-between; 
+    list-style: none;
+    display: flex;
+    width: 500px; 
+}
+  
+.header ul li {
+    padding: 5px;
+}
+  
+.header ul li:hover {
+    box-shadow: 0px 0px 1px 1px;
+    background-color: #c78100;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.grudado {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+  
+.conteudo {
+    display: block;
+    padding-top: none;
+    padding-left: 19px;
+    justify-content: left;
+}
+  
+.sticky + .conteudo {
+    padding-top: 102px;
+}
+
+/* Página Login */
+
+#input_nomeUsuario, #input_emailUsuario, #input_senhaUsuario {
+    border: #c9aa80 solid;
+    color: white;
+    background-color: #c9aa80;
+    border-radius: 20px;
+    width: 250px;
+    height: 40px;
+    padding-left: 10px;
+}
+
+#btn_login {
+    border: #c9aa80 solid;
+    color: white;
+    background-color: #c39b62;
+    border-radius: 20px;
+    width: 140px;
+    height: 50px;
+}
+
+#btn_login:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 10px 5px;
+}
+
+.conteudoLogin {
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    column-gap: 50px;
+}
+
+.camposLogin {
+    align-self: center;
+    align-items: center;
+    font-family: system-ui;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+
+.loginLogo {
+    display: flex;
+    border-radius: 100%;
+    height: 30%;
+    width: 30%;
+    background-color: darkgoldenrod;
+}
