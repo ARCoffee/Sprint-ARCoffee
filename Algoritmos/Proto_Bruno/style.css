@@ -9,7 +9,8 @@ a {
 }
   
 .header {
-    background-color: #874925;
+    height: 5.2vw;
+    background-color: #a29083;
     margin: 0px 0px 3px 0px;
     border-bottom: solid grey;
 }    
@@ -34,13 +35,12 @@ a {
 }
   
 .header ul li {
+    color: whitesmoke;
     padding: 5px;
 }
   
 .header ul li:hover {
-    color: rgb(160, 160, 160);
-    box-shadow: 0px 0px 1px 1px;
-    background-color: #7d4727;
+    background-color: #c2b59b6f;
     border-radius: 150px;
     cursor: pointer;
 }
@@ -66,28 +66,27 @@ a {
     padding-top: 3px;
     padding-bottom: 3px;
     align-self: center;
-    border-radius: 15px;
-    height: 5vw;
+    height: 5.5vw;
 }
 
 .registroHome {
     display: flex;
     position: inherit;
-    background-color: #995c38   ;
+    background-color: #887a6f;
     border-radius: 150px;
 }
 
 #li_homeSignIn:hover {
-    background-color: #7d4727;
+    background-color: #776b61;
 }
 
 #li_homeLogIn {
-    border: #c39b62 solid thin;
+    border: #615650 solid thin;
     border-radius: 150px;
 }
 
 #li_homeLogIn:hover {
-    
+    background-color: #776b61;
 }
 
 /* Página Login */
