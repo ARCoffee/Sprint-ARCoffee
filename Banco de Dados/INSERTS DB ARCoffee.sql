@@ -9,25 +9,25 @@ insert into cliente (nome, cpf_cnpjCliente, contato, areaContratada, Plano) valu
     ('Juvenal Costa Brito', '87290313773', '31946788431', 40, "Basic");
 
 -- Inserindo valores na tabela estoque
-insert into estoque (localizacaoEstq, volumeEstoque,codEstq,idCliente)values
-	('al santos, 327', 200, 2, '1'),
-    ('al santos, 330', 212, 2, '1'),
-    ('al santos, 334', 190, 2, '1'),
-    ('al Presidente Vargas, 123', 70, 3, 2),
-    ('Av Paulista 327', 100, 1, 3),
-    ('al santos, 421', 100, 2, 4),
-    ('al Ferraz, 332', 50, 2, 5),
-    ('al Silva, 673', 100, 2, 6),
-    ('al Airton Senna, 823', 200, 2, 6),
-    ('al Saraiva, 239', 50, 2, 6),
-    ('al Trans Americana, 1234', 150, 1, 7);
-
+insert into estoque (localizacaoEstq, volumeEstoque,idCliente)values
+	('al santos, 327', 200,  1),
+    ('al santos, 330', 212,  1),
+    ('al santos, 334', 190,  1),
+    ('al Presidente Vargas, 123', 70, 2),
+    ('Av Paulista 327', 100, 3),
+    ('al santos, 421', 100, 4),
+    ('al Ferraz, 332', 50, 5),
+    ('al Silva, 673', 100, 6),
+    ('al Airton Senna, 823', 200, 6),
+    ('al Saraiva, 239', 50, 6),
+    ('al Trans Americana, 1234', 150, 7);
+    
 -- Inserindo valores em tipoCafe
-insert into tipoCafe (nome,tratamento)values
-    ('Arabica', 'entre 11 e 13%'),
-    ('Robusta', 'entre 10 e 12%'),
-    ('Bourbon', 'entre 9 e 12%'),
-    ('Conilon', 'entre 11 e 14%');
+insert into tipoCafe (nome, minimoUmidade, maximoUmidade)values
+    ('Arabica', 10, 12),
+    ('Robusta', 11, 13),
+    ('Bourbon', 12, 14),
+    ('Catuaí', 11, 19);
 
 -- Inserção de valores na tabela leitura
 insert into leitura (temperatura, umidade, dataHora, idSensor, idCliente) values

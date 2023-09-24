@@ -20,7 +20,6 @@ create table estoque(
     idEstq int primary key auto_increment,
     localizacaoEstq varchar(100),
 	volumeEstoque int, -- quantidade de sacas
-    codEstq int,
     idCliente int
 );
 
@@ -28,7 +27,8 @@ create table estoque(
 create table tipoCafe (
     codCafe int primary key auto_increment,
     nome varchar (50),
-    tratamento varchar (50) 
+    minimoUmidade int,
+    maximoUmidade int
 );
 
 -- Criando tabela leitura
