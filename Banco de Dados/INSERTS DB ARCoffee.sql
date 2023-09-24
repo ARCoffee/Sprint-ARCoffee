@@ -1,12 +1,12 @@
 -- Inserindo valores na tabela cliente
-insert into cliente (nome, cpf_cnpjCliente, contato, areaContratada, Plano) values
-    ('Renato Santos Drummond', '78906784226','11987017701', 10, "Basic"),
-    ('Gilberto Pascoal', '19890476112', '12977450864', 210, "Basic"),
-    ('Sandra Ximenes Brasil', '88541827431','62978109733',200, "Pro Plus"),
-    ('Coperativa Jean e Filho', '1290385478573', '11963980337', 420, "Pro Plus"),
-    ('Grupo Jennifer Silva', '7596788456138', '71923679948', 840, "Pro"),
-    ('Ivanice Ferreira', '99879473773', '73987609943', 220, "Pro"),    
-    ('Juvenal Costa Brito', '87290313773', '31946788431', 40, "Basic");
+insert into cliente (nome, cpf_cnpjCliente, contato, areaContratada, Plano, fk_idCafe) values
+    ('Renato Santos Drummond', '78906784226','11987017701', 10, "Basic", 1),
+    ('Gilberto Pascoal', '19890476112', '12977450864', 210, "Basic", 2),
+    ('Sandra Ximenes Brasil', '88541827431','62978109733',200, "Pro Plus", 3),
+    ('Coperativa Jean e Filho', '1290385478573', '11963980337', 420, "Pro Plus", 4),
+    ('Grupo Jennifer Silva', '7596788456138', '71923679948', 840, "Pro", 2),
+    ('Ivanice Ferreira', '99879473773', '73987609943', 220, "Pro", 1),    
+    ('Juvenal Costa Brito', '87290313773', '31946788431', 40, "Basic", 4);
 
 -- Inserindo valores na tabela estoque
 insert into estoque (localizacaoEstq, volumeEstoque,idCliente)values

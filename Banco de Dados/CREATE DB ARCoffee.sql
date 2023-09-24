@@ -12,25 +12,40 @@ create table cliente (
     contato varchar(11),
     areaContratada float,
     Plano varchar(15),
-    fk_codCafe int
+    fk_idCafe int,
+    constraint fk_idCafe foreign key (fk_idCafe) references tipoCafe(idCafe)
 );
+
+-- Criando tabela tipoCafe
+create table tipoCafe (
+    idCafe int primary key auto_increment,
+    nome varchar (50),
+    minimoTemperatura int,
+    maximoTemperatura int,
+    minimoUmidade int,
+    maximoUmidade int
+);
+
 
 -- Criando tabela estoque
 create table estoque(
     idEstq int primary key auto_increment,
     localizacaoEstq varchar(100),
 	volumeEstoque int, -- quantidade de sacas
-    idCliente int
+    fk_Cliente int,
+    constraint fk_Cliente foreign key (fk_Cliente) references Cliente(idCliente)
 );
 
--- Criando tabela tipoCafe
-create table tipoCafe (
-    codCafe int primary key auto_increment,
-    nome varchar (50),
-    minimoTemperatura int,
-    maximoTemperatura int,
-    minimoUmidade int,
-    maximoUmidade int
+
+-- Criando tabela sensor
+create table sensor(
+    idSensor int primary key auto_increment,
+    PortaArduino char(2),
+    fk_Cliente int,
+    fk_Estq int,
+    constraint fk_Estoque foreign key (fk_Estq) references estoque(idEstq)
+    --     constraint fk_Cliente foreign key (fk_Cliente) references Cliente(idCliente),
+
 );
 
 -- Criando tabela leitura
@@ -39,8 +54,9 @@ create table leitura (
     temperatura int,
     umidade int,
     dataHora datetime,
-    idSensor int,
-    idCliente int
+    fk_Sensor int,
+    constraint fk_Sensor foreign key (fk_Sensor) references Sensor(idSensor)
+    
 );
 
 -- Criando tabela usuario
@@ -48,14 +64,9 @@ create table usuario(
     idUsuario int primary key auto_increment,
     login varchar(50),
     senha varchar (50),
-    idCliente int
+    fk_Cliente int
+    --     constraint fk_Cliente foreign key (fk_Cliente) references Cliente(idCliente),
 );
 
--- Criando tabela sensor
-create table sensor(
-    idSensor int primary key auto_increment,
-    idCliente int,
-    idEstq int
-);
 
 
