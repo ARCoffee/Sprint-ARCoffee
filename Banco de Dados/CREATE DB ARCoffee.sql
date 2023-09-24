@@ -27,6 +27,8 @@ create table estoque(
 create table tipoCafe (
     codCafe int primary key auto_increment,
     nome varchar (50),
+    minimoTemperatura int,
+    maximoTemperatura int,
     minimoUmidade int,
     maximoUmidade int
 );

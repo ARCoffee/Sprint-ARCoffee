@@ -23,11 +23,11 @@ insert into estoque (localizacaoEstq, volumeEstoque,idCliente)values
     ('al Trans Americana, 1234', 150, 7);
     
 -- Inserindo valores em tipoCafe
-insert into tipoCafe (nome, minimoUmidade, maximoUmidade)values
-    ('Arabica', 10, 12),
-    ('Robusta', 11, 13),
-    ('Bourbon', 12, 14),
-    ('Catuaí', 11, 19);
+insert into tipoCafe (nome, minimoTemperatura, maximoTemperatura, minimoUmidade, maximoUmidade)values
+    ('Arabica', 16, 24, 10, 12),
+    ('Conilon', 15, 20, 11, 13),
+    ('Bourbon', 14, 20, 12, 14),
+    ('Catuaí', 16, 20, 11, 19);
 
 -- Inserção de valores na tabela leitura
 insert into leitura (temperatura, umidade, dataHora, idSensor, idCliente) values
