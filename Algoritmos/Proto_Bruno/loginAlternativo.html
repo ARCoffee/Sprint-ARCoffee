@@ -3,55 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Parte 2</title>
+    <title>Login</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('https://st2.depositphotos.com/1428014/7721/i/950/depositphotos_77216581-stock-photo-coffee-beans.jpg'); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0);
+            border: white solid 1px;
+            backdrop-filter: blur(10px); 
+            width: 25vw;
+            height: 15vw;
+            padding: 20px;
+            text-align: center;
+            border-radius: 30px;
+        }
+
+        .card h2 {
+            color: white;
+        }
+
+        .campo {
+            margin: 2vw 0; /* Aumentei a margem inferior para espaçar mais os campos */
+            position: relative;
+        }
+
+        .campo input {
+            width: 70%;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .campo label {
+            position: absolute;
+            left: 4.5vw;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+            transition: top 0.3s, font-size 0.3s;
+        }
+
+        .campo input:focus + label,
+        .campo input:not(:placeholder-shown) + label {
+            top: 5px;
+            font-size: 12px;
+        }
+    </style>
 </head>
 <body>
-    <div class="conteudo">
-        <div class="card">
-            <h2>Login</h2>
-            <div class="campos">
-                <div class="campo">
-                    Email: 
-                    <input type="email" placeholder="Login">
-                </div>
-                <div class="campo">
-                    Senha:
-                    <input type="password" placeholder="Senha">
-                </div>
+    <div class="card">
+        <h2>Login</h2>
+        <div class="campos">
+            <div class="campo">
+                <input type="email" placeholder=" ">
+                <label>Email</label>
+            </div>
+            <div class="campo">
+                <input type="password" placeholder=" ">
+                <label>Senha</label>
             </div>
         </div>
     </div>
 </body>
 </html>
-
-<style>
-    body {
-        margin: 0;
-    }
-
-    .conteudo {
-        display: flex;
-        border: 3px solid #000;
-        justify-content: center;
-        align-content: center;
-        background-color: red;
-    }
-
-    .conteudo .card {
-        justify-content: center;
-        background-color: green;
-        width: 40vw;
-        text-align: center;
-    }
-
-    .campos {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .campos .campo {
-        align-items: center;
-        align-content: center;
-    }
-</style>
