@@ -5,45 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Cadastro</title>
+    <!-- Icones importados -->
+    <script src="https://kit.fontawesome.com/ce9ef0d266.js" crossorigin="anonymous"></script>
 
     <style>
-        body {
-            background: linear-gradient(to bottom right, #d2b48c, #6c482d) no-repeat;
-            background-attachment: fixed;
+      body {
+        background: linear-gradient(to bottom right, #d2b48c, #6c482d) no-repeat;
+        background-attachment: fixed;
 
-        }
+      }
 
-        .cardCadastro {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: absolute;
-            flex-direction: column;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #dddd;
-            width: 30%;
-            padding: 2%;
-        }
+      .cardCadastro {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        flex-direction: column;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #6c482d52;
+        width: 22%;
+        height: 32%;
+        padding: 2%;
+        border-radius: 1vw;
+        border: solid #ffffff5e 2px;
+      }
 
-        .cardCadastro .camposCadastro i{
-          position: absolute;
-          display: flex;
-          flex-direction: row;
-          right: 25%;
-          bottom: 31%;
-        }
+      .cardCadastro h2 {
+        margin: 0;
+        margin-bottom: 0.7vw;
+      }
 
-        .cardCadastro h2 {
-          margin: 0;
-        }
+      .camposCadastro input {
+        height: 2vw;
+        width: 15vw;
+        margin: 3px;
+        padding-left: 2.3vw;
+        border-radius: 1vw;
+        border: none;
+      }
 
-        
+      .camposCadastro i {
+        position: absolute;
+        margin: 13px
+      }
+
+      .camposCadastro {
+        display: flex;
+        align-items: center;
+        margin: 0.3vw;
+      }
+
+      .camposCadastro button {
+        height: 2vw;
+        width: 15vw;
+        border-radius: 1vw;
+        border: none;
+      }
+
     </style>
 
 </head>
 <body>
+  <!-- Header -->
     <div class="header" id="meuHeader">
         <div class="container">
           <img src="https://github.com/ARCoffee/Sprint-ARCoffee/blob/main/design/ar%20coffee%20(7).png?raw=true" alt="Logo">
@@ -61,15 +86,32 @@
         </ul>
         </div>
     </div>
+    <!-- Fim do Header -->
 
         <div class="cardCadastro">
             <h2>Cadastro</h2>
+
             <div class="camposCadastro">
-              <i>
-                <img src="assets/icons/person_FILL0_wght400_GRAD0_opsz24.png" alt="">
-              </i>
-              <input type="email" placeholder="Email" style="height: 2vw; width: 18vw; margin: 15px;">
+              <i class="fa-solid fa-user"></i>
+              <input type="text" placeholder="Usuário">
             </div>
+
+            <div class="camposCadastro">
+              <i class="fa-solid fa-envelope"></i>
+              <input type="email" placeholder="Email">
+            </div>
+
+
+            <div class="camposCadastro">
+              <i class="fa-solid fa-lock"></i>
+              <input type="password" placeholder="Senha">
+            </div>
+
+            <div class="camposCadastro">
+              <i class="fa-solid fa-right-to-bracket"></i>
+              <button>Cadastre-se</button>
+            </div>
+
         </div>
     </div>
 
