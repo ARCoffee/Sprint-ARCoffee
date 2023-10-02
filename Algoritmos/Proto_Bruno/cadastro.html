@@ -18,11 +18,22 @@
             align-items: center;
             justify-content: center;
             position: absolute;
+            flex-direction: column;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             background-color: #dddd;
             width: 30%;
+        }
+
+        .cardCadastro .camposCadastro i{
+          position: absolute;
+          left: 65%;
+          bottom: 0.1vw;
+        }
+        
+        .camposCadastro .camposCadastro input {
+
         }
 
     </style>
@@ -49,6 +60,12 @@
 
         <div class="cardCadastro">
             <h2>Cadastro</h2>
+            <div class="camposCadastro">
+              <i>
+                <img src="assets/icons/person_FILL0_wght400_GRAD0_opsz24.png" alt="">
+              </i>
+              <input type="email" placeholder="Email" style="height: 2vw; height: 2vw;">
+            </div>
         </div>
     </div>
 
