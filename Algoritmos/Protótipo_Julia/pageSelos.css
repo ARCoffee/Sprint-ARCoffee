@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+  
+.header {
+    height: 5.2vw;
+    background-color: #a29083;
+    margin: 0px 0px 3px 0px;
+    box-shadow: 0px 0px 15px 8px rgba(177, 177, 177, 0.315);
+    font-size: 0.9vw;
+}    
+  
+.header .container{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+.header h1 {
+ color: white;
+}
+  
+.header ul {
+    justify-content: space-between; 
+    list-style: none;
+    display: flex;
+    width: 500px; 
+}
+  
+.header ul li {
+    color: whitesmoke;
+    padding: 5px;
+}
+  
+.header ul li:hover {
+    background-color: #c2b59b6f;
+    border-radius: 150px;
+    cursor: pointer;
+}
+
+.grudado {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+  
+.conteudo {
+    display: block;
+    padding-top: none;
+    padding-left: 19px;
+    justify-content: left;
+}
+  
+.sticky + .conteudo {
+    padding-top: 102px;
+}
+
+.container img {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    align-self: center;
+    height: 5.5vw;
+}
+
+.registroHome {
+    display: flex;
+    position: inherit;
+    background-color: #887a6f;
+    border-radius: 150px;
+}
+
+#li_homeSignIn:hover {
+    background-color: #776b61;
+}
+
+#li_homeLogIn {
+    border: #615650 solid thin;
+    border-radius: 150px;
+}
+
+#li_homeLogIn:hover {
+    background-color: #776b61;
+} 
+
+/* Inicio pagina! */
+.box {
+    background: rgb(137, 241, 5);
+    background: radial-gradient(circle, #71c566 0%, #b2a499 100%);
+    display: flex;
+    justify-content: center;
+
+}
+.box .container{
+    justify-content: space-evenly;
+    display: flex;
+    align-content: flex-end;
+    align-items: center;
+   padding-top: 100px;
+   padding-bottom: 200px;
+}
+.selo{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    width: auto;
+    margin: 50px;
+}
+.selo img {
+    width:250px;
+    height:250px;
+}
+
+.selo p {
+    text-align: center;
+   flex-direction: column;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   color: white;
+   text-shadow: black 0.1em 0.1em 0.2em
+}
+
