@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@100&display=swap');
+body {
+  background: rgb(191, 181, 173);
+  background: linear-gradient(
+    to left,
+    rgba(125, 105, 99, 1) 0%,
+    rgba(157, 141, 128, 1) 50%,
+    #b2a499 100%
+  );
+}
+.section {
+  width: 100%;
+  display: flex;
+  position: absolute;
+  top: 20%;
+}
+.section .margemLateral {
+  width: 90vw;
+  margin: auto;
+  display: flex;
+}
+.textoPlanos {
+  width: 25vw;
+  color: whitesmoke;
+  font-family: 'Alumni Sans', sans-serif;
+  
+}
+
+.textoPlanos h1{
+    font-size: 75px;
+    margin: 0;
+}
+
+.textoPlanos p{
+    font-size: 30px;
+    margin: 0;
+}
+.PlanoForma {
+  text-align: center;
+  margin-left: 15px;
+  width: 300px;
+  height: 500px;
+  background-color: #4e3828;
+  border-radius: 25px;
+  display: inline-block;
+}
+.canto {
+  color: #fff;
+}
+.centro {
+  margin-top: 10px;
+  background-color: #cccac5;
+  color: #4e3828;
+  height: 550px;
+  position: relative;
+  top: -25px;
+}
+.PlanoForma button {
+  font-size: 15px;
+  font-family: Arial;
+  width: 140px;
+  height: 50px;
+  border-width: 1px;
+  color: #4e3828;
+  border-color: #b2a499;
+  border-radius: 28px;
+  background: #b2a499;
+  cursor: pointer;
+}
+.centro button{
+    background: #4e3828;
+    border-color: #4e3828;
+    color: #b2a499;
+}
+
+.PlanoForma button:hover {
+  background: #9b8a7c;
+}
+.centro button:hover {
+    background: #433022;
+  }
+.PlanoForma h1{
+    font-size: 65px;
+    margin: 0;
+}

@@ -5,84 +5,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <script src="senha.js" defer></script>
-    <style>
-        body{
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            background-image: linear-gradient(100deg, yellow , blue);
-        }
-        .login{
-            background-color: rgba(0, 0, 0, 0.8);
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            padding: 50px;
-            border-radius: 15px;
-            color: white;
-        }
-        .login h1 {
-            display: flex;
-            justify-content: center;
-        }
-        .login input{
-            background-color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 10px;
-        }
-        .login button {
-            background-color: cadetblue;
-            border: none;
-            padding: 15px;
-            width: 100%;
-            border-radius: 50px;
-            cursor: pointer;
-        }
-
-        .login li a {
-            text-decoration: none;
-            color: rgb(247, 165, 12);
-            list-style: none;
-        }
-
-        .login li {
-            text-decoration: none;
-            color: rgb(247, 165, 12);
-            list-style: none;
-            display: flex;
-            justify-content: center;
-        } 
-
-        .login input {
-            text-align: center;
-        }
-        
-    </style>
+    <link rel="stylesheet" href="login.css">
 </head>
 
 <body>
-    <div class="login">
 
-    <h1>LOGIN</h1>
+    <div class="header">
+        <div class="container">
+            <img src="assets/imgs/ar coffee (7).png" >
+        <ul> 
+            <li>Home</li>
+            
+            <a href="">
+                <li>Nossos Valores</li>
+            </a>
 
-        
-    <!-- Email: -->
-    <input  placeholder="usuario@exemplo.com" type="email" id="input_login"><br><br>
+            <a href="">
+                <li>Planos</li>
+            </a>
 
-    <!-- Senha: -->
-    <input placeholder="SENHA" type="password" id="input_senha"><br><br>
+            <a href="">
+                <li>Login</li>
+            </a>
 
+            <li>|</li>
 
-    <!-- <button onclick="entrar()"><Entrar</button><br><br> -->
-
-    <button onclick="entrar()"><a href="C:\Users\Patrick\Documents\SPTECH\PI\GIT\Aula Prototiáção Do Site\public\index.html"></a>Entrar</button><br><br>
-
-    <li><a href="">Cadastre-se</a></li> 
-
-    <div class="mensagem"></div>
-
+            <a href="">
+                <li>Cadastro</li>
+            </a>
+        </ul>
+        </div>
     </div>
 
+    <div class="imagem">
+
+        <div class="mensagem">
+
+        </div>
+
+    </div>
+    <div class="login">
+
+        
+        <div class="background-container">
+            <h1>LOGIN</h1>
+            <!-- Email: -->
+            EMAIL
+            <input placeholder="usuario@exemplo.com" type="email" id="input_login"><br><br>
+
+            <!-- Senha: -->
+            SENHA
+            <input placeholder="*********" type="password" id="input_senha"><br><br>
+
+
+            <button onclick="entrar()">Entrar</button></a><br><br>
+
+            <li><a href="">Cadastre-se</a></li>
+        </div>
+
+    </div>
 </body>
+
+<script>
+
+    function entrar() {
+        var Login = input_login.value
+        var Senha = input_senha.value
+
+        if (Login == 'patrick' && Senha == '1905') {
+            window.location.href = "https://www.youtube.com/"
+        }
+        else {
+            alert('Dados incorretos')
+        }
+    }
+</script>
+
 </html>
