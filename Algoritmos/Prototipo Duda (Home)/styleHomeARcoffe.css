@@ -125,3 +125,30 @@ a {
     align-items: center;
     letter-spacing: 1px;
 }
+
+/* TEXTO SOBRE NÓS */
+
+.text .container {
+    background-color: #d0b690;
+    border-radius: 10px;
+    width: 95%;
+    height: 150px;
+    margin: auto;  
+}
+
+.text .container p {
+
+    font-size: larger;
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 5px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    letter-spacing: 1px;
+    margin: auto;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
