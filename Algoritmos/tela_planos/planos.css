@@ -1,6 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,900&display=swap');
 body {
-  background: rgb(191, 181, 173);
   background: linear-gradient(
     to left,
     rgba(125, 105, 99, 1) 0%,
@@ -19,20 +18,20 @@ body {
   margin: auto;
   display: flex;
 }
+
 .textoPlanos {
   width: 25vw;
   color: whitesmoke;
-  font-family: 'Alumni Sans', sans-serif;
-  
+  font-family: 'Montserrat', sans-serif;  
 }
 
 .textoPlanos h1{
-    font-size: 75px;
+    font-size: 60px;
     margin: 0;
 }
 
 .textoPlanos p{
-    font-size: 30px;
+    font-size: 25px;
     margin: 0;
 }
 .PlanoForma {
