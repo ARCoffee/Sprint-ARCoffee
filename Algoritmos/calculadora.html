@@ -146,32 +146,19 @@
         } else {
           valorSacasPerdidas = 800 * qtdsacasPerdidas;
         }
-
-        // Criação da mensagem de exibição 
-        var textoCalculadora = `<p><b>Você perde ${porcentagemPerda}% da sua produção, equivalente à R$${valorSacasPerdidas} devido ao mal armazenamento.<br>
-      Serão necessários ${sensoresNecessarios} sensores para total aproveitamento da monitoração,
-       ou seja, ${sensoresNecessarios / quantidadeArmazens} sensores por armazém. 
-      O investimento inicial ficará no total de R$${custoSensores + custoInstalacao}.</b></p>`
-
-
-        if (quantidadeArmazens == 1) {
-          textoCalculadora = `<p><b>Você perde ${porcentagemPerda}% da sua produção, equivalente à R$${valorSacasPerdidas} devido ao mal armazenamento.<br>
-      Serão necessários ${sensoresNecessarios} sensores para total aproveitamento da monitoração,
-      O investimento inicial ficará no total de R$${custoSensores + custoInstalacao}.</b></p>`
-        }
+        sensoresNecessarios = Math.ceil(sensoresNecessarios);
+        porcentagemPerda = porcentagemPerda.toFixed(1);
+        var investimento = custoSensores + custoInstalacao;
+        investimento = investimento.toFixed(0);
 
         
 
-        // Seria bem legal se tivesse uma mensagem resumindo o quanto o usuário perde e o quanto ele ganha, tipo:
-        // No momento você perde: R$1000,00
-        // Com nossa solução você passa a perder: R$500,00
-        // Economizando R$500 no total
-        // 👍
-
-
+           
 
         // Inserção do resultado
-        result.innerHTML = textoCalculadora;
+        result.innerHTML = `<ul><li>Atualmente você perde R$${valorSacasPerdidas},00 devido ao mau armazenamento</li><br>
+          <li>Investindo R$${investimento} você conseguirá monitorar todos os seus estoques</li><br>
+          <li>Podendo deixar de perder até: R$${valorSacasPerdidas * 0.8}</li>`;
       }
 
       // Função para converter toneladas em sacas
