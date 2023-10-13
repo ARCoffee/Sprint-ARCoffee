@@ -11,9 +11,7 @@ create table cliente (
     cpf_cnpjCliente varchar(14) not null,
     contato varchar(11),
     areaContratada float,
-    Plano varchar(15),
-    fk_idCafe int,
-    constraint fk_idCafe foreign key (fk_idCafe) references tipoCafe(idCafe)
+    Plano varchar(15)
 );
 
 -- Criando tabela tipoCafe
@@ -29,11 +27,14 @@ create table tipoCafe (
 
 -- Criando tabela estoque
 create table estoque(
-    idEstq int primary key auto_increment,
+    idEstoque int,
+	fk_Cliente int,
     localizacaoEstq varchar(100),
-	volumeEstoque int, -- quantidade de sacas
-    fk_Cliente int,
-    constraint fk_Cliente foreign key (fk_Cliente) references Cliente(idCliente)
+	volumeEstoque int, 
+    fk_Cafe int,
+    primary key (idEstoque, fk_Cliente),
+    constraint Estoque_fk_Cafe foreign key (fk_Cafe) references tipoCafe(idCafe),
+    constraint Estoque_fk_Cliente foreign key (fk_Cliente) references Cliente(idCliente)
 );
 
 
@@ -42,30 +43,30 @@ create table sensor(
     idSensor int primary key auto_increment,
     PortaArduino char(2),
     fk_Cliente int,
-    fk_Estq int,
-    constraint fk_Estoque foreign key (fk_Estq) references estoque(idEstq)
-    --     constraint fk_Cliente foreign key (fk_Cliente) references Cliente(idCliente),
-
+    fk_Estoque int,
+    constraint sensor_fk_Cliente foreign key (fk_Cliente) references estoque(fk_Cliente), 
+    constraint sensor_fk_Estoque foreign key (fk_Estoque) references estoque(idEstoque)
 );
 
 -- Criando tabela leitura
 create table leitura (
-    idLeitura int primary key auto_increment,
+    idLeitura int,
+    fk_Sensor int,
     temperatura int,
     umidade int,
     dataHora datetime,
-    fk_Sensor int,
-    constraint fk_Sensor foreign key (fk_Sensor) references Sensor(idSensor)
-    
+    primary key (idLeitura, fk_Sensor),
+    constraint leitura_fk_Sensor foreign key (fk_Sensor) references Sensor(idSensor)
 );
 
 -- Criando tabela usuario
 create table usuario(
-    idUsuario int primary key auto_increment,
+    idUsuario int,
+	fk_Cliente int,
     login varchar(50),
     senha varchar (50),
-    fk_Cliente int
-    --     constraint fk_Cliente foreign key (fk_Cliente) references Cliente(idCliente),
+    primary key (idUsuario, fk_Cliente),
+    constraint usuario_fk_Cliente foreign key (fk_Cliente) references Cliente(idCliente)
 );
 
 
