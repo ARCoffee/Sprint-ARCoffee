@@ -5,10 +5,10 @@ create database ARcoffee;
 use ARcoffee;
 
 -- Criando tabela cliente
-create table cliente (
-    idCliente int primary key auto_increment,
+create table Empresa (
+    idEmpresa int primary key auto_increment,
     nome varchar (50),
-    cpf_cnpjCliente varchar(14) not null,
+    cpf_cnpjEmpresa varchar(14) not null,
     contato varchar(11),
     areaContratada float,
     Plano varchar(15)
@@ -28,13 +28,13 @@ create table tipoCafe (
 -- Criando tabela estoque
 create table estoque(
     idEstoque int,
-	fk_Cliente int,
+	fk_Empresa int,
     localizacaoEstq varchar(100),
 	volumeEstoque int, 
     fk_Cafe int,
-    primary key (idEstoque, fk_Cliente),
+    primary key (idEstoque, fk_Empresa),
     constraint Estoque_fk_Cafe foreign key (fk_Cafe) references tipoCafe(idCafe),
-    constraint Estoque_fk_Cliente foreign key (fk_Cliente) references Cliente(idCliente)
+    constraint Estoque_fk_Empresa foreign key (fk_Empresa) references Empresa(idEmpresa)
 );
 
 
@@ -42,9 +42,9 @@ create table estoque(
 create table sensor(
     idSensor int primary key auto_increment,
     PortaArduino char(2),
-    fk_Cliente int,
+    fk_Empresa int,
     fk_Estoque int,
-    constraint sensor_fk_Cliente foreign key (fk_Cliente) references estoque(fk_Cliente), 
+    constraint sensor_fk_Empresa foreign key (fk_Empresa) references estoque(fk_Empresa), 
     constraint sensor_fk_Estoque foreign key (fk_Estoque) references estoque(idEstoque)
 );
 
@@ -62,11 +62,11 @@ create table leitura (
 -- Criando tabela usuario
 create table usuario(
     idUsuario int,
-	fk_Cliente int,
+	fk_Empresa int,
     login varchar(50),
     senha varchar (50),
-    primary key (idUsuario, fk_Cliente),
-    constraint usuario_fk_Cliente foreign key (fk_Cliente) references Cliente(idCliente)
+    primary key (idUsuario, fk_Empresa),
+    constraint usuario_fk_Empresa foreign key (fk_Empresa) references Empresa(idEmpresa)
 );
 
 

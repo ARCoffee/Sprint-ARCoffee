@@ -1,5 +1,5 @@
--- Inserindo valores na tabela cliente
-insert into cliente (nome, cpf_cnpjCliente, contato, areaContratada, Plano) values
+-- Inserindo valores na tabela Empresa
+insert into Empresa (nome, cpf_cnpjEmpresa, contato, areaContratada, Plano) values
     ('Renato Santos Drummond', '78906784226','11987017701', 10, "Basic"),
     ('Gilberto Pascoal', '19890476112', '12977450864', 210, "Basic"),
     ('Sandra Ximenes Brasil', '88541827431','62978109733',200, "Pro Plus"),
@@ -14,7 +14,7 @@ insert into tipoCafe (nome, minimoTemperatura, maximoTemperatura, minimoUmidade,
     ('Catuaí', 16, 20, 11, 19);
     
 -- Inserindo valores na tabela estoque
-insert into estoque (idEstoque, fk_Cliente, localizacaoEstq, volumeEstoque, fk_Cafe) values
+insert into estoque (idEstoque, fk_Empresa, localizacaoEstq, volumeEstoque, fk_Cafe) values
 	(1,1,'al santos, 327', 200,  1),
     (2,1,'al santos, 330', 212,  2),
     (3,1,'al santos, 334', 190,  3),
@@ -27,9 +27,8 @@ insert into estoque (idEstoque, fk_Cliente, localizacaoEstq, volumeEstoque, fk_C
     (1,5,'al Saraiva, 239', 50, 3),
     (2,5,'al Trans Americana, 1234', 150, 4);
     
-    select * from estoque;
 -- Inserindo valores na tabela sensor
-insert into sensor (PortaArduino, fk_Cliente, fk_Estoque) values
+insert into sensor (PortaArduino, fk_Empresa, fk_Estoque) values
     (3,1,1),
     (2,3,1),
     (1,4,1),
@@ -44,27 +43,27 @@ insert into sensor (PortaArduino, fk_Cliente, fk_Estoque) values
 
 -- Inserção de valores na tabela leitura
 insert into leitura (idLeitura, fk_Sensor, temperatura, umidade, dataHora) values
-    (1,23,21, 60, "2023-09-11 10:31:15"),
-    (2,23,19, 76, "2023-09-11 10:32:15"),
-    (3,23,17, 70, "2023-09-11 10:33:15"),
-    (4,23,11, 77, "2023-09-11 10:34:15"),
-    (5,23,25, 45, "2023-09-11 10:35:15"),
-    (1,24,26, 20, "2023-09-11 10:36:15"),
-    (2,24,16, 72, "2023-09-11 10:37:15"),
-    (3,24,21, 67, "2023-09-11 10:38:15"),
-    (1,25,24, 51, "2023-09-11 10:39:15"),
-    (1,26,22, 64, "2023-09-11 10:40:15"),
-    (1,27,32, 27, "2023-09-11 10:45:15"),
-    (1,28,5, 80, "2023-09-11 10:33:15"),
-    (1,29,7, 75, "2023-09-11 10:42:15"),
-    (1,30,6, 79, "2023-09-11 10:43:15"),
-    (1,31,12, 67, "2023-09-11 10:47:15"),
-    (1,32,18, 62, "2023-09-11 11:51:15"),
-    (1,33,21, 67, "2023-09-11 10:38:15");
+    (1,1,21, 60, "2023-09-11 10:31:15"),
+    (2,1,19, 76, "2023-09-11 10:32:15"),
+    (3,1,17, 70, "2023-09-11 10:33:15"),
+    (4,1,11, 77, "2023-09-11 10:34:15"),
+    (5,1,25, 45, "2023-09-11 10:35:15"),
+    (1,2,26, 20, "2023-09-11 10:36:15"),
+    (2,2,16, 72, "2023-09-11 10:37:15"),
+    (3,2,21, 67, "2023-09-11 10:38:15"),
+    (1,3,24, 51, "2023-09-11 10:39:15"),
+    (1,4,22, 64, "2023-09-11 10:40:15"),
+    (1,5,32, 27, "2023-09-11 10:45:15"),
+    (1,6,5, 80, "2023-09-11 10:33:15"),
+    (1,7,7, 75, "2023-09-11 10:42:15"),
+    (1,8,6, 79, "2023-09-11 10:43:15"),
+    (1,9,12, 67, "2023-09-11 10:47:15"),
+    (1,10,18, 62, "2023-09-11 11:51:15"),
+    (1,11,21, 67, "2023-09-11 10:38:15");
     
 
 -- Inserindo valores na tabela usuario
-insert into usuario (idUsuario, fk_Cliente, login, senha) values
+insert into usuario (idUsuario, fk_Empresa, login, senha) values
     (1,1,'RenatoSantos32', 'Maria29072001'),
     (2,1,'MariaSantos11', 'Renato24071984'),
     (1,2,'Jonas192', '2991Jonas'),
