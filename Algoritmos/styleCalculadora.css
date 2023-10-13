@@ -57,3 +57,13 @@ h2 {
 .conversaoMiddle input {
     width: 19.44vw;
 }
+
+.ulResultado {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ulResultado li {
+    line-height: 3vw;
+}
