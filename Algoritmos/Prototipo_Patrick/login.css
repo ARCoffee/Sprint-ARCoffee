@@ -1,19 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,900&display=swap');
+
 body {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    /* background-attachment: fixed; */
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
-    overflow-y: hidden;
+}
+
+body {
+    background: linear-gradient(
+      to left,
+      rgba(125, 105, 99, 1) 0%,
+      rgba(157, 141, 128, 1) 50%,
+      #b2a499 100%
+    );
 }
 
 .header {
     height: 5.2vw;
-    background-color: #352208;
-    /* background-color: #422c22; */
-    /* border-bottom: solid #5b4133; */
-    box-shadow: 0px 0px 15px 8px rgb(41, 23, 0);
+    background-color: #3e2217;
+    box-shadow: 0px 0px 15px 8px #593823;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
 }
 
-.container img {
+.containerHeader img {
     padding-top: 5px;
     padding-bottom: 5px;
     align-self: flex-start;
@@ -22,16 +33,21 @@ body {
 
 
 .header ul {
-    width: 500px;
+    width: 700px;
     list-style: none;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     color: whitesmoke;
-    font-size: medium;    
-} 
+    font-size: medium;
+}
 
+.header ul :hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: all 0.5s;
+}
 
-.header .container {
+.header .containerHeader {
     width: 80%;
     margin: auto;
     display: flex;
@@ -40,7 +56,7 @@ body {
 }
 
 a {
-    color: whitesmoke ;
+    color: whitesmoke;
     text-decoration: none;
 }
 

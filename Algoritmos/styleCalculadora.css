@@ -10,7 +10,7 @@ h2 {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin-top: 1%;
+    margin-top: 60px;
 }
 
 .containerCalculadora .mainLeft {
@@ -24,6 +24,12 @@ h2 {
     background-color: #d8cdb8ae;
     border-radius: 2%;
     padding: 2% 2%;
+}
+.containerCalculadora .mainLeft select {
+    border-radius: 10px;
+}
+.containerCalculadora .mainLeft input {
+    border-radius: 10px;
 }
 
 .containerCalculadora .mainRight {

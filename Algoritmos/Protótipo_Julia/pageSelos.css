@@ -94,8 +94,7 @@ a {
 
 /* Inicio pagina! */
 .box {
-    background: rgb(137, 241, 5);
-    background: radial-gradient(circle, #71c566 0%, #b2a499 100%);
+    background-image: url(../imagens/background.png);
     display: flex;
     justify-content: center;
 
