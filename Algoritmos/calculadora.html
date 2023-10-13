@@ -156,9 +156,11 @@
            
 
         // Inserção do resultado
-        result.innerHTML = `<ul class="ulResultado"><li>Atualmente você perde <span style="color: red;">R$${valorSacasPerdidas} ,00</span> devido ao mau armazenamento</li><br>
+        result.innerHTML = `
+        <ul class="ulResultado"><li>Atualmente você perde <span style="color: red;">R$${valorSacasPerdidas} ,00</span> devido ao mau armazenamento</li><br>
           <li>Investindo <span style="color: blue;">R$${investimento}</span> você conseguirá monitorar todos os seus estoques</li><br>
-          <li>Podendo deixar de perder até: <span style="color: green;">R$${valorSacasPerdidas * 0.8}</span></li>`;
+          <li>Podendo deixar de perder até: <span style="color: green;">R$${valorSacasPerdidas * 0.8}</span></li>
+          `;
       }
 
       // Função para converter toneladas em sacas
