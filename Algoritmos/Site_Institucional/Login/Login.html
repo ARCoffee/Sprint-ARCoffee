@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="containerHeader">
+            <img src="../imagens/arcoffee.png" >
+        <ul> 
+            <a href="../siteInstitucional.html">
+                <li>Home</li>
+            </a>
+            
+            <a href="../siteInstitucional.html">
+                <li>Nossos Valores</li>
+            </a>
+
+            <a href="../siteInstitucional.html">
+                <li>Nossa Sede</li>
+            </a>
+            
+            <a href="../siteInstitucional.html">
+                <li>Planos</li>
+            </a>
+
+            <a href="../calculadora.html">
+                <li>Orçamento</li>
+            </a>
+
+            <a href="../Login/Login.html">
+                <li>Login</li>
+            </a>
+
+            <li>|</li>
+
+            <a href="../Cadastro/cadastro.html">
+                <li>Cadastro</li>
+            </a>
+
+        </ul>
+        </div>
+    </div>
+    <div class="imagem">
+
+        <div class="mensagem">
+
+        </div>
+
+    </div>
+    <div class="login">
+
+        
+        <div class="background-container">
+            <h1>LOGIN</h1>
+            <!-- Email: -->
+            EMAIL
+            <input placeholder="usuario@exemplo.com" type="email" id="input_login"><br><br>
+
+            <!-- Senha: -->
+            SENHA
+            <input placeholder="*********" type="password" id="input_senha"><br><br>
+
+
+            <button onclick="entrar()">Entrar</button></a><br><br>
+
+            <li><a href="">Cadastre-se</a></li>
+        </div>
+
+    </div>
+</body>
+
+<script>
+
+    function entrar() {
+        var Login = input_login.value
+        var Senha = input_senha.value
+
+        if (Login == 'patrick' && Senha == '1905') {
+            window.location.href = "https://www.youtube.com/"
+        }
+        else {
+            alert('Dados incorretos')
+        }
+    }
+</script>
+
+</html>

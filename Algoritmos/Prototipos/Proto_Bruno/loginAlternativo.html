@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('https://st2.depositphotos.com/1428014/7721/i/950/depositphotos_77216581-stock-photo-coffee-beans.jpg'); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0);
+            border: white solid 1px;
+            backdrop-filter: blur(10px); 
+            width: 30vw;
+            height: auto;
+            padding: 20px;
+            text-align: center;
+            border-radius: 30px;
+        }
+
+        .card h2 {
+            color: white;
+        }
+
+        .campo {
+            margin: 20px 0; /* Aumentei a margem inferior para espaçar mais os campos */
+            position: relative;
+        }
+
+        .campo input {
+            width: 70%;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .campo label {
+            position: absolute;
+            left: 4.8vw;
+            top: 50%;
+            transform: translateY(-48%);
+            pointer-events: none;
+            transition: top 0.3s, font-size 0.3s;
+        }
+
+        .campo input:focus + label,
+        .campo input:not(:placeholder-shown) + label {
+            top: 5px;
+            font-size: 12px;
+        }
+
+        .botaoLogin {
+            margin-top: 20px; /* Espaçamento entre os campos e o botão */
+        }
+
+        .botaoLogin button {
+            padding: 10px 20px;
+            background-color: white; /* Cor de fundo do botão */
+            color: black; /* Cor do texto do botão */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 9vw;
+        }
+
+        .botaoCadastro {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centraliza horizontalmente */
+            margin-top: 20px;
+        }
+
+        .botaoCadastro button {
+            padding: 10px 20px;
+            background-color: white;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 9vw;
+        }
+
+        .labelPergunta {
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Login</h2>
+        <div class="campos">
+            <div class="campo">
+                <input type="email" placeholder=" ">
+                <label>Email</label>
+            </div>
+            <div class="campo">
+                <input type="password" placeholder=" ">
+                <label>Senha</label>
+            </div>
+        </div>
+        <div class="botaoLogin">
+            <button>Login</button>
+        </div>
+        <div class="labelPergunta">
+            <br>
+            <label>Não tem conta?</label>
+        </div>
+        <div class="botaoCadastro">
+            <button>Cadastre-se</button>
+        </div>
+    </div>
+</body>
+</html>

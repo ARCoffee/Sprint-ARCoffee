@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&family=Ubuntu:wght@400;500&display=swap');
+
+body {
+    font-family: 'Raleway', sans-serif;; 
+    margin: 0;
+}
+
+body {
+    
+    background-color: #e5e5e5;
+}
+
+.header {
+    height: 5.2vw;
+    background-color: #352208;
+    /* background-color: #422c22; */
+    /* border-bottom: solid #5b4133; */
+    box-shadow: 0px 0px 15px 8px rgb(41, 23, 0);
+    /* position: fixed;
+    z-index: 1;
+    top: 0;
+    width: 100vw; */
+}
+
+.container img {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    align-self: flex-start;
+    height: 5.5vw;
+}
+
+
+.header ul {
+    width: 500px;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    color: whitesmoke;
+    font-size: medium;    
+} 
+
+
+.header .container {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+a {
+    color: whitesmoke ;
+    text-decoration: none;
+}
+
+/* ESTILIZAÇÃO IMAGENS */
+
+.banner .container img {
+    width: 95%;
+    height: 300px;
+    margin: auto;
+    display: flex;
+    border-radius: 20px;
+    object-fit: cover;
+    display: flex;
+    /* opacity: 83%; */
+}
+
+.banner .container {
+    position: relative; 
+}
+
+.filha {
+    position: absolute; 
+    bottom: 0; 
+    left: 38%; 
+    padding: 5px; 
+}
+
+
+/* ESTILIZAÇÃO TEXTO DA IMAGEM */
+.banner .container h1 {
+    background-color: #352208;
+    font-size: medium;
+    font-family: 'Times New Roman', Times, serif; 
+    border-radius: 5px;
+    width: 400px;
+    height: 80px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    text-shadow: 4px 4px 8px rgba(101, 44, 0, 0.5);
+    letter-spacing: 1px;   
+}
+
+/* ESTILIZAÇÃO ICONES */
+
+ .conteudo .container {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.box {
+    width: 100px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    /* justify-content: space-around; */
+    
+}
+
+.box p {
+    font-size: medium;
+    font-family: 'Times New Roman', Times, serif; 
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 1px;
+}
+
+/* TEXTO SOBRE NÓS */
+
+.text .container {
+    background-color: #d0b690;
+    border-radius: 10px;
+    width: 95%;
+    height: 150px;
+    margin: auto;  
+}
+
+.text .container p {
+
+    font-size: larger;
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 5px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    letter-spacing: 1px;
+    margin: auto;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
