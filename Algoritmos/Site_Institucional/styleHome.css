@@ -22,7 +22,6 @@ body {
     top: 0;
     width: 100%;
     z-index: 999;
-    
 }
 
 .containerHeader img {
@@ -481,7 +480,7 @@ a {
     align-items: center;
     justify-content: center;
   }
-  
+
   .centro button{
       background: #4e3828;
       border-color: #4e3828;
@@ -500,6 +499,17 @@ a {
       font-size: 65px;
       margin: 0;
   }
+  .conteudo button:hover {
+    cursor: pointer;
+    transform: scale(1.04);
+    transition: all 1.0s;
+}
+#valores{
+    bottom: 103px;
+    position: relative;
+}
 
-
-
+#sede {
+    bottom: 100px;
+    position: relative;
+}
