@@ -25,8 +25,7 @@ body {
 }
 
 .containerHeader img {
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-bottom: 3px;
     align-self: flex-start;
     height: 5.5vw;
 }
