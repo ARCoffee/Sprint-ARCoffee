@@ -1,5 +1,9 @@
 -- Selects simples:
-select * from cliente;
+use arcoffee;
+
+select * from Empresa;
+
+select * from Usuario;
 
 select * from estoque;
 
@@ -7,26 +11,15 @@ select * from tipoCafe;
 
 select * from leitura;
 
-select * from usuario;
-
 select * from sensor;
 
--- Select tabela Temperatura
-select temperatura as "Temperatura", dataHora as "Data e Hora" from leitura where idCliente = 3;
+-- Joins 
 
--- Select tabela Umidade
-select umidade as "Umidade", dataHora as "Data e Hora" from leitura where idCliente = 3;
+select empresa.nome as Empresa, usuario.login as Login from empresa join usuario on fk_Empresa = idEmpresa;
 
--- Select sinal amarelo quente/humido
-select idCliente as "ID do cliente", temperatura as "Temperatura", umidade as "Umidade", dataHora as "Data e Hora" from leitura where temperatura > 26 or umidade > 13;
+select empresa.nome as Empresa, estoque.localizacaoEstq as Local_Estoque, tipocafe.nome as Tipo_Cafe from Empresa join estoque 
+on fk_Empresa = idEmpresa join tipocafe on idcafe = fk_cafe where idEmpresa = 1;
 
--- Select sinal vermelho quente/humido
-select idCliente as "ID do cliente", temperatura as "Temperatura", umidade as "Umidade", dataHora as "Data e Hora" from leitura where temperatura > 30 or umidade > 20;
-
--- Select sinal amarelo frio/seco
-select idCliente as "ID do cliente", temperatura as "Temperatura", umidade as "Umidade", dataHora as "Data e Hora" from leitura where temperatura < 12 or umidade < 9;
-
--- Select sinal vermelho frio/seco
-select idCliente as "ID do cliente", temperatura as "Temperatura", umidade as "Umidade", dataHora as "Data e Hora" from leitura where temperatura < 9 or umidade < 5;
-
-
+select estoque.localizacaoEstq as Localização_Estoque, sensor.fk_estoque as Sensor, leitura.temperatura as Temperatura, leitura.umidade as Umidade
+from Estoque join sensor on estoque.fk_Empresa = sensor.fk_Empresa and idEstoque = fk_Estoque join leitura on idSensor = fk_Sensor
+where idEstoque = 1 and estoque.fk_empresa = 1;

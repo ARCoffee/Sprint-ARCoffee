@@ -1,10 +1,10 @@
 -- Inserindo valores na tabela Empresa
 insert into Empresa (nome, cpf_cnpjEmpresa, contato, areaContratada, Plano) values
-    ('Renato Santos Drummond', '78906784226','11987017701', 10, "Basic"),
-    ('Gilberto Pascoal', '19890476112', '12977450864', 210, "Basic"),
-    ('Sandra Ximenes Brasil', '88541827431','62978109733',200, "Pro Plus"),
-    ('Coperativa Jean e Filho', '1290385478573', '11963980337', 420, "Pro Plus"),
-    ('Grupo Jennifer Silva', '7596788456138', '71923679948', 840, "Pro"); 
+    ('Fazenda Sol', '78906784226','11987017701', 10, "Basic"),
+    ('Pilão', '19890476112', '12977450864', 210, "Basic"),
+    ('Starbucks', '88541827431','62978109733',200, "Pro Plus"),
+    ('Vale do Ouro Verde', '1290385478573', '11963980337', 420, "Pro Plus"),
+    ('Fazenda Campo Místico', '7596788456138', '71923679948', 840, "Pro"); 
     
 -- Inserindo valores em tipoCafe
 insert into tipoCafe (nome, minimoTemperatura, maximoTemperatura, minimoUmidade, maximoUmidade)values
