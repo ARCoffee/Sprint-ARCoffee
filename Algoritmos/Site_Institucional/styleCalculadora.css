@@ -52,9 +52,9 @@ input {
     flex-direction: column;
     text-align: center;
     padding: 4% 2%;
-    margin: 2% 15%;
+    margin: 2% 5%;
     background-color: #d8cdb8ae;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .conversaoMiddle button {
