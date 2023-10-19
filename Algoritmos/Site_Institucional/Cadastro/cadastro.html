@@ -112,23 +112,25 @@
 
             <div class="camposCadastro">
               <i class="fa-solid fa-user"></i>
-              <input type="text" placeholder="Usuário">
+              <input id="inputUsuario" type="text" minLength="3" placeholder="Usuário">
             </div>
 
             <div class="camposCadastro">
               <i class="fa-solid fa-envelope"></i>
-              <input type="email" placeholder="Email">
+              <input id="inputEmail" type="email"  minLength="7" placeholder="Email">
             </div>
 
 
             <div class="camposCadastro">
               <i class="fa-solid fa-lock"></i>
-              <input type="password" placeholder="Senha">
+              <input id="inputSenha" type="password" placeholder="Senha">
             </div>
 
             <div class="camposCadastro">
               <i class="fa-solid fa-right-to-bracket"></i>
-              <button>Cadastre-se</button>
+              <button onclick="cadastrar()">
+                Cadastre-se
+              </button>
             </div>
 
         </div>
@@ -137,3 +139,25 @@
 
 </body>
 </html>
+<script>
+  function cadastrar(){
+    var email = inputEmail.value;
+    var senha = inputSenha.value;
+    var usuario = inputUsuario.value;
+
+    if(usuario.indexOf('!') > 0 || usuario.indexOf('@') > 0 || usuario.indexOf('#') > 0 || usuario.indexOf('$') > 0 || usuario.indexOf('%') > 0 || usuario.indexOf('&') > 0 || usuario.indexOf('*') > 0 || usuario.indexOf('(') > 0 || usuario.indexOf(') > 0') > 0 || usuario.indexOf('"') > 0 || usuario.indexOf('/') > 0 || usuario.indexOf('?') > 0 || usuario.indexOf('>') > 0 || usuario.indexOf('<') > 0 || usuario.indexOf('^') > 0 || usuario.indexOf('´') > 0 || usuario.indexOf('`') > 0 || usuario.indexOf(',') > 0 || usuario.indexOf('+') > 0 || usuario.indexOf('=') > 0 || usuario.indexOf('°') > 0 || usuario.indexOf(';') > 0 || usuario.indexOf(':') > 0 || usuario.length > 20 ||  usuario.indexOf('..') > 0
+    ){
+      alert('Usuário inválido')
+    }
+    
+    else if(email.indexOf('@') < 0 || email.length > 100){
+      alert('Email inválido')
+    }
+  
+    else if(senha.indexOf('@') == -1 && senha.indexOf('*') == -1 && senha.indexOf('%') == -1 && senha.indexOf('?') == -1){
+      alert('Senha inválida')
+    }else if(senha.length < 8){
+        alert('Min. de 8 caracteres')
+      }
+}
+</script>
