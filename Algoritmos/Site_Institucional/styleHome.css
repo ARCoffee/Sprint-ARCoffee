@@ -512,3 +512,11 @@ a {
     bottom: 100px;
     position: relative;
 }
+
+.PlanoForma .conteudo img {
+    position: absolute;
+    width: 4vw;
+    top: 0;
+    transform: translate(-8.8vw, -55%) rotate(1.94turn);
+    z-index: 1;
+}
