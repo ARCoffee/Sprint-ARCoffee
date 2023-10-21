@@ -2,11 +2,6 @@
 #define dht_type DHT11 //define qual o tipo de sensor DHTxx que se está utilizando
  
 
-/**
- * Configurações iniciais sobre os sensores
- * DHT11, LM35, LDR5 e TCRT5000
- */
- 
 int dht_pin = A0;
 DHT dht_1 = DHT(dht_pin, dht_type); //pode-se configurar diversos sensores DHTxx
 int switch_pin = 7;
@@ -25,19 +20,19 @@ void loop()
    */
   float umidade = dht_1.readHumidity();
   float temperatura = dht_1.readTemperature();
+  float umidadeP = (0.649 *umidade) + 3.24;
+  float temperaturaP = (0.4186 * temperatura ) - 15.11;
+
   if (isnan(temperatura) or isnan(umidade)) 
   {
     Serial.println("Erro ao ler o DHT");
   } 
   else
   {
-    Serial.print(umidade);
+    Serial.print(umidadeP);
     Serial.print(";");
-    Serial.print(temperatura);
+    Serial.print(temperaturaP);
     Serial.println(";");
-   // Serial.print("0;");
-    //Serial.print("0;");
-     //Serial.println("0");
    }
  delay(2000);
 }
