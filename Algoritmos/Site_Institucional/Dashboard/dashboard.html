@@ -5,7 +5,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <!-- ChartJS (Gráficos) -->
-        <script defer src="path/to/chartjs/dist/chart.umd.js"></script>
+        <!-- <script defer src="path/to/chartjs/dist/chart.umd.js"></script> -->
         
         <link rel="stylesheet" href="styleDashboard.css">
         <script src="https://kit.fontawesome.com/ce9ef0d266.js" crossorigin="anonymous"></script>
@@ -16,28 +16,23 @@
         <!-- Header -->
         <div class="sidebar">
             <div class="conteudos">
-                <div class="botao">
-                    <!-- Perfil -->
+                <div class="icones">
                     <i class="fa-solid fa-user"></i>
                     <p>Perfil</p>
                 </div>
-                <div id="aqui" class="botao">
-                    <!-- Visão Geral -->
+                <div id="aqui" class="icones">
                     <i class="fa-solid fa-house"></i>
                     <p>Armazém</p>
                 </div>
-                <div class="botao">
-                    <!-- Estatísticas -->
+                <div class="icones">
                     <i class="fa-solid fa-bell"></i>
                     <p>Sensores</p>
                 </div>
-                <div class="botao">
-                    <!-- Ajuda -->
+                <div class="icones">
                     <i class="fa-solid fa-circle-question"></i>
                     <p>Ajuda</p>
                 </div>
-                <div class="botao">
-                    <!-- sair -->
+                <div class="icones">
                     <a href="">
                     <i class="fa-solid fa-right-from-bracket"></i>
                     <p>Sair</p>
@@ -47,6 +42,9 @@
         </div>
         <!-- Fim do Header -->
 
+        <div class="dash">
+            <p>Dashboard</p>
+        </div>
 
         <div class="graficos">
             <canvas id="myChart1"></canvas>
@@ -90,9 +88,6 @@
               }
             }); 
 
-            // linha
-
-    
         const ctx2 = document.getElementById('myChart2');
       
         new Chart(ctx2, {
@@ -127,9 +122,10 @@
             }
           }
         }); 
-            
-          </script>
+
+        </script>
 
     </body>
 
+    
 </html>

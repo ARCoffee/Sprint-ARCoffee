@@ -28,34 +28,34 @@ p {
     justify-content: center;
 }
 
-.sidebar .conteudos .botao {
+.sidebar .conteudos .icones {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 65%;
 }
 
-.sidebar .conteudos .botao i {
+.sidebar .conteudos .icones i {
     font-size: 1.4em;
     color: white;
 }
 
-.sidebar .conteudos .botao p {
+.sidebar .conteudos .icones p {
     font-size: small;
     font-weight: 550;
     color: white;
 }
 
-/* .sidebar .conteudos .botao i:hover {
+.sidebar .conteudos .icones i:hover {
     color: goldenrod;
     cursor: pointer;
 }
 
-.sidebar .conteudos .botao:hover {
+.sidebar .conteudos .icones:hover {
     cursor: pointer;
 }
 
-#aqui {
+/* #aqui {
     color: #008ee7;
 }
 
@@ -67,8 +67,31 @@ p {
     color: #008ee7;
 } */
 
+
+/* ESTILIZAÇÃO GRAFICOS */
+
 .graficos {
     display: flex;
-    height: 700px;
-    width: 700px;
-}
+    justify-content: space-between;
+    margin: 20px;
+    /* padding: 20px; */
+    height: 680px;
+    width: 680px;
+  }
+  
+  #myChart1, #myChart2 {
+    width: 100px; 
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 5px;
+  }
+  
+  .dash p {
+    text-align: center;
+    font-size: 24px;
+    margin: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: larger;
+  }
+  
+
