@@ -1,6 +1,7 @@
 body {
     margin: 0;
     margin-left: 8.5vw;
+    background-color: #b2a499;
 }
 
 p {
@@ -55,7 +56,7 @@ p {
     cursor: pointer;
 }
 
-/* #aqui {
+#aqui {
     color: #008ee7;
 }
 
@@ -65,7 +66,7 @@ p {
 
 #aqui i {
     color: #008ee7;
-} */
+}
 
 
 /* ESTILIZAÇÃO GRAFICOS */
@@ -73,23 +74,48 @@ p {
 .graficos {
     display: flex;
     margin: 20px;
-    height: 680px;
     width: 680px;
   }
   
   #myChart1, #myChart2 {
     width: 100px; 
     border: 1px solid #ddd;
-    padding: 10px;
+    /* padding: 10px; */
     margin: 5px;
-  }
+  } 
+  
   
   .dash p {
     text-align: center;
     font-size: 24px;
     margin: 20px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: larger;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: x-large;
   }
   
+#imgSensor {
+    width: 30px;
+    height: 30px;
+}
 
+.KPI {
+    background-color: hsla(25, 40%, 47%, 0.311);
+    display: flex;
+    justify-content: space-evenly   ;
+    text-align: center;
+    align-items: center;
+    border-radius: 20px;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+/* .KPI .forma {
+    backg
+    border-radius: 10px;
+} */
+
+.textoGrafico {
+    display: flex;
+    justify-content: space-evenly ;
+    
+}

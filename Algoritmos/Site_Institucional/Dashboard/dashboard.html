@@ -12,6 +12,7 @@
         <title>Dashboard</title>
     </head>
 
+    
     <body>
         <!-- Header -->
         <div class="sidebar">
@@ -25,7 +26,7 @@
                     <p>Armazém</p>
                 </div>
                 <div class="icones">
-                    <i class="fa-solid fa-bell"></i>
+                  <img src="iconeSensor.png" id="imgSensor">
                     <p>Sensores</p>
                 </div>
                 <div class="icones">
@@ -43,8 +44,14 @@
         <!-- Fim do Header -->
 
         <div class="dash">
-            <p>Dashboard</p>
+            <p>DASHBOARD</p>
         </div>
+
+        <div class="textoGrafico">
+          <p>Registros dos últimos 7 dias </p>
+          <p>Status Atual</p>
+        </div>
+        
 
         <div class="graficos">
             <canvas id="myChart1"></canvas>
@@ -59,20 +66,20 @@
             new Chart(ctx1, {
               type: 'bar',
               data: {
-                labels: ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho'],
+                labels: ['seg', 'ter', 'qua', 'qui', 'sex', 'sab', 'dom'],
                 datasets: [{
                   label: 'Temperatura',
-                  data: [22, 24, 27, 23, 20, 18],
+                  data: [20, 18, 19.5, 20, 20.5, 19, 18.7],
                   borderWidth: 1,
-                  borderColor: '#ff8c00',
-                  backgroundColor: '#FF6C00',
+                  borderColor: '#ca6702',
+                  backgroundColor: '#ca6702',
                   
                   }, 
     
                 {label: 'Umidade',
-                data: [90, 89, 93, 87, 88, 82],
+                data: [15.5, 15.9, 16, 16.5, 16.7, 17, 17],
                 borderWidth: 1,
-                borderColor: '',
+                borderColor: '#064f77',
                 backgroundColor: '#064f77',
             }
                   
@@ -96,16 +103,16 @@
             labels: ['12:00','13:00','14:00','15:00','16:00','17:00'],
             datasets: [{
               label: 'Temperatura',
-              data: [30, 29, 28, 25, 22,23],
+              data: [20, 18, 19.5, 20, 20.5, 19, 18.7],
               borderWidth: 1,
-              borderColor: '#ff8c00',
-              backgroundColor: '#FF6C00',
+              borderColor: '#ca6702',
+              backgroundColor: '#ca6702',
               
               
               }, 
 
             {label: 'Umidade',
-            data: [80, 82, 80, 85, 80, 83],
+            data: [15.5, 15.9, 16, 16.5, 16.7, 17, 17],
             borderWidth: 1,
             borderColor: '#064f77',
             backgroundColor: '#064f77',
@@ -124,6 +131,29 @@
         }); 
 
         </script>
+
+        <div class="KPI">
+
+          <div class="temperatura">
+            <p>Temperatura Ideal</p>
+            <div class="forma">
+              <p>18°C <br> 20.5°C</p></div>
+          </div>
+
+          <div class="umidade">
+            <p>Umidade</p>
+            <div class="forma"><p>17%</p></div>
+          </div>
+
+          <div class="sensor">
+            <p>Sensor</p>
+            <div class="forma"><p>Sensor 1: <i class="fa-solid fa-toggle-on"></i> on</p>
+            <p>Sensor 2: <i class="fa-solid fa-toggle-off"></i> off</p></div>
+          </div>
+
+        </div>
+        
+        
 
     </body>
 
