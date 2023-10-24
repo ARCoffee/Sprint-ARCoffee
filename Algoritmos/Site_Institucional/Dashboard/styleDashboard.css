@@ -1,7 +1,7 @@
 body {
     margin: 0;
     margin-left: 8.5vw;
-    background-color: #b2a499;
+    background-color: #e6e0dc;
 }
 
 p {
@@ -48,7 +48,7 @@ p {
 }
 
 .sidebar .conteudos .icones i:hover {
-    color: goldenrod;
+    color: rgb(255, 205, 40);
     cursor: pointer;
 }
 

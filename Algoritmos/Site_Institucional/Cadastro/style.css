@@ -59,6 +59,15 @@ a {
     color: whitesmoke;
     text-decoration: none;
 }
+
+.imagem {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../imagens/imgFundoLogin3.png);
+    background-size: cover;
+    background-repeat: no-repeat; 
+    
+}
 /* @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 body {
