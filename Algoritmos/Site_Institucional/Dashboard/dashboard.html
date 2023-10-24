@@ -1,162 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <!-- ChartJS (Gráficos) -->
-        <!-- <script defer src="path/to/chartjs/dist/chart.umd.js"></script> -->
-        
-        <link rel="stylesheet" href="styleDashboard.css">
-        <script src="https://kit.fontawesome.com/ce9ef0d266.js" crossorigin="anonymous"></script>
-        <title>Dashboard</title>
-    </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- ChartJS (Gráficos) -->
+  <!-- <script defer src="path/to/chartjs/dist/chart.umd.js"></script> -->
 
-    
-    <body>
-        <!-- Header -->
-        <div class="sidebar">
-            <div class="conteudos">
-                <div class="icones">
-                    <i class="fa-solid fa-user"></i>
-                    <p>Perfil</p>
-                </div>
-                <div id="aqui" class="icones">
-                    <i class="fa-solid fa-house"></i>
-                    <p>Armazém</p>
-                </div>
-                <div class="icones">
-                  <img src="iconeSensor.png" id="imgSensor">
-                    <p>Sensores</p>
-                </div>
-                <div class="icones">
-                    <i class="fa-solid fa-circle-question"></i>
-                    <p>Ajuda</p>
-                </div>
-                <div class="icones">
-                    <a href="">
-                    <i class="fa-solid fa-right-from-bracket"></i>
-                    <p>Sair</p>
-                    </a>
-                </div>
-            </div>  
-        </div>
-        <!-- Fim do Header -->
+  <link rel="stylesheet" href="styleDashboard.css">
+  <script src="https://kit.fontawesome.com/ce9ef0d266.js" crossorigin="anonymous"></script>
+  <title>Dashboard</title>
+</head>
 
-        <div class="dash">
-            <p>DASHBOARD</p>
-        </div>
 
-        <div class="textoGrafico">
-          <p>Registros dos últimos 7 dias </p>
-          <p>Status Atual</p>
-        </div>
-        
+<body>
+  <!-- Header -->
+  <div class="sidebar">
+    <div class="conteudos">
+      <div class="icones">
+        <i class="fa-solid fa-user"></i>
+        <p>Perfil</p>
+      </div>
+      <div id="aqui" class="icones">
+        <i class="fa-solid fa-house"></i>
+        <p>Armazém</p>
+      </div>
+      <div class="icones">
+        <img src="iconeSensor.png" id="imgSensor">
+        <p>Sensores</p>
+      </div>
+      <div class="icones">
+        <i class="fa-solid fa-circle-question"></i>
+        <p>Ajuda</p>
+      </div>
+      <div class="icones">
+        <a href="../siteInstitucional.html">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          <p>Sair</p>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- Fim do Header -->
 
-        <div class="graficos">
-            <canvas id="myChart1"></canvas>
-            <canvas id="myChart2"></canvas>
-          </div>
-          
-          <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-          
-          <script>
-            const ctx1 = document.getElementById('myChart1');
-          
-            new Chart(ctx1, {
-              type: 'bar',
-              data: {
-                labels: ['seg', 'ter', 'qua', 'qui', 'sex', 'sab', 'dom'],
-                datasets: [{
-                  
-                  label: 'Temperatura',
-                  data: [20, 18, 19.5, 20, 20.5, 19, 18.7],
-                  borderWidth: 1,
-                  borderColor: '#ca6702',
-                  backgroundColor: '#ca6702',
-                  
-                  }, 
-    
-                {label: 'Umidade',
-                data: [15.5, 15.9, 16, 16.5, 16.7, 17, 17],
-                borderWidth: 1,
-                borderColor: '#064f77',
-                backgroundColor: '#064f77',
-            }
-                  
-            ]
-    
-              },
-              options: {
-                scales: {
-                  y: {
-                    beginAtZero: true
-                  }
-                }
-              }
-            }); 
+  <div class="dash">
+    <select id="">
+      <option value="">Armazem 1</option>
+      <option value="">Armazem 2</option>
+    </select>
+  </div>
 
-        const ctx2 = document.getElementById('myChart2');
-      
-        new Chart(ctx2, {
-          type: 'line',
-          data: {
-            labels: ['12:00','13:00','14:00','15:00','16:00','17:00'],
-            datasets: [{
-              label: 'Temperatura',
-              data: [20, 18, 19.5, 20, 20.5, 19, 18.7],
-              borderWidth: 1,
-              borderColor: '#ca6702',
-              backgroundColor: '#ca6702',
-              
-              
-              }, 
 
-            {label: 'Umidade',
-            data: [15.5, 15.9, 16, 16.5, 16.7, 17, 17],
-            borderWidth: 1,
-            borderColor: '#064f77',
-            backgroundColor: '#064f77',
-        }
-              
-        ]
+  <div class="graficos">
+    <canvas id="myChart1"></canvas>
+    <canvas id="myChart2"></canvas>
+  </div>
 
-          },
-          options: {
-            scales: {
-              y: {
-                beginAtZero: true
-              }
-            }
-          }
-        }); 
 
-        </script>
+  <div class="espacoKPIs">
+    <div class="KPI Temperatura">
+      <p class="title">Temperatura Hoje</p>
+      <div class="divisoria">
+        <p>Mínima: 17°C</p>
+        <p> Horas: 13:00</p>
+        <div class="status alerta "></div>
+      </div>
+      <div class="divisoria">
+        <p>Máxima: 20°C</p>
+        <p> Horas: 16:00</p>
+        <div class="status ideal"></div>
+      </div>
+    </div>
+    <div class="KPI Umidade">
+      <p class="title">Umidade Hoje</p>
+      <div class="divisoria">
+        <p>Mínima: 15.5%</p>
+        <p> Horas: 12:00</p>
+        <div class="status emergencia"></div>
+      </div>
+      <div class="divisoria">
+        <p>Máxima: 19%</p>
+        <p> Horas: 17:00</p>
+        <div class="status critico"></div>
+      </div>
+    </div>
+    <div class="KPI Sensores">
 
-        <div class="KPI">
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
 
-          <div class="temperatura">
-            <p>Temperatura Ideal</p>
-            <div class="forma">
-              <p>18°C <br> 20.5°C</p></div>
-          </div>
 
-          <div class="umidade">
-            <p>Umidade</p>
-            <div class="forma"><p>17%</p></div>
-          </div>
-
-          <div class="sensor">
-            <p>Sensor</p>
-            <div class="forma"><p>Sensor 1: <i class="fa-solid fa-toggle-on"></i> on</p>
-            <p>Sensor 2: <i class="fa-solid fa-toggle-off"></i> off</p></div>
-          </div>
-
-        </div>
-        
-        
-
-    </body>
-
-    
 </html>
+<script>
+  const ctx1 = document.getElementById('myChart1');
+
+  new Chart(ctx1, {
+    type: 'bar',
+    data: {
+      labels: ['seg', 'ter', 'qua', 'qui', 'sex', 'sab', 'dom'],
+      datasets: [{
+        label: 'Temperatura',
+        data: [18, 17, 19.5, 20, 20.5, 19, 18.7],
+        borderWidth: 1,
+        borderColor: '#ca6702',
+        backgroundColor: '#ca6702',
+
+      },
+
+      {
+        label: 'Umidade',
+        data: [15.5, 15.9, 16, 16.5, 16.7, 17, 17],
+        borderWidth: 1,
+        borderColor: '#064f77',
+        backgroundColor: '#064f77',
+      }
+
+      ]
+
+    },
+    options: {
+      plugins: {
+        title: {
+          display: true,
+          text: 'Registros dos últimos 7 dias'
+        },
+      },
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+  const ctx2 = document.getElementById('myChart2');
+
+  new Chart(ctx2, {
+    type: 'line',
+    data: {
+      labels: ['12:00', '13:00', '14:00', '15:00', '16:00', '17:00'],
+      datasets: [{
+        label: 'Temperatura',
+        data: [20, 18, 19.5, 20, 20.5, 19.5],
+        borderWidth: 1,
+        borderColor: '#ca6702',
+        backgroundColor: '#ca6702',
+
+
+      },
+
+      {
+        label: 'Umidade',
+        data: [15.5, 15.9, 16, 16.5, 16.7, 19],
+        borderWidth: 1,
+        borderColor: '#064f77',
+        backgroundColor: '#064f77',
+      }
+
+      ]
+
+    },
+    options: {
+      plugins: {
+        title: {
+          display: true,
+          text: 'Status Atual'
+        },
+      },
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+</script>

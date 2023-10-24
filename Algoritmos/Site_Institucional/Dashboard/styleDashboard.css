@@ -1,7 +1,7 @@
 body {
     margin: 0;
     margin-left: 8.5vw;
-    background-color: #e6e0dc;
+    background-color: #fceee1;
 }
 
 p {
@@ -48,7 +48,7 @@ p {
 }
 
 .sidebar .conteudos .icones i:hover {
-    color: rgb(255, 205, 40);
+    color: goldenrod;
     cursor: pointer;
 }
 
@@ -68,54 +68,95 @@ p {
     color: #008ee7;
 }
 
-
-/* ESTILIZAÇÃO GRAFICOS */
-
-.graficos {
-    display: flex;
-    margin: 20px;
-    width: 680px;
-  }
-  
-  #myChart1, #myChart2 {
-    width: 100px; 
-    border: 1px solid #ddd;
-    /* padding: 10px; */
-    margin: 5px;
-  } 
-  
-  
-  .dash p {
-    text-align: center;
-    font-size: 24px;
-    margin: 20px;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: x-large;
-  }
-  
 #imgSensor {
     width: 30px;
     height: 30px;
 }
 
-.KPI {
-    background-color: hsla(25, 40%, 47%, 0.311);
+/* ESTILIZAÇÃO GRAFICOS */
+
+.dash{
     display: flex;
-    justify-content: space-evenly   ;
-    text-align: center;
-    align-items: center;
-    border-radius: 20px;
-    margin-left: 2%;
-    margin-right: 2%;
+    width: 100%;
+    justify-content: center;
+    margin: 20px 0px 20px;
+}
+select {
+    background-color: #4d3626;
+    color: white;
+    padding: 12px;
+    width: 250px;
+    border-radius: 10px;
+    font-size: 20px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    
+  }
+
+.graficos {
+    display: flex;
+    /* margin-left: 10px; */
+    margin-bottom: 20px;
+    width: 100%;
+    height: 40vh;
+    justify-content: center;
 }
 
-/* .KPI .forma {
-    backg
-    border-radius: 10px;
-} */
+#myChart1 {
+    width: 50%;
+    border: 1px solid #ddd;
+    /* padding: 10px; */
+    margin: 5px;
+}
 
-.textoGrafico {
+#myChart2 {
+    width: 50%;
+    border: 1px solid #ddd;
+    /* padding: 10px; */
+    margin: 5px;
+}
+
+
+.espacoKPIs {
     display: flex;
-    justify-content: space-evenly ;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.KPI {
+    margin-top: 30px;
+    background-color: #4d3626;
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
     
+     box-shadow: 10px 10px 10px rgba(1, 1, 1, 0.528);
+}
+.KPI .title{
+    text-align: center;
+}
+.KPI p{
+    color: #ddd;
+    font-size: larger;
+}
+.divisoria{
+    display: flex;
+    justify-content: space-around;
+}
+.status{
+    margin-top: 25px;
+    height: 19px;
+    width: 19px;
+    border-radius: 100%;
+}
+.emergencia{
+    background-color: #ffc000;
+}
+.alerta{
+    background-color: #ffff00;
+}
+.ideal{
+    background-color: #2ea71e;
+}
+.critico{
+    background-color: #ff0000;
 }
