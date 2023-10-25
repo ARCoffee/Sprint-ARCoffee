@@ -20,6 +20,7 @@ p {
     overflow-x: hidden;
     top: 0;
     left: 0;
+    overflow: hidden;
 }
 
 .sidebar .conteudos {
@@ -107,8 +108,18 @@ select {
     /* padding: 10px; */
     margin: 5px;
 }
-
 #myChart2 {
+    width: 50%;
+    border: 1px solid #ddd;
+    margin: 5px;
+}
+#myChart4 {
+    width: 50%;
+    border: 1px solid #ddd;
+    /* padding: 10px; */
+    margin: 5px;
+}
+#myChart3 {
     width: 50%;
     border: 1px solid #ddd;
     /* padding: 10px; */
@@ -159,4 +170,13 @@ select {
 }
 .critico{
     background-color: #ff0000;
+}
+#SegundoArmazem{
+    display: none;
+}
+#tempArmazem2{
+    display: none;
+}
+#umiArmazem2{
+    display: none;
 }
