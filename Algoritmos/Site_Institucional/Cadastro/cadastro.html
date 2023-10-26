@@ -161,10 +161,14 @@
       alert('Email inválido')
     }
 
-    else if (senha.indexOf('@') == -1 && senha.indexOf('*') == -1 && senha.indexOf('%') == -1 && senha.indexOf('?') == -1) {
-      alert('Senha inválida')
+    else if (senha.indexOf('@') == -1 && senha.indexOf('*') == -1 && senha.indexOf('%') == -1 && senha.indexOf('?') == -1 && senha.indexOf('#') == -1 ) {
+      alert('Senha inválida, min. 1 caracter especial')
     } else if (senha.length < 8) {
       alert('Min. de 8 caracteres')
+    }
+    else{
+      window.location.href = "../Login/Login.html"
+        
     }
   }
 </script>
