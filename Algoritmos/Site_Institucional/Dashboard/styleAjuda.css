@@ -39,7 +39,39 @@
     justify-content: center;
     align-items: center;
 }
-
-p .sac{
-
+.ajudaGraph{
+    width: 350px;
+    height: 320px;
+    display:flex;
+    background-color: #3e2217;
+    border-radius: 50px;
+    align-items: end;
+    
+}
+.ajudaGraph span{
+    height: 50px;
+    display: flex;
+    width: 250px;
+    margin: 0%;
+    font-size: large;
+    color: aliceblue;
+    justify-content: left;
+    align-items: end;
+}
+.ajudaGraph img{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    width: 250px;
+    height: 250px;
+    /* margin-bottom: 30px; */
+}
+.ajudaGraph h2{
+    margin-bottom: 30px;
+    display: flex;
+    writing-mode: vertical-lr;
+    flex-direction: column-reverse;
+    font-size: large;
+    color: aliceblue;
+    justify-content: center;
 }
