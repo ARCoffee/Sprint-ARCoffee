@@ -69,5 +69,22 @@ create table usuario(
     constraint usuario_fk_Empresa foreign key (fk_Empresa) references Empresa(idEmpresa)
 );
 
+-- criando a tabela alerta sensor 
+create table historicoAlerta (
+	idhistoricoAlerta int,
+	temperatura1 int,
+	temperatura2 int,
+	temperatura3 int,
+	temperatura4 int,
+	temperatura5 int,
+	umidade1 int,
+	umidade2 int,
+	umidade3 int,
+	umidade4 int,
+	umidade5 int,
+	fk_Sensor int,
+	constraint fkSensor foreign key (fk_Sensor) references sensor (idSensor)
+);
+
 
 
