@@ -11,7 +11,7 @@ const SERVIDOR_PORTA = 3300;
 // configure a linha abaixo caso queira que os dados capturados sejam inseridos no banco de dados.
 // false -> nao insere
 // true -> insere
-const HABILITAR_OPERACAO_INSERIR = false;
+const HABILITAR_OPERACAO_INSERIR = true;
 
 // altere o valor da variável AMBIENTE para o valor desejado:
 // API conectada ao banco de dados remoto, SQL Server -> 'producao'
@@ -33,9 +33,9 @@ const serial = async (
                 // altere!
                 // CREDENCIAIS DO BANCO - MYSQL WORKBENCH
                 host: 'localhost',
-                user: 'USUARIO_DO_BANCO_LOCAL',
-                password: 'SENHA_DO_BANCO_LOCAL',
-                database: 'DATABASE_LOCAL'
+                user: 'insertGrupo10',
+                password: 'arcoffee2023',
+                database: 'arcoffee'
             }
         ).promise();
     } else if (AMBIENTE == 'producao') {
@@ -64,12 +64,28 @@ const serial = async (
         const valores = data.split(';');
         const dht11Umidade = parseFloat(valores[0]);
         const dht11Temperatura = parseFloat(valores[1]);
+        const dht11Temp2 = dht11Temperatura * .30;
+        const dht11Umid2 = dht11Umidade * .30;
+        const dht11Temp3 = dht11Temperatura * 1.20;
+        const dht11Umid3 = dht11Umidade * 1.20;
+        const dht11Temp4 = dht11Temperatura * .50;
+        const dht11Umid4 = dht11Umidade * .50;
+        const dht11Temp5 = dht11Temperatura * .20;
+        const dht11Umid5 = dht11Umidade * .20; 
         // const lm35Temperatura = parseFloat(valores[2]);
         // const luminosidade = parseFloat(valores[3]);
         // const chave = parseInt(valores[4]);
 
         valoresDht11Umidade.push(dht11Umidade);
         valoresDht11Temperatura.push(dht11Temperatura);
+        valoresDht11Umidade.push(dht11Umid2);
+        valoresDht11Temperatura.push(dht11Temp2);
+        valoresDht11Umidade.push(dht11Umid3);
+        valoresDht11Temperatura.push(dht11Temp3);
+        valoresDht11Umidade.push(dht11Umid4);
+        valoresDht11Temperatura.push(dht11Temp4);
+        valoresDht11Umidade.push(dht11Umid5);
+        valoresDht11Temperatura.push(dht11Temp5);
         // valoresLuminosidade.push(luminosidade);
         // valoresLm35Temperatura.push(lm35Temperatura);
         // valoresChave.push(chave);
@@ -105,10 +121,10 @@ const serial = async (
                 // Este insert irá inserir dados de fk_aquario id=1 (fixo no comando do insert abaixo)
                 // >> você deve ter o aquario de id 1 cadastrado.
                 await poolBancoDados.execute(
-                    'INSERT INTO medida (dht11_umidade, dht11_temperatura, luminosidade, lm35_temperatura, chave, momento, fk_aquario) VALUES (?, ?, ?, ?, ?, now(), 1)',
-                    [dht11Umidade, dht11Temperatura, luminosidade, lm35Temperatura, chave]
+                    'INSERT INTO sensoresArcoffee (sensorTemp1, sensorTemp2, sensorTemp3, sensorTemp4, sensorTemp5, sensorUmid1, sensorUmid2, sensorUmid3, sensorUmid4, sensorUmid5, dataHora) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, now())',
+                    [dht11Temperatura, dht11Temp2, dht11Temp3, dht11Temp4, dht11Temp5, dht11Umidade, dht11Umid2, dht11Umid3, dht11Umid4, dht11Umid5]
                 );
-                console.log("valores inseridos no banco: ", dht11Umidade + ", " + dht11Temperatura + ", " + luminosidade + ", " + lm35Temperatura + ", " + chave)
+                console.log("valores inseridos no banco: ", dht11Umidade + ", " + dht11Temperatura)
 
             } else {
                 throw new Error('Ambiente não configurado. Verifique o arquivo "main.js" e tente novamente.');
