@@ -72,4 +72,3 @@ insert into usuario (idUsuario, fk_Empresa, login, senha) values
     (1,4,'Alex91', '81293Rt1&881'),
     (1,5,'JuliaSena', 'minhasenha991');
     
--- inserindo valores na tabela historico alerta
