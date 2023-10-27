@@ -2,7 +2,8 @@
 
 .bannerHelp {
     height: 120px;
-    width: 100%;
+    width: 90%;
+    margin: auto;
     display: flex;
     margin-top: 20px;
     justify-content: space-between;
