@@ -1,109 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Sensores Dashboard</title>
+		<link rel="website icon" type="png" href="../imagens/arcoffee.png" />
+		<link rel="stylesheet" href="styleDashboard.css" />
+		<link rel="stylesheet" href="styleAjuda.css" />
+		<script
+			src="https://kit.fontawesome.com/ce9ef0d266.js"
+			crossorigin="anonymous"
+		></script>
+	</head>
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sensores Dashboard</title>
-    <link rel="website icon" type="png" href="../imagens/arcoffee.png" />
-    <link rel="stylesheet" href="styleDashboard.css" />
-    <link rel="stylesheet" href="styleAjuda.css" />
-    <script src="https://kit.fontawesome.com/ce9ef0d266.js" crossorigin="anonymous"></script>
-  </head>
+	<body>
+		<div class="sidebar">
+			<div class="conteudos">
+				<div class="icones">
+					<i class="fa-solid fa-user"></i>
+					<p>Perfil</p>
+				</div>
 
-  <body>
+				<div class="icones">
+					<a href="dashboard.html">
+						<i class="fa-solid fa-house"></i>
+						<p>Armazém</p>
+					</a>
+				</div>
 
-    <div class="sidebar">
-      <div class="conteudos">
+				<div class="icones">
+					<a href="dashboard_sensores.html">
+						<img src="../imagens/iconeSensor.png" id="imgSensor" />
+						<p>Sensores</p>
+					</a>
+				</div>
 
-        <div class="icones">
-          <i class="fa-solid fa-user"></i>
-          <p>Perfil</p>
+				<div id="aqui" class="icones">
+					<i class="fa-solid fa-circle-question"></i>
+					<p>Ajuda</p>
+				</div>
+
+				<div class="icones">
+					<a href="../siteInstitucional.html">
+						<i class="fa-solid fa-right-from-bracket"></i>
+						<p>Sair</p>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="bannerHelp">
+			<div class="textHelp">
+				<h1>Ajuda</h1>
+				<img src="../imagens/iconeDuvidaBlack.png" />
+			</div>
+
+			<div class="textHelp">
+				<div class="containerSac">
+					<p class="sac">sac.arcoffee@outlook.com</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="containerAlertas">
+      
+      <div class="containerContexto">
+
+        <div class="contTexto">
+          <h2>Gráficos</h2>
         </div>
-
-        <div class="icones">
-          <a href="dashboard.html">
-            <i class="fa-solid fa-house"></i>
-            <p>Armazém</p>
-          </a>
+        <div class="containerGraphs">
+          
+          <div class="graphBarra">
+            <img src="../imagens/graphbar.png" />
+          </div>
+          
+          <div class="graphLinha">
+            <img src="../imagens/graphline.png" alt="" />
+          </div>
         </div>
-
-        <div class="icones">
-          <a href="dashboard_sensores.html">
-            <img src="../imagens/iconeSensor.png" id="imgSensor" />
-            <p>Sensores</p>
-          </a>
-        </div>
-
-        <div id="aqui" class="icones">
-          <i class="fa-solid fa-circle-question"></i>
-          <p>Ajuda</p>
-        </div>
-
-        <div class="icones">
-          <a href="../siteInstitucional.html">
-            <i class="fa-solid fa-right-from-bracket"></i>
-            <p>Sair</p>
-          </a>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="bannerHelp">
-
-      <div class="textHelp">
-        <h1>Ajuda</h1>
-        <img src="../imagens/iconeDuvidaBlack.png" />
-      </div>
-
-      <div class="textHelp">
-        <div class="containerSac">
-          <p class="sac">sac.arcoffee@outlook.com</p>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="containerAlertas">
-      <div class="containerGraphs">
-        <h2>Gráficos</h2>
-
-        <div class="graphBarra">
-          <img src="../imagens/graphbar.png">
-        </div>
-
-        <div class="graphLinha">
-          <img src="../imagens/graphline.png" alt="">
-        </div>
-      </div>
-
-      <div class="alertas">
-        <h2>Tipos de Alertas:</h2>
-
-        <div class="containerAlerta">
-          <p>Alerta crítico</p>
-          <div class="status critico"></div>
-        </div>
-
-        <hr>
-
-        <div class="containerAlerta">
-          <p>Alerta emergêncial </p>
-          <div class="status alerta"></div>
-        </div>
-
-        <hr>
-
-        <div class="containerAlerta">
-          <p>Temperatura/umidade ideal</p>
-          <div class="status ideal"></div>
-        </div>
-
-        <hr>
+        
       </div>
 
-    </div>
-  </body>
+			<div class="alertas">
+				<h2>Tipos de Alertas:</h2>
 
+				<div class="containerAlerta">
+					<p>Alerta crítico</p>
+					<div class="status critico"></div>
+				</div>
+
+				<hr/>
+
+				<div class="containerAlerta">
+					<p>Alerta emergêncial</p>
+					<div class="status alerta"></div>
+				</div>
+
+				<hr/>
+
+				<div class="containerAlerta">
+					<p>Temperatura/umidade ideal</p>
+					<div class="status ideal"></div>
+				</div>
+
+				<hr />
+			</div>
+		</div>
+	</body>
 </html>
