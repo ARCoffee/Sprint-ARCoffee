@@ -1,76 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sensores Dashboard</title>
-  <link rel="website icon" type="png" href="../imagens/arcoffee.png">
-  <link rel="stylesheet" href="styleDashboard.css">
-  <link rel="stylesheet" href="styleAjuda.css">
-  <script src="https://kit.fontawesome.com/ce9ef0d266.js" crossorigin="anonymous"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sensores Dashboard</title>
+    <link rel="website icon" type="png" href="../imagens/arcoffee.png" />
+    <link rel="stylesheet" href="styleDashboard.css" />
+    <link rel="stylesheet" href="styleAjuda.css" />
+    <script src="https://kit.fontawesome.com/ce9ef0d266.js" crossorigin="anonymous"></script>
+  </head>
 
-</head>
+  <body>
 
-<body>
-  <div class="sidebar">
-    <div class="conteudos">
-      <div class="icones">
-        <i class="fa-solid fa-user"></i>
-        <p>Perfil</p>
+    <div class="sidebar">
+      <div class="conteudos">
+
+        <div class="icones">
+          <i class="fa-solid fa-user"></i>
+          <p>Perfil</p>
+        </div>
+
+        <div class="icones">
+          <a href="dashboard.html">
+            <i class="fa-solid fa-house"></i>
+            <p>Armazém</p>
+          </a>
+        </div>
+
+        <div class="icones">
+          <a href="dashboard_sensores.html">
+            <img src="../imagens/iconeSensor.png" id="imgSensor" />
+            <p>Sensores</p>
+          </a>
+        </div>
+
+        <div id="aqui" class="icones">
+          <i class="fa-solid fa-circle-question"></i>
+          <p>Ajuda</p>
+        </div>
+
+        <div class="icones">
+          <a href="../siteInstitucional.html">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <p>Sair</p>
+          </a>
+        </div>
+
       </div>
-      <div class="icones">
-        <a href="dashboard.html">
-          <i class="fa-solid fa-house"></i>
-          <p>Armazém</p>
-        </a>
-      </div>
-      <div class="icones">
-        <a href="dashboard_sensores.html">
-          <img src="../imagens/iconeSensor.png" id="imgSensor">
-          <p>Sensores</p>
-        </a>
-      </div>
-      <div id="aqui" class="icones">
-        <i class="fa-solid fa-circle-question"></i>
+    </div>
+
+    <div class="bannerHelp">
+
+      <div class="textHelp">
         <p>Ajuda</p>
+        <img src="../imagens/iconeDuvidaBlack.png" />
       </div>
-      <div class="icones">
-        <a href="../siteInstitucional.html">
-          <i class="fa-solid fa-right-from-bracket"></i>
-          <p>Sair</p>
-        </a>
-      </div>
-    </div>
-  </div>
-  <div class="bannerHelp">
-    <div class="textHelp">
-      <p>
-        Ajuda
-      </p>
-      <img src="../imagens/iconeDuvidaBlack.png">
-    </div>
-    <div class="textHelp">
-      <div class="containerSac">
-        <p class="sac">
-          sac.arcoffee@outlook.com
-        </p>
-      </div>
-    </div>
-  </div>
 
-  <div class="containerAlertas">
-<div class="ajudaGraph">
-  <h2>valores de temperatura e umidade</h2>
-  <img src="../imagens/graphbar.png">
-  <span>dias</span>
-</div>
-<div class="alertas">
-<p>alerta crítico</p>
-<p>alerta emergêncial</p>
-<p>temperatura/umidade ideal</p>
-</div>
-  </div>
-</body>
+      <div class="textHelp">
+
+        <div class="containerSac">
+          <p class="sac">sac.arcoffee@outlook.com</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="containerAlertas">
+
+      <div class="ajudaGraph">
+        <h2>valores de temperatura e umidade</h2>
+        <img src="../imagens/graphbar.png" />
+        <span>dias</span>
+      </div>
+
+      <div class="alertas">
+
+        <h2>Tipos de Alertas:</h2>
+
+        <div class="containerAlerta">
+          <p>Alerta crítico</p>
+          <div class="status critico"></div>
+        </div>
+
+        <hr>
+
+        <div class="containerAlerta">
+          <p>Alerta emergêncial </p>
+          <div class="status alerta"></div>
+        </div>
+
+        <hr>
+
+        <div class="containerAlerta">
+          <p>Temperatura/umidade ideal</p>
+          <div class="status ideal"></div>
+        </div>
+
+        <hr>
+
+      </div>
+
+    </div>
+  </body>
 
 </html>
