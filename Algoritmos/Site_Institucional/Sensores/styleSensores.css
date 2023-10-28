@@ -114,6 +114,7 @@ p {
 
 /* estilização das imagens e os titulos delas */
 .informacao {
+    margin-top: 2%;
     display: flex;
     position: relative;
     width: 190px;
@@ -124,6 +125,7 @@ p {
 }
 
 .informacao h3 {
+  
     display: flex;
     position: absolute;
     font-size: 18px;
@@ -131,7 +133,7 @@ p {
 }
 
 .informacao .imagens {
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
     margin-top: 25%;
 }
