@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="styleDashboard.css">
   <link rel="website icon" type="png" href="../imagens/arcoffee.png">
   <script src="https://kit.fontawesome.com/ce9ef0d266.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <title>Dashboard</title>
 </head>
 
@@ -168,35 +169,39 @@
 
     </div>
 
-    <div id="tempoArmazem1" class="KPI Semanal">
-      <p class="title">Tempo Semanal Fora do Ideal</p>
-      <div class="divisoria">
-        <p class="title">Temperatura: 10h </p>
-        <div class="status critico"></div>
+    <div class="KPI Semanal">
+      <p class="title">Tempo Hoje Fora do Ideal</p>
+      <div id="tempoArmazem1">
+
+        <div class="divisoria">
+
+          <p>Temperatura:</p>
+          <p> 10 horas </p>
+          
+        </div>
+
+        <div class="divisoria">
+          <p>Umidade: </p>
+          <p> 4 horas </p>
+        </div>
       </div>
 
-      <div class="divisoria">
-        <p class="title">Umidade: 4h </p>
-        <div class="status critico"></div>
-      </div>
-    </div>
+      <div id="tempoArmazem2">
 
-    <div id="tempoArmazem2" class="KPI Semanal">
-      <p class="title">Tempo Semanal Fora do Ideal</p>
-      <div class="divisoria">
-        <p class="title">Temperatura: 19h </p>
-        <div class="status critico"></div>
-      </div>
+        <div class="divisoria">
+          <p>Temperatura:</p>
+          <p> 19 horas </p>
+        </div>
 
-      <div class="divisoria">
-        <p class="title">Umidade: 22h </p>
-        <div class="status critico"></div>
+        <div class="divisoria">
+          <p>Umidade: </p>
+          <p>22 horas </p>
+        </div>
       </div>
-
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
 </body>
 
 
