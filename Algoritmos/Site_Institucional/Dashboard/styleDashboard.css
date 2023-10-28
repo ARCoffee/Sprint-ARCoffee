@@ -167,9 +167,6 @@ select {
     width: 19px;
     border-radius: 100%;
 }
-.emergencia{
-    background-color: #ffc000;
-}
 .alerta{
     background-color: #ffff00;
 }
