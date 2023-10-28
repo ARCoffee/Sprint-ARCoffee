@@ -167,12 +167,35 @@
       </div>
 
     </div>
-    <div class="KPI Semanal">
-      <p class="title">Última Semana</p>
-      <p class="title">Temperatura Máxima: 20.5°C</p>
-      <p class="title">Umidade Máxima: 17%</p>
+
+    <div id="tempoArmazem1" class="KPI Semanal">
+      <p class="title">Tempo Semanal Fora do Ideal</p>
+      <div class="divisoria">
+        <p class="title">Temperatura: 10h </p>
+        <div class="status critico"></div>
+      </div>
+
+      <div class="divisoria">
+        <p class="title">Umidade: 4h </p>
+        <div class="status critico"></div>
+      </div>
+    </div>
+
+    <div id="tempoArmazem2" class="KPI Semanal">
+      <p class="title">Tempo Semanal Fora do Ideal</p>
+      <div class="divisoria">
+        <p class="title">Temperatura: 19h </p>
+        <div class="status critico"></div>
+      </div>
+
+      <div class="divisoria">
+        <p class="title">Umidade: 22h </p>
+        <div class="status critico"></div>
+      </div>
+
     </div>
   </div>
+
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 
@@ -355,6 +378,8 @@
       SegundoArmazem.style.display = 'none';
       tempArmazem2.style.display = 'none';
       umiArmazem2.style.display = 'none';
+      tempoArmazem2.style.display = 'none';
+      tempoArmazem1.style.display = 'block';
 
     } else if (valor == '2') {
       PrimeiroArmazem.style.display = 'none';
@@ -363,6 +388,9 @@
       SegundoArmazem.style.display = 'flex';
       tempArmazem2.style.display = 'block';
       umiArmazem2.style.display = 'block';
+      tempoArmazem2.style.display = 'block';
+      tempoArmazem1.style.display = 'none';
+
     }
   }
 

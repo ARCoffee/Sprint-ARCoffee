@@ -154,7 +154,7 @@ select {
 }
 .KPI p{
     color: #ddd;
-    font-size: larger;
+    font-size: large;
     font-weight: 600;
 }
 .divisoria{
@@ -186,3 +186,6 @@ select {
 #umiArmazem2{
     display: none;
 }
+#tempoArmazem2{
+    display: none;
+} 
