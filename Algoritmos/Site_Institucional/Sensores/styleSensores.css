@@ -83,44 +83,80 @@ p {
     width: 30px;
     height: 30px;
 }
-
 /* Select */
 
 /* Sensores */
 .sensores {
-    margin-top: 20px;
     display: flex;
-    width: 800px;
-    height: 250px;
-    border: 5px solid black;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 50%;
+    height: 30%;
+    margin-top: 2%;
+    flex-wrap: wrap-reverse;
+    background-color: #3e2217f6;
 }
 
 .sensores .conteudos {
     display: flex;
-    
+    margin: 10px;
 }
-
 .sensores .conteudos .caixas {
     display: flex;
-    width: 800px;
+    padding: 2%;
 }
 
-.sensores .conteudos .caixas h1{
-    align-items: center;
-    flex-direction: column-reverse;
-}
-
-.imagens {
-    display: flex;
-    width: 85px;
-    height: 85px;
-    flex-direction: column;
-    align-items: end;
-    text-align: center;
-    padding-top: 25px;
-}
-
-h1 h3 {
+/* estlização do h1 e o p */
+.titulo {
     margin: 0;
-    width: 0;
+    width: 20%;
+    height: 30%;
+    font-size: 25px;
+    color: white;
+}
+
+
+.texto {
+    display: flex;
+    font-size: 20px;
+    width: 30%;
+    margin-top: 10%;
+    height: 35%;
+    color: white;
+}
+
+/* estilizaçaõ da bolinha */
+.status {
+    display: flex;
+    height: 12px;
+    width: 12px;
+    border: 1px solid black;
+    border-radius: 100%;
+    background-color: green;
+    flex-direction: row;
+    float: left;
+}
+
+/* estilização das imagens */
+.informacao {
+    display: flex;
+    position: relative;
+    width: 190px;
+    justify-content: flex-end;
+    align-items: start;
+    float: left;
+    margin-left: 35px;
+}
+
+.informacao h3 {
+    display: flex;
+    position: absolute;
+    font-size: 18px;
+    color: white;
+}
+
+.informacao .imagens {
+    width: 150px;
+    height: 150px;
+    margin-top: 25%;
 }
