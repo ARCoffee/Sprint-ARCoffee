@@ -79,56 +79,23 @@ hr {
     justify-content: center;
 }
 
-.containerAlertas .alertas h2 {
-    margin: 0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: white;
-    margin-bottom: 4%;
-    text-align: center;
-}
-
-.ajudaGraph {
-    width: 350px;
-    height: 320px;
+.containerAlertas .containerGraphs {
     display: flex;
     background-color: #3e2217;
-    border-radius: 50px;
-    align-items: end;
-
+    border-radius: 15px;
+    height: fit-content;
+    padding: 3%;
 }
 
-.ajudaGraph span {
-    height: 50px;
-    display: flex;
-    width: 250px;
-    margin: 0%;
-    font-size: large;
-    color: aliceblue;
-    justify-content: left;
-    align-items: end;
+.containerAlertas .containerGraphs img {
+    width: 13vw;
 }
 
-.ajudaGraph img {
-    display: flex;
-    justify-content: center;
-    align-items: start;
-    width: 250px;
-    height: 250px;
-    /* margin-bottom: 30px; */
+.containerAlertas .containerGraphs h2 {
+    margin: 0;
 }
-
-.ajudaGraph h2 {
-    margin-bottom: 30px;
-    display: flex;
-    writing-mode: vertical-lr;
-    flex-direction: column-reverse;
-    font-size: large;
-    color: aliceblue;
-    justify-content: center;
-}
-
 /* As bolinhas lá */
-.status {
+.status{
     margin: 5% 10%;
     height: 19px;
     width: 19px;
@@ -138,11 +105,9 @@ hr {
 .ideal {
     background-color: #2ea71e;
 }
-
 .alerta {
     background-color: #ffff00;
 }
-
 .critico {
     background-color: #ff0000;
 }
@@ -161,4 +126,12 @@ hr {
 .containerAlertas p {
     margin: 0;
     width: fit-content;
+}
+
+.alertas h2 {
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 4%;
 }
