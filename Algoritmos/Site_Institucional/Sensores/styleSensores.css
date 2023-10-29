@@ -84,6 +84,41 @@ p {
 }
 
 /* Select */
+.select {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+select {
+    background-color:#3e2217;
+    color: white;
+    padding: 12px;
+    width: 250px;
+    border-radius: 10px;
+    font-size: 20px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2); 
+  }
+
+/* Media dos sensores */
+
+.mediaSensores {
+    display: flex;
+    width: 40%;
+    height: 400px;
+    float: right;
+    margin-top: 6%;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-right: 5%;
+}
+
+.mediaSensores .conteudos{
+    display: flex;
+    padding: 2%;
+}
+
 
 /* Sensores */
 .sensores {
@@ -92,8 +127,8 @@ p {
     border-radius: 10px;
     width: 45%;
     height: 30%;
-    margin-top: 2%;
-    background-color: #3e2217f6;
+    margin-top: 5.5%;
+    background-color:#3e2217;
 }
 
 .sensores .conteudos .caixas {
@@ -137,3 +172,10 @@ p {
     height: 120px;
     margin-top: 25%;
 }
+
+/* Segundo estoque
+#estoque2{
+    display: none;
+}
+ */
+

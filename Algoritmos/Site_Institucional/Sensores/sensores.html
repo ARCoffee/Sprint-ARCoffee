@@ -44,32 +44,55 @@
     <!-- Fim da sidebar-->
 
     <!-- selects -->
-    <select name="sensor" id="estoques">
-        <option value="1">Estoque 1</option>
-        <option value="2">Estoque 2</option>
-    </select>
+    <div class="select">
+        <select onchange="mudarestoque()" id="estoques">
+            <option value="1">Estoque 1</option>
+            <option value="2">Estoque 2</option>
+        </select>
+    </div>
+
+    <div class="mediaSensores">
+        <div class="conteudos">
+            <div class="sensorCaixa">
+
+                <div class="texto2">
+                    <h3> Temperatura Média:</h3>
+                    <h3> Umidade Média: </h3>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- fim do selects -->
 
 
     <!-- Sensor 1 -->
+    <div id="estoque1">
 
-    <div class="sensores">
-        <div class="conteudos">
-            <div class="caixas">
 
-                <div class="texto">
+        <div class="sensores">
+            <div class="conteudos">
+                <div class="caixas">
 
-                    <h2 >Sensor 1</h2>
-                    <p>Status: <b style="color: rgb(6, 255, 6);">ON</b> </p>
-                    <i class="fa-solid fa-toggle-on" style="color: rgb(6, 255, 6);"></i>
+                    <div class="texto">
 
-                </div>
+                        <h2>Sensor 1</h2>
+                        <p>Status: <b style="color: rgb(6, 255, 6);">ON</b> </p>
+                        <i class="fa-solid fa-toggle-on" style="color: rgb(6, 255, 6);"></i>
 
-                
-                <div class="informacao">
-                    <h3>Temperatura: 21°C</h3>
-                    <img class="imagens" src="../imagens/termometro.png" width="200px" alt="Imagem de um termomêtro">
-                </div>
+                    </div>
+
+
+                    <div class="informacao">
+                        <h3>Temperatura: 21°C</h3>
+                        <img class="imagens" src="../imagens/termometro.png" width="200px"
+                            alt="Imagem de um termomêtro">
+                    </div>
 
                     <div class="informacao">
                         <h3>Umidade: 18%</h3>
@@ -81,115 +104,288 @@
     </div>
 
     <!-- sensor 2 -->
-     <div class="sensores">
+    <div class="sensores">
         <div class="conteudos">
             <div class="caixas">
-                
-                   <div class="texto">
 
-                    <h2 >Sensor 2</h2>
+                <div class="texto">
+
+                    <h2>Sensor 2</h2>
                     <p>Status: <b style="color: rgb(6, 255, 6);">ON</b> </p>
                     <i class="fa-solid fa-toggle-on" style="color: rgb(6, 255, 6);"></i>
 
                 </div>
 
-                
+
                 <div class="informacao">
                     <h3>Temperatura: 19°C</h3>
                     <img class="imagens" src="../imagens/termometro.png" width="200px" alt="Imagem de um termomêtro">
                 </div>
 
-                    <div class="informacao">
-                        <h3>Umidade: 15%</h3>
-                        <img class="imagens" src="../imagens/gota.png" width="200" alt="Imagem de uma gota d'água">
-                    </div>
+                <div class="informacao">
+                    <h3>Umidade: 15%</h3>
+                    <img class="imagens" src="../imagens/gota.png" width="200" alt="Imagem de uma gota d'água">
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
     <!-- sensor 3 -->
     <div class="sensores">
         <div class="conteudos">
             <div class="caixas">
-                
+
                 <div class="texto">
 
-                    <h2 >Sensor 3</h2>
+                    <h2>Sensor 3</h2>
                     <p>Status: <b style="color: #ff0000;">OFF</b> </p>
                     <i class="fa-solid fa-toggle-off" style="color: #ff0000;"></i>
 
                 </div>
 
-                
+
                 <div class="informacao">
                     <h3>Temperatura: 0°C</h3>
                     <img class="imagens" src="../imagens/termometro.png" width="200px" alt="Imagem de um termomêtro">
                 </div>
 
-                    <div class="informacao">
-                        <h3>Umidade: 0%</h3>
-                        <img class="imagens" src="../imagens/gota.png" width="200" alt="Imagem de uma gota d'água">
-                    </div>
+                <div class="informacao">
+                    <h3>Umidade: 0%</h3>
+                    <img class="imagens" src="../imagens/gota.png" width="200" alt="Imagem de uma gota d'água">
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
     <!-- sensor 4 -->
     <div class="sensores">
         <div class="conteudos">
             <div class="caixas">
-                
+
                 <div class="texto">
 
-                    <h2 >Sensor 4</h2>
+                    <h2>Sensor 4</h2>
                     <p>Status: <b style="color: rgb(6, 255, 6);">ON</b> </p>
                     <i class="fa-solid fa-toggle-on" style="color: rgb(6, 255, 6);"></i>
                 </div>
 
-                
+
                 <div class="informacao">
                     <h3>Temperatura: 23°C</h3>
                     <img class="imagens" src="../imagens/termometro.png" width="200px" alt="Imagem de um termomêtro">
                 </div>
 
+                <div class="informacao">
+                    <h3>Umidade: 19%</h3>
+                    <img class="imagens" src="../imagens/gota.png" width="200" alt="Imagem de uma gota d'água">
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- sensor 5 -->
+    <div class="sensores">
+        <div class="conteudos">
+            <div class="caixas">
+
+                <div class="texto">
+
+                    <h2>Sensor 5</h2>
+                    <p>Status: <b style="color: #ff0000;">OFF</b> </p>
+                    <i class="fa-solid fa-toggle-off" style="color: #ff0000;"></i>
+
+                </div>
+
+
+                <div class="informacao">
+                    <h3>Temperatura: 0°C</h3>
+                    <img class="imagens" src="../imagens/termometro.png" width="200px" alt="Imagem de um termomêtro">
+                </div>
+
+                <div class="informacao">
+                    <h3>Umidade: 0%</h3>
+                    <img class="imagens" src="../imagens/gota.png" width="200" alt="Imagem de uma gota d'água">
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <!-- 2 estoque -->
+
+    <!-- <div id="estoque2">
+
+        <div class="sensores">
+            <div class="conteudos">
+                <div class="caixas">
+
+                    <div class="texto">
+
+                        <h2>Sensor 1</h2>
+                        <p>Status: <b style="color: rgb(6, 255, 6);">ON</b> </p>
+                        <i class="fa-solid fa-toggle-on" style="color: rgb(6, 255, 6);"></i>
+
+                    </div>
+
+
                     <div class="informacao">
-                        <h3>Umidade: 19%</h3>
+                        <h3>Temperatura: 13°C</h3>
+                        <img class="imagens" src="../imagens/termometro.png" width="200px"
+                            alt="Imagem de um termomêtro">
+                    </div>
+
+                    <div class="informacao">
+                        <h3>Umidade: 20%</h3>
                         <img class="imagens" src="../imagens/gota.png" width="200" alt="Imagem de uma gota d'água">
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
-  <!-- sensor 5 -->
+
+   
     <div class="sensores">
         <div class="conteudos">
             <div class="caixas">
-                
+
                 <div class="texto">
 
-                    <h2 >Sensor 5</h2>
+                    <h2>Sensor 2</h2>
+                    <p>Status: <b style="color: rgb(6, 255, 6);">ON</b> </p>
+                    <i class="fa-solid fa-toggle-on" style="color: rgb(6, 255, 6);"></i>
+
+                </div>
+
+
+                <div class="informacao">
+                    <h3>Temperatura: 25°C</h3>
+                    <img class="imagens" src="../imagens/termometro.png" width="200px" alt="Imagem de um termomêtro">
+                </div>
+
+                <div class="informacao">
+                    <h3>Umidade: 19%</h3>
+                    <img class="imagens" src="../imagens/gota.png" width="200" alt="Imagem de uma gota d'água">
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+ 
+    <div class="sensores">
+        <div class="conteudos">
+            <div class="caixas">
+
+                <div class="texto">
+
+                    <h2>Sensor 3</h2>
                     <p>Status: <b style="color: #ff0000;">OFF</b> </p>
                     <i class="fa-solid fa-toggle-off" style="color: #ff0000;"></i>
 
                 </div>
 
-                
+
+                <div class="informacao">
+                    <h3>Temperatura: 22°C</h3>
+                    <img class="imagens" src="../imagens/termometro.png" width="200px" alt="Imagem de um termomêtro">
+                </div>
+
+                <div class="informacao">
+                    <h3>Umidade: 19%</h3>
+                    <img class="imagens" src="../imagens/gota.png" width="200" alt="Imagem de uma gota d'água">
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="sensores">
+        <div class="conteudos">
+            <div class="caixas">
+
+                <div class="texto">
+
+                    <h2>Sensor 4</h2>
+                    <p>Status: <b style="color: #ff0000;">OFF</b> </p>
+                    <i class="fa-solid fa-toggle-off" style="color: #ff0000;"></i>
+                </div>
+
+
                 <div class="informacao">
                     <h3>Temperatura: 0°C</h3>
                     <img class="imagens" src="../imagens/termometro.png" width="200px" alt="Imagem de um termomêtro">
                 </div>
 
-                    <div class="informacao">
-                        <h3>Umidade: 0%</h3>
-                        <img class="imagens" src="../imagens/gota.png" width="200" alt="Imagem de uma gota d'água">
-                    </div>
+                <div class="informacao">
+                    <h3>Umidade: 0%</h3>
+                    <img class="imagens" src="../imagens/gota.png" width="200" alt="Imagem de uma gota d'água">
                 </div>
             </div>
         </div>
-    </div> 
+    </div>
+    </div>
+
+    
+    <div class="sensores">
+        <div class="conteudos">
+            <div class="caixas">
+
+                <div class="texto">
+
+                    <h2>Sensor 5</h2>
+                    <p>Status: <b style="color: #ff0000;">OFF</b> </p>
+                    <i class="fa-solid fa-toggle-off" style="color: #ff0000;"></i>
+
+                </div>
+
+
+                <div class="informacao">
+                    <h3>Temperatura: 0°C</h3>
+                    <img class="imagens" src="../imagens/termometro.png" width="200px" alt="Imagem de um termomêtro">
+                </div>
+
+                <div class="informacao">
+                    <h3>Umidade: 0%</h3>
+                    <img class="imagens" src="../imagens/gota.png" width="200" alt="Imagem de uma gota d'água">
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div> -->
+
 </body>
 
 </html>
+<!-- <script>
+
+    function mudarEstoque() {
+        var valor = estoques.value
+        if (valor == '1') {
+            estoque1.style.display = 'flex';
+            // tempArmazem1.style.display = 'block';
+            // umiArmazem1.style.display = 'block';
+            // SegundoArmazem.style.display = 'none';
+            // tempArmazem2.style.display = 'none';
+            estoque2.style.display = 'none';
+            // tempoArmazem2.style.display = 'none';
+            // tempoArmazem1.style.display = 'block';
+
+        } else if (valor == '2') {
+            estoque1.style.display = 'none';
+            // tempArmazem1.style.display = 'none';
+            // umiArmazem1.style.display = 'none';
+            estoque2.style.display = 'flex';
+            // tempArmazem2.style.display = 'block';
+            // umiArmazem2.style.display = 'block';
+            // tempoArmazem2.style.display = 'block';
+            // tempoArmazem1.style.display = 'none';
+
+        }
+    }
+
+</script> -->
