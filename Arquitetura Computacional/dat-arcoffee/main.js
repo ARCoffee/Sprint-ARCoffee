@@ -11,7 +11,7 @@ const SERVIDOR_PORTA = 3300;
 // configure a linha abaixo caso queira que os dados capturados sejam inseridos no banco de dados.
 // false -> nao insere
 // true -> insere
-const HABILITAR_OPERACAO_INSERIR = false;
+const HABILITAR_OPERACAO_INSERIR = true;
 
 // altere o valor da variável AMBIENTE para o valor desejado:
 // API conectada ao banco de dados remoto, SQL Server -> 'producao'
@@ -67,8 +67,8 @@ const serial = async (
     arduino.pipe(new serialport.ReadlineParser({ delimiter: '\r\n' })).on('data', async (data) => {
         //console.log(data);
         const valores = data.split(';');
-        valor = 30
-        sensor2 = valor * .30;
+        // valor = 30
+        // sensor2 = valor * .30;
         const dht11Umidade = parseFloat(valores[0]);
         const dht11Temperatura = parseFloat(valores[1]);
         const sensor2temp = dht11Temperatura * 1.2;
