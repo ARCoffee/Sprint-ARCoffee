@@ -11,7 +11,7 @@ p {
 
 /* Sidebar */
 .sidebar {
-    background-color: #4d3626;
+    background-color: #3e2217;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -82,6 +82,7 @@ p {
     width: 30px;
     height: 30px;
 }
+/* Fim da sidebar */
 
 /* Select */
 .select {
@@ -103,11 +104,10 @@ select {
 
 /* Media dos sensores*/
 
-.mediaSensoresTemp {
+.mediaSensores {
     display: flex;
-    position: relative;
-    width: 45%;
-    height: 450px;
+    width: 35%;
+    height: 200px;
     float: right;
     margin-top: 5.5%;
     border: 1px solid black;
@@ -116,59 +116,27 @@ select {
     margin-right: 2%;
 }
 
-.mediaSensoresTemp .conteudos {
+.mediaSensores .conteudos {
     display: flex;
     padding: 2%;
 }
 
-
-.mediaSensorUmid {
-    display: flex;
-    position: absolute;
-    width: 100%;
-    height: 460px;
-    float: right;
-    margin-top: 17%;
-    border: 1px solid black;
-    background-color: #3e2217;
-    border-radius: 10px;
-    margin-left: -13px;
-    
-
-}
-
-.mediaSensoresUmid .conteudos {
-    display: flex;
-    padding: 2%;
-}
-
-
-.texto2 h3 {
-    font-size: 25px;
+.texto2 {
+    display: inline-block;
     color: white;
-    font-weight: bold;
+    justify-content: center;
+    width: 100%;
 }
 
-.texto2 p {
-    font-size: 35px;
-    display: flex;
-    justify-content: center;
-    color: yellow;
-    font-weight: bold;
-}
 
 .mediaImagens {
     display: inline;
-    margin-left: 55px
+    margin-left: 65px;
+    
 }
 
 .armazem {
-    height: 250px;
-}
-
-.termometroArmazen {
-
-    height: 220px;
+    height: 100px;
 }
 
 
@@ -177,8 +145,8 @@ select {
     display: flex;
     border: 1px solid black;
     border-radius: 10px;
-    width: 45%;
-    height: 30%;
+    width: 60%;
+    height: 200px;
     margin-top: 5.5%;
     background-color: #3e2217;
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
@@ -206,14 +174,13 @@ select {
     display: flex;
     position: relative;
     width: 190px;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: start;
     float: left;
     margin-left: 35px;
 }
 
 .informacao h3 {
-
     display: flex;
     position: absolute;
     font-size: 18px;
