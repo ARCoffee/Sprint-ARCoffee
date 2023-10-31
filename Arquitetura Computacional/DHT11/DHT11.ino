@@ -15,9 +15,6 @@ void setup()
  
 void loop() 
 {
-  /**
-   * Bloco do DHT11
-   */
   float umidade = dht_1.readHumidity();
   float temperatura = dht_1.readTemperature();
   float umidadeP = (0.4186 *  umidade) - 15.11;
@@ -25,7 +22,7 @@ void loop()
 
   if (isnan(temperatura) or isnan(umidade)) 
   {
-    Serial.print("");
+    Serial.print("Erro ao ler o DHT11");
   } 
   else
   {

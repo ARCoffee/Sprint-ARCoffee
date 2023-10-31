@@ -1,0 +1,23 @@
+.containerPerfil{
+    margin: auto;
+    width: 98%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.boxPerfil{
+    background-color: #3e2217;
+    width: 900px;
+    height: 500px;
+    border-radius: 20px;
+    margin-right: 20px;
+    display: flex;
+    justify-content:center;
+}
+.boxPerfil span{
+    color: aliceblue;
+    font-size: xx-large;
+    padding-top: 2%;
+
+}
