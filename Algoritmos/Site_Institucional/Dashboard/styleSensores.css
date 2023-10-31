@@ -107,7 +107,7 @@ select {
 .mediaSensores {
     display: flex;
     width: 35%;
-    height: 200px;
+    height: 150px;
     float: right;
     margin-top: 5.5%;
     border: 1px solid black;
@@ -128,11 +128,15 @@ select {
     width: 100%;
 }
 
+.texto2 b{
+    color: yellow;
+    font-size: 22px;
+}
+
 
 .mediaImagens {
     display: inline;
     margin-left: 65px;
-    
 }
 
 .armazem {
@@ -146,7 +150,7 @@ select {
     border: 1px solid black;
     border-radius: 10px;
     width: 60%;
-    height: 200px;
+    height: 240px;
     margin-top: 5.5%;
     background-color: #3e2217;
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
@@ -159,42 +163,60 @@ select {
 
 /* estlização do h1 e o p */
 .texto {
-    margin: 0%;
     display: flex;
-    font-size: 20px;
-    width: 35%;
+    font-size: 25px;
+    width: 30%;
     height: 50%;
     color: white;
+    margin-left: 3%;
     flex-direction: column;
 }
 
 /* estilização das imagens e os titulos delas */
 .informacao {
-    margin-top: 2%;
     display: flex;
-    position: relative;
-    width: 190px;
-    justify-content: center;
-    align-items: start;
-    float: left;
-    margin-left: 35px;
+    margin-top: 3%;
+    width: 200px;
+    justify-content: flex-end;
+    margin-left: 60px;
 }
 
 .informacao h3 {
     display: flex;
     position: absolute;
-    font-size: 18px;
+    font-size: 22px;
+    justify-self: center;
     color: white;
 }
 
 .informacao .imagens {
-    width: 120px;
+    width: 130px;
     height: 120px;
-    margin-top: 25%;
+    margin-top: 30%;
 }
 
-/* Segundo estoque
-#estoque2{
+/*Segundo Armazem*/
+
+#estoque2 {
     display: none;
 }
- */
+
+#estoque2Sensor1{
+    display: none;
+}
+
+#estoque2Sensor2{
+    display: none;
+}
+
+#estoque2Sensor3{
+    display: none;
+}
+
+#estoque2Sensor4 {
+    display: none;
+}
+
+#estoque2Sensor5{
+    display: none;
+}

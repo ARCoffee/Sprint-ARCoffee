@@ -52,29 +52,25 @@
 
     <!-- selects -->
     <div class="select">
-        <select onchange="mudarestoque()" id="estoques">
+        <select onchange="mudarEstoque()" id="estoques">
             <option value="1">Estoque 1</option>
             <option value="2">Estoque 2</option>
         </select>
     </div>
 
-    <div class="mediaSensores">
-        <div class="conteudos">
-            <div class="sensorCaixa">
+    <div id="mediaEstoque1">
+        <div class="mediaSensores">
+            <div class="conteudos">
+                <div class="sensorCaixa">
 
-                <div class="texto2">
-                    <h3> Temperatura Média dos Sensores:</h3>
-                    <p>21°C</p>
-                        <h3>Umidade Média dos Sensores:</h3>
-                        <p>17%</p>
+                    <div class="texto2">
+                        <h3> Temperatura Média dos Sensores: <b>21°C</b></h3>
+                        <h3>Umidade Média dos Sensores: <b>17%</b></h3>
                     </div>
-                    <!-- <div class="mediaImagens">
-                        <img class="armazem" src="../imagens/graos-de-cafe.png" alt="">
-                    </div> -->
+                </div>
             </div>
         </div>
     </div>
-
     <!-- fim do selects -->
 
 
@@ -240,146 +236,174 @@
 
     <!-- 2 estoque -->
 
-    <!-- <div id="estoque2">
+    <div id="mediaEstoque2">
+        <div class="mediaSensores">
+            <div class="conteudos">
+                <div class="sensorCaixa">
 
+                    <div class="texto2">
+                        <h3> Temperatura Média dos Sensores: <b>18°C</b></h3>
+                        <h3>Umidade Média dos Sensores: <b>15.2%</b></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="estoque2">
+
+        <div id="estoque2Sensor1">
+            <div class="sensores">
+                <div class="conteudos">
+                    <div class="caixas">
+
+                        <div class="texto">
+
+                            <h2>Sensor 1</h2>
+                            <p>Status: <b style="color: rgb(6, 255, 6);">ON</b> </p>
+                            <i class="fa-solid fa-toggle-on" style="color: rgb(6, 255, 6);"></i>
+
+                        </div>
+
+
+                        <div class="informacao">
+                            <h3>Temperatura: 16°C</h3>
+                            <img class="imagens" src="../imagens/termometro.png" width="200px"
+                                alt="Imagem de um termomêtro">
+                        </div>
+
+                        <div class="informacao">
+                            <h3>Umidade: 18%</h3>
+                            <img class="imagens" src="../imagens/gota.png" width="200" alt="Imagem de uma gota d'água">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="estoque2Sensor2">
+            <div class="sensores">
+                <div class="conteudos">
+                    <div class="caixas">
+
+                        <div class="texto">
+
+                            <h2>Sensor 2</h2>
+                            <p>Status: <b style="color: rgb(6, 255, 6);">ON</b> </p>
+                            <i class="fa-solid fa-toggle-on" style="color: rgb(6, 255, 6);"></i>
+
+                        </div>
+
+
+                        <div class="informacao">
+                            <h3>Temperatura: 17°C</h3>
+                            <img class="imagens" src="../imagens/termometro.png" width="200px"
+                                alt="Imagem de um termomêtro">
+                        </div>
+
+                        <div class="informacao">
+                            <h3>Umidade: 15%</h3>
+                            <img class="imagens" src="../imagens/gota.png" width="200" alt="Imagem de uma gota d'água">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="estoque2Sensor3">
         <div class="sensores">
             <div class="conteudos">
                 <div class="caixas">
 
                     <div class="texto">
 
-                        <h2>Sensor 1</h2>
+                        <h2>Sensor 3</h2>
                         <p>Status: <b style="color: rgb(6, 255, 6);">ON</b> </p>
                         <i class="fa-solid fa-toggle-on" style="color: rgb(6, 255, 6);"></i>
-
                     </div>
 
 
                     <div class="informacao">
-                        <h3>Temperatura: 13°C</h3>
+                        <h3>Temperatura: 18°C</h3>
                         <img class="imagens" src="../imagens/termometro.png" width="200px"
                             alt="Imagem de um termomêtro">
                     </div>
 
                     <div class="informacao">
-                        <h3>Umidade: 20%</h3>
+                        <h3>Umidade: 16%</h3>
                         <img class="imagens" src="../imagens/gota.png" width="200" alt="Imagem de uma gota d'água">
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    </div>
 
-   
-    <div class="sensores">
-        <div class="conteudos">
-            <div class="caixas">
+    <div id="estoque2Sensor4">
+        <div class="sensores">
+            <div class="conteudos">
+                <div class="caixas">
 
-                <div class="texto">
+                    <div class="texto">
 
-                    <h2>Sensor 2</h2>
-                    <p>Status: <b style="color: rgb(6, 255, 6);">ON</b> </p>
-                    <i class="fa-solid fa-toggle-on" style="color: rgb(6, 255, 6);"></i>
+                        <h2>Sensor 4</h2>
+                        <p>Status: <b style="color: rgb(6, 255, 6);">ON</b> </p>
+                        <i class="fa-solid fa-toggle-on" style="color: rgb(6, 255, 6);"></i>
+                    </div>
 
-                </div>
 
+                    <div class="informacao">
+                        <h3>Temperatura: 21°C</h3>
+                        <img class="imagens" src="../imagens/termometro.png" width="200px"
+                            alt="Imagem de um termomêtro">
+                    </div>
 
-                <div class="informacao">
-                    <h3>Temperatura: 25°C</h3>
-                    <img class="imagens" src="../imagens/termometro.png" width="200px" alt="Imagem de um termomêtro">
-                </div>
-
-                <div class="informacao">
-                    <h3>Umidade: 19%</h3>
-                    <img class="imagens" src="../imagens/gota.png" width="200" alt="Imagem de uma gota d'água">
+                    <div class="informacao">
+                        <h3>Umidade: 12%</h3>
+                        <img class="imagens" src="../imagens/gota.png" width="200" alt="Imagem de uma gota d'água">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     </div>
 
- 
-    <div class="sensores">
-        <div class="conteudos">
-            <div class="caixas">
+    <div id="estoque2Sensor5">
+        <div class="sensores">
+            <div class="conteudos">
+                <div class="caixas">
 
-                <div class="texto">
+                    <div class="texto">
 
-                    <h2>Sensor 3</h2>
-                    <p>Status: <b style="color: #ff0000;">OFF</b> </p>
-                    <i class="fa-solid fa-toggle-off" style="color: #ff0000;"></i>
+                        <h2>Sensor 5</h2>
+                        <p>Status: <b style="color: #ff0000;">OFF</b> </p>
+                        <i class="fa-solid fa-toggle-off" style="color: #ff0000;"></i>
 
-                </div>
-
-
-                <div class="informacao">
-                    <h3>Temperatura: 22°C</h3>
-                    <img class="imagens" src="../imagens/termometro.png" width="200px" alt="Imagem de um termomêtro">
-                </div>
-
-                <div class="informacao">
-                    <h3>Umidade: 19%</h3>
-                    <img class="imagens" src="../imagens/gota.png" width="200" alt="Imagem de uma gota d'água">
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-
-    <div class="sensores">
-        <div class="conteudos">
-            <div class="caixas">
-
-                <div class="texto">
-
-                    <h2>Sensor 4</h2>
-                    <p>Status: <b style="color: #ff0000;">OFF</b> </p>
-                    <i class="fa-solid fa-toggle-off" style="color: #ff0000;"></i>
-                </div>
+                    </div>
 
 
-                <div class="informacao">
-                    <h3>Temperatura: 0°C</h3>
-                    <img class="imagens" src="../imagens/termometro.png" width="200px" alt="Imagem de um termomêtro">
-                </div>
+                    <div class="informacao">
+                        <h3>Temperatura: 0°C</h3>
+                        <img class="imagens" src="../imagens/termometro.png" width="200px"
+                            alt="Imagem de um termomêtro">
+                    </div>
 
-                <div class="informacao">
-                    <h3>Umidade: 0%</h3>
-                    <img class="imagens" src="../imagens/gota.png" width="200" alt="Imagem de uma gota d'água">
+                    <div class="informacao">
+                        <h3>Umidade: 0%</h3>
+                        <img class="imagens" src="../imagens/gota.png" width="200" alt="Imagem de uma gota d'água">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     </div>
-
-    
-    <div class="sensores">
-        <div class="conteudos">
-            <div class="caixas">
-
-                <div class="texto">
-
-                    <h2>Sensor 5</h2>
-                    <p>Status: <b style="color: #ff0000;">OFF</b> </p>
-                    <i class="fa-solid fa-toggle-off" style="color: #ff0000;"></i>
-
-                </div>
-
-
-                <div class="informacao">
-                    <h3>Temperatura: 0°C</h3>
-                    <img class="imagens" src="../imagens/termometro.png" width="200px" alt="Imagem de um termomêtro">
-                </div>
-
-                <div class="informacao">
-                    <h3>Umidade: 0%</h3>
-                    <img class="imagens" src="../imagens/gota.png" width="200" alt="Imagem de uma gota d'água">
-                </div>
-            </div>
-        </div>
     </div>
     </div>
-    </div> -->
 
 </body>
 
@@ -389,24 +413,36 @@
     function mudarEstoque() {
         var valor = estoques.value
         if (valor == '1') {
-            estoque1.style.display = 'flex';
-            tempArmazem1.style.display = 'block';
-            umiArmazem1.style.display = 'block';
-            SegundoArmazem.style.display = 'none';
-            tempArmazem2.style.display = 'none';
+            estoque1.style.display = 'block';
+            mediaEstoque1.style.display = 'block'
+            estoque1Sensor1.style.display = 'block';
+            estoque1Sensor2.style.display = 'block';
+            estoque1Sensor3.style.display = 'block';
+            estoque1Sensor4.style.display = 'block';
+            estoque1Sensor5.style.display = 'block';
             estoque2.style.display = 'none';
-            tempoArmazem2.style.display = 'none';
-            tempoArmazem1.style.display = 'block';
+            mediaEstoque2.style.display = 'none'
+            estoque2Sensor1.style.display = 'none';
+            estoque2Sensor2.style.display = 'none';
+            estoque2Sensor3.style.display = 'none';
+            estoque2Sensor4.style.display = 'none';
+            estoque2Sensor5.style.display = 'none';
 
         } else if (valor == '2') {
             estoque1.style.display = 'none';
-            tempArmazem1.style.display = 'none';
-            umiArmazem1.style.display = 'none';
-            estoque2.style.display = 'flex';
-            tempArmazem2.style.display = 'block';
-            umiArmazem2.style.display = 'block';
-            tempoArmazem2.style.display = 'block';
-            tempoArmazem1.style.display = 'none';
+            mediaEstoque1.style.display = 'none'
+            estoque1Sensor1.style.display = 'none';
+            estoque1Sensor2.style.display = 'none';
+            estoque1Sensor3.style.display = 'none';
+            estoque1Sensor4.style.display = 'none';
+            estoque1Sensor5.style.display = 'none';
+            estoque2.style.display = 'block';
+            mediaEstoque2.style.display = 'block'
+            estoque2Sensor1.style.display = 'block';
+            estoque2Sensor2.style.display = 'block';
+            estoque2Sensor3.style.display = 'block';
+            estoque2Sensor4.style.display = 'block';
+            estoque2Sensor5.style.display = 'block';
 
         }
     }

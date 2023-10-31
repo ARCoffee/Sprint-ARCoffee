@@ -6,12 +6,10 @@ body {
 }
 
 body {
-    background: linear-gradient(
-      to left,
-      rgba(125, 105, 99, 1) 0%,
-      rgba(157, 141, 128, 1) 50%,
-      #b2a499 100%
-    );
+    background: linear-gradient(to left,
+            rgba(125, 105, 99, 1) 0%,
+            rgba(157, 141, 128, 1) 50%,
+            #b2a499 100%);
 }
 
 .header {
@@ -52,7 +50,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+
 }
 
 a {
@@ -68,7 +66,7 @@ a {
     margin: auto;
     display: flex;
     border-radius: 20px;
-    object-fit: cover; 
+    object-fit: cover;
     display: flex;
     z-index: -1;
     margin-top: 120px;
@@ -123,9 +121,10 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 
 }
+
 .conteudoH .containerH .boxHome img {
     display: flex;
     justify-content: center;
@@ -134,7 +133,7 @@ a {
     margin-left: 3%;
     width: 100px;
     height: 100px;
-    
+
 }
 
 .boxHome p {
@@ -151,7 +150,7 @@ a {
 .text {
     /* background-image: url(imagens/imgFundoLogin3.png); */
     background-size: cover;
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
     /* background-color: #3e2217; */
     border-radius: 10px;
     width: 100%;
@@ -175,7 +174,7 @@ a {
     font-weight: 700;
 }
 
-#imgSobreNos{
+#imgSobreNos {
     display: flex;
     justify-content: right;
     align-self: flex-end;
@@ -183,6 +182,7 @@ a {
     height: 320px;
     padding-left: 10%;
 }
+
 /* Inicio pagina sustentabilidade! */
 .boxSelo {
     background-image: url(imagens/background.png);
@@ -190,19 +190,21 @@ a {
     display: flex;
     justify-content: center;
     background-repeat: no-repeat;
-    
+
 
 }
-.boxSelo .containerSelo{
+
+.boxSelo .containerSelo {
     justify-content: space-evenly;
     display: flex;
     align-content: flex-end;
     align-items: center;
-   padding-top: 100px;
-   padding-bottom: 200px;
-   
+    padding-top: 100px;
+    padding-bottom: 200px;
+
 }
-.selo{
+
+.selo {
     display: flex;
     justify-content: center;
     align-content: center;
@@ -210,42 +212,41 @@ a {
     width: auto;
     margin: 50px;
 }
+
 .selo img {
-    width:250px;
-    height:250px;
+    width: 250px;
+    height: 250px;
 }
 
 .selo p {
     text-align: center;
-   flex-direction: column;
-   font-family: 'Montserrat', sans-serif;
-   font-weight: 800;
-   color: #593823;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    color: #593823;
 }
 
 /* social thamires */
-.bannerSede{
+.bannerSede {
     display: flex;
-    background: linear-gradient(
-        to left,
-        rgba(125, 105, 99, 1) 0%,
-        rgba(157, 141, 128, 1) 50%,
-        #b2a499 100%
-      );
-      margin-bottom: 160px;
-      margin-top: 100px;
-      width: 100%;
-      justify-content: center;
+    background: linear-gradient(to left,
+            rgba(125, 105, 99, 1) 0%,
+            rgba(157, 141, 128, 1) 50%,
+            #b2a499 100%);
+    margin-top: 10%;
+    margin-bottom: 10%;
+    width: 100%;
+    justify-content: center;
 }
 
-.bannerSede .containerSede .imgbanner{
+.bannerSede .containerSede .imgbanner {
     display: flex;
     border-radius: 10px;
     align-items: center;
     margin-left: 10%;
     margin-top: 5%;
-    width: 550px;
-    height: 500px;
+    width: 500px;
+    height: 450px;
     box-shadow: 15px 10px 50px rgb(36, 23, 12);
 
 }
@@ -262,20 +263,17 @@ a {
     justify-content: space-between;
     align-items: center;
     margin-left: 5px;
-   
+
 }
 
-.social .containerSede ul{
-    width: 480px;
+.social .containerSede ul {
+    width: 500px;
     display: flex;
     justify-content: space-between;
-    align-self: center;
     list-style: none;
     font-size: 18px;
     font-weight: bold;
     color: black;
-    margin: 35px;
-    margin-left: 35px;
     flex-direction: row;
 }
 
@@ -284,17 +282,19 @@ a {
     flex-direction: row-reverse;
     justify-content: center;
     align-items: center;
+    align-items: center;
     border: 2px solid rgb(36, 23, 12);
     border-radius: 30px;
-    width: 240px;
-    height: 35px;
+    width: 260px;
+    height: 40px;
     background-color: rgba(255, 255, 255, 0.397);
-    margin-left: 20px;
+    margin-left: 5%;
 }
 
 .social .containerSede .boxSede:hover {
     cursor: pointer;
-    box-shadow: 5px 5px 10px rgb(36, 23, 12);;
+    box-shadow: 5px 5px 10px rgb(36, 23, 12);
+    ;
     transform: scale(1.1);
     transition: all 0.5s;
 }
@@ -316,20 +316,31 @@ a {
 }
 
 .horario .containerSede {
-    width: 70%;
+    width: 90%;
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin-top: 15px;
-    margin-left: 250px;
+    margin-left: 120px;
     padding-top: 5px;
 
 }
-.horario  span {
-   display: flex;
-   font-size: 25px;
-   margin: 5px;
-   justify-content: center;  
+
+.horario h4 {
+    border: 2px solid rgb(36, 23, 12);
+    border-radius: 15px;
+    background-color:  rgba(36, 23, 12, 0.932);
+    height: 12%;
+    color: white;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    margin: 5px;
+    justify-content: center;
+    box-shadow: 15px 10px 10px rgb(36, 23, 12);
 }
+
+
 
 .horario .containerSede .local {
     display: flex;
@@ -338,9 +349,18 @@ a {
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.397);
     text-align: center;
+    justify-content: center;
+    margin-top: 5%;
     flex-direction: row-reverse;
     font-size: 20px;
-    
+
+}
+
+.horario .containerSede .local:hover {
+    cursor: pointer;
+    box-shadow: 5px 5px 10px rgb(36, 23, 12);
+    transform: scale(1.1);
+    transition: all 0.5s;
 }
 
 .horario .container .local img {
@@ -359,12 +379,12 @@ a {
 }
 
 #localizacao {
-    margin: 5px;
+    margin-top: 3%;
     margin-left: 10px;
     border: 1px solid rgb(36, 23, 12);
     border-radius: 5px;
     box-shadow: 15px 10px 10px rgb(36, 23, 12);
-    
+
 }
 
 /* Tela planos */
@@ -374,71 +394,70 @@ a {
     display: flex;
     position: absolute;
     height: 100vh;
-    background: linear-gradient(
-      to left,
-      rgba(125, 105, 99, 1) 0%,
-      rgba(157, 141, 128, 1) 50%,
-      #b2a499 100%
-    );
-  }
-  
-  .section .margemLateral {
+    background: linear-gradient(to left,
+            rgba(125, 105, 99, 1) 0%,
+            rgba(157, 141, 128, 1) 50%,
+            #b2a499 100%);
+}
+
+.section .margemLateral {
     width: 90vw;
     margin: auto;
     display: flex;
-  }
-  
-  .textoPlanos {
+}
+
+.textoPlanos {
     width: 25vw;
     color: whitesmoke;
-    font-family: 'Montserrat', sans-serif;  
-  }
-  
-  .textoPlanos h1{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.textoPlanos h1 {
     font-size: 60px;
     margin: 0;
-  }
-  
-  .textoPlanos p{
+}
+
+.textoPlanos p {
     font-size: 25px;
     margin-top: 30px;
-  }
-  
-  
-  .textoOportunidade{
+}
+
+
+.textoOportunidade {
     display: flex;
     margin-top: 20px;
-  }
-  .textoOportunidade .oportunidades{
+}
+
+.textoOportunidade .oportunidades {
     margin-left: 5px;
     font-size: 20px;
-  }
-  
-  .setaTexto{
+}
+
+.setaTexto {
     display: flex;
     margin-top: 10px;
-  }
-  
-  .setaTexto img{
+}
+
+.setaTexto img {
     width: 70px;
     height: 70px;
-  }
-  
-  .anual{
+}
+
+.anual {
     margin-top: 35px;
     font-size: 15px;
     width: 200px;
     text-align: center;
-  }
-  
-  .checkimg{
+}
+
+.checkimg {
     margin-top: 5px;
     width: 15px;
     height: 15px;
-  }
-  
-  
-  .PlanoForma {
+}
+
+
+.PlanoForma {
     text-align: center;
     margin-left: 25px;
     width: 300px;
@@ -448,20 +467,20 @@ a {
     display: inline-block;
     color: #fff;
     box-shadow: 10px 10px 10px rgba(1, 1, 1, 0.528);
-  }
-  
-  .centro {
+}
+
+.centro {
     margin-top: 10px;
     background-color: #cccac5;
     color: #4e3828;
     height: 550px;
     position: relative;
     top: -25px;
-  }
-  
-  .PlanoForma button {
+}
+
+.PlanoForma button {
     font-size: 15px;
-    font-family: 'Montserrat', sans-serif;  
+    font-family: 'Montserrat', sans-serif;
     width: 140px;
     height: 50px;
     border-width: 1px;
@@ -470,41 +489,43 @@ a {
     border-radius: 28px;
     background: #b2a499;
     cursor: pointer;
-  }
-  
-  .conteudo{
+}
+
+.conteudo {
     display: flex;
     padding-left: 0;
     height: 100%;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-  }
+}
 
-  .centro button{
-      background: #4e3828;
-      border-color: #4e3828;
-      color: #b2a499;
-  }
-  
-  .PlanoForma button:hover {
+.centro button {
+    background: #4e3828;
+    border-color: #4e3828;
+    color: #b2a499;
+}
+
+.PlanoForma button:hover {
     background: #9b8a7c;
-  }
-  
-  .centro button:hover {
-      background: #433022;
-  }
-  
-  .PlanoForma h1{
-      font-size: 65px;
-      margin: 0;
-  }
-  .conteudo button:hover {
+}
+
+.centro button:hover {
+    background: #433022;
+}
+
+.PlanoForma h1 {
+    font-size: 65px;
+    margin: 0;
+}
+
+.conteudo button:hover {
     cursor: pointer;
     transform: scale(1.04);
     transition: all 1.0s;
 }
-#valores{
+
+#valores {
     bottom: 103px;
     position: relative;
 }
