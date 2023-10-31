@@ -75,4 +75,9 @@ input {
 
 .ulResultado li {
     line-height: 3vw;
+    font-size: x-large;
+}
+.ulResultado span{
+    font-weight: 900;
+    font-size: larger;
 }
