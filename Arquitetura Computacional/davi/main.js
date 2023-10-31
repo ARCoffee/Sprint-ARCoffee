@@ -11,12 +11,12 @@ const SERVIDOR_PORTA = 3300;
 // configure a linha abaixo caso queira que os dados capturados sejam inseridos no banco de dados.
 // false -> nao insere
 // true -> insere
-const HABILITAR_OPERACAO_INSERIR = false;
+const HABILITAR_OPERACAO_INSERIR = true;
 
 // altere o valor da variável AMBIENTE para o valor desejado:
 // API conectada ao banco de dados remoto, SQL Server -> 'producao'
 // API conectada ao banco de dados local, MySQL Workbench - 'desenvolvimento'
-const AMBIENTE = 'producao';
+const AMBIENTE = 'desenvolvimento';
 
 const serial = async (
     valoresDht11Umidade,
@@ -38,9 +38,9 @@ const serial = async (
                 // altere!
                 // CREDENCIAIS DO BANCO - MYSQL WORKBENCH
                 host: 'localhost',
-                user: 'USUARIO_DO_BANCO_LOCAL',
-                password: 'SENHA_DO_BANCO_LOCAL',
-                database: 'DATABASE_LOCAL'
+                user: 'insertGrupo10',
+                password: 'arcoffee2023',
+                database: 'arcoffee'
             }
         ).promise();
     } else if (AMBIENTE == 'producao') {
@@ -67,8 +67,8 @@ const serial = async (
     arduino.pipe(new serialport.ReadlineParser({ delimiter: '\r\n' })).on('data', async (data) => {
         //console.log(data);
         const valores = data.split(';');
-        // valor = 30
-        // sensor2 = valor * .30;
+        valor = 30
+        sensor2 = valor * .30;
         const dht11Umidade = parseFloat(valores[0]);
         const dht11Temperatura = parseFloat(valores[1]);
         const sensor2temp = dht11Temperatura * 1.2;
@@ -122,8 +122,8 @@ const serial = async (
                 // Este insert irá inserir dados de fk_aquario id=1 (fixo no comando do insert abaixo)
                 // >> você deve ter o aquario de id 1 cadastrado.
                 await poolBancoDados.execute(
-                    'INSERT INTO medida (dht11_umidade, dht11_temperatura, sensor2temp, sensor2umi, sensor3temp, momento, fk_aquario) VALUES (?, ?, ?, ?, ?, now(), 1)',
-                    [dht11Umidade, + ", " + dht11Temperatura, + ", " + sensor2temp + ", " + sensor2umi + ", " + sensor3temp + ", " + sensor3umi + ", " + sensor4temp + ", " + sensor4umi + ", " + sensor5temp + ", " + sensor5umi]
+                    'INSERT INTO historicoAlerta (temperatura1, temperatura2, temperatura3, temperatura4, temperatura5, umidade1, umidade2, umidade3, umidade4, umidade5, dataHora) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, now())',
+                    [dht11Umidade,  dht11Temperatura,  sensor2temp,  sensor2umi,  sensor3temp,  sensor3umi,  sensor4temp,  sensor4umi,  sensor5temp,  sensor5umi]
                 );
                 console.log("valores inseridos no banco: ", dht11Umidade + ", " + dht11Temperatura + ", " + sensor2temp + ", " + sensor2umi + ", " + sensor3temp + ", " + sensor3umi + ", " + sensor4temp + ", " + sensor4umi + ", " + sensor5temp + ", " + sensor5umi)
 
