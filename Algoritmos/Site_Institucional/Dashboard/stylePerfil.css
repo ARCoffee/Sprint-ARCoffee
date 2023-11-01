@@ -7,7 +7,7 @@
     align-items: center;
 }
 .boxPerfil{
-    background-color: #3e2217;
+    background-image: url(../imagens/backgroundCoffee.png);
     width: 900px;
     height: 500px;
     border-radius: 20px;
@@ -18,24 +18,34 @@
 .boxPerfil .pUser{
     margin: 0;
     color: rgb(0, 0, 0);
-    font-size: xx-large;
+    font-size: larger;
     padding-left: 2%;
 }
 .boxUser{
     display: flex;
-    
     justify-content: center;
     height: 400px;
     width: 300px;
-    background-color: #fceee1;
+    background-color: #b8a391; 
     border-radius: 25px;
     flex-direction: column;
+    margin-top: 10px;
+    margin-left: 10px;
 }
 .imagemUser{
     height: 200px;
     width: 200px;
     align-self: center;
+    margin-bottom: 20px;
+    padding-right: 10px;
 }
 .boxDadosUser{
-
+    display: flex;
+    flex-direction: column;
+}
+.boxDadosUser p{
+padding-top: 40px;
+padding-left: 20px;
+font-size: larger;
+color: aliceblue;
 }
