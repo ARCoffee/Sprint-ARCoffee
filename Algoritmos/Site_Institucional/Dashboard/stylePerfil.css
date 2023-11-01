@@ -24,13 +24,11 @@
 .boxUser{
     display: flex;
     justify-content: center;
-    height: 400px;
     width: 300px;
     background-color: #b8a391; 
     border-radius: 25px;
     flex-direction: column;
-    margin-top: 10px;
-    margin-left: 10px;
+    margin: 15px 15px; 
 }
 .imagemUser{
     height: 200px;
