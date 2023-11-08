@@ -1,3 +1,4 @@
+
 -- Criando banco de dados ARcoffee
 create database ARcoffee;
 
@@ -23,7 +24,6 @@ create table tipoCafe (
     minimoUmidade int,
     maximoUmidade int
 );
-
 
 -- Criando tabela estoque
 create table estoque(
@@ -82,9 +82,8 @@ create table historicoAlerta (
 	umidade3 int,
 	umidade4 int,
 	umidade5 int,
-	fk_Sensor int,
-	constraint fkSensor foreign key (fk_Sensor) references sensor (idSensor)
-);
+	dataHora datetime
+    );
 
 
 

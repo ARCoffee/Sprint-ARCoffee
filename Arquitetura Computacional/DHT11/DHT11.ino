@@ -4,11 +4,13 @@
 
 int dht_pin = A0;
 DHT dht_1 = DHT(dht_pin, dht_type); //pode-se configurar diversos sensores DHTxx
+int switch_pin = 0;
 
 void setup() 
 {
   Serial.begin(9600);
   dht_1.begin();
+  pinMode(switch_pin, INPUT);
 }
  
 void loop() 
