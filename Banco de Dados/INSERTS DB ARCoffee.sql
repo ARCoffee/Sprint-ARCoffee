@@ -13,8 +13,8 @@ insert into tipoCafe (nome, minimoTemperatura, maximoTemperatura, minimoUmidade,
     ('Bourbon', 14, 20, 12, 14),
     ('Catuaí', 16, 20, 11, 19);
     
--- Inserindo valores na tabela estoque
-insert into estoque (idEstoque, fk_Empresa, localizacaoEstq, volumeEstoque, fk_Cafe) values
+-- Inserindo valores na tabela Armazem
+insert into Armazem (idArmazem, fk_Empresa, localizacaoEstq, volumeArmazem, fk_Cafe) values
 	(1,1,'al santos, 327', 200,  1),
     (2,1,'al santos, 330', 212,  2),
     (3,1,'al santos, 334', 190,  3),
@@ -28,7 +28,7 @@ insert into estoque (idEstoque, fk_Empresa, localizacaoEstq, volumeEstoque, fk_C
     (2,5,'al Trans Americana, 1234', 150, 4);
     
 -- Inserindo valores na tabela sensor
-insert into sensor (PortaArduino, fk_Empresa, fk_Estoque) values
+insert into sensor (PortaArduino, fk_Empresa, fk_Armazem) values
     (3,1,1),
     (2,3,1),
     (1,4,1),

@@ -25,16 +25,16 @@ create table tipoCafe (
     maximoUmidade int
 );
 
--- Criando tabela estoque
-create table estoque(
-    idEstoque int,
+-- Criando tabela Armazem
+create table Armazem(
+    idArmazem int,
 	fk_Empresa int,
     localizacaoEstq varchar(100),
-	volumeEstoque int, 
+	volumeArmazem int, 
     fk_Cafe int,
-    primary key (idEstoque, fk_Empresa),
-    constraint Estoque_fk_Cafe foreign key (fk_Cafe) references tipoCafe(idCafe),
-    constraint Estoque_fk_Empresa foreign key (fk_Empresa) references Empresa(idEmpresa)
+    primary key (idArmazem, fk_Empresa),
+    constraint Armazem_fk_Cafe foreign key (fk_Cafe) references tipoCafe(idCafe),
+    constraint Armazem_fk_Empresa foreign key (fk_Empresa) references Empresa(idEmpresa)
 );
 
 
@@ -43,9 +43,9 @@ create table sensor(
     idSensor int primary key auto_increment,
     PortaArduino char(2),
     fk_Empresa int,
-    fk_Estoque int,
-    constraint sensor_fk_Empresa foreign key (fk_Empresa) references estoque(fk_Empresa), 
-    constraint sensor_fk_Estoque foreign key (fk_Estoque) references estoque(idEstoque)
+    fk_Armazem int,
+    constraint sensor_fk_Empresa foreign key (fk_Empresa) references Armazem(fk_Empresa), 
+    constraint sensor_fk_Armazem foreign key (fk_Armazem) references Armazem(idArmazem)
 );
 
 -- Criando tabela leitura
@@ -83,7 +83,7 @@ create table historicoAlerta (
 	umidade4 int,
 	umidade5 int,
 	dataHora datetime
-    );
+);
 
 
 
