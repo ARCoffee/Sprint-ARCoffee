@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <script src="./js/sessao.js"></script>
+
+  <link rel="stylesheet" href="./css/estilo.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/style.css">
+    
+    <title>Cadastro</title>
+    <!-- Icones importados -->
+    <link rel="website icon" type="png" href="assets/arcoffee.png">
+    <script src="https://kit.fontawesome.com/ce9ef0d266.js" crossorigin="anonymous"></script>
+  
+    <style>
+      body {
+      background: linear-gradient(to bottom right, #d2b48c, #6c482d) no-repeat;
+      background-attachment: fixed;
+
+    }
+
+    .cardCadastro {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      flex-direction: column;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.85);
+      color: #755f52;
+      width: 22%;
+      height: auto;
+      padding: 2%;
+      border-radius: 1vw;
+      border: solid #ffffff5e 2px;
+    }
+
+    .cardCadastro h2 {
+      font-size: 30px;
+      color: #c4b5a9;
+      margin: 0;
+      margin-bottom: 0.7vw;
+    }
+
+    .camposCadastro input {
+      height: 2vw;
+      width: 15vw;
+      margin: 3px;
+      padding-left: 2.3vw;
+      border-radius: 1vw;
+      border: none;
+    }
+
+    .camposCadastro i {
+      position: absolute;
+      margin: 13px
+    }
+
+    .camposCadastro {
+      display: flex;
+      align-items: center;
+      margin: 0.3vw;
+    }
+
+    .camposCadastro button {
+      height: 2vw;
+      width: 15vw;
+      border-radius: 1vw;
+      border: none;
+      cursor: pointer;
+    }
+    </style>
+</head>
+
+<body onload="listar()">
+  <!--header inicio-->
+  <!-- <div class="header">
+    <div class="container">
+      <h1 class="titulo">AquaTech</h1>
+      <ul class="navbar">
+        <li>
+          <a href="index.html">Inicial</a>
+        </li>
+        <li>
+          <a href="simulador.html">Simulador</a>
+        </li>
+        <li>|</li>
+        <li>
+          <a href="login.html">Login</a>
+        </li>
+        <li class="agora">
+          <a href="#">Cadastro</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  header fim
+
+  <div class="login">
+    <div class="alerta_erro">
+      <div class="card_erro" id="cardErro">
+        <span id="mensagem_erro"></span>
+      </div>
+    </div>
+    <div class="container">
+      <div class="card card-cadastro">
+        <h2>Bem-vindo!</h2>
+        <div class="formulario">
+
+                         Para inserir mais um campo, copie uma das inputs abaixo.
+                         Assim que inserir vá para o script abaixo.
+
+          <div class="campo">
+            <span>Empresa:</span>
+            <select name="empresas" id="listaEmpresas">
+              <option selected>Selecione uma empresa</option>
+            </select>
+          </div>
+          <div class="campo">
+            <span>Nome:</span>
+            <input id="nome_input" type="text" placeholder="Seu nome" />
+          </div>
+          <div class="campo">
+            <span>E-mail:</span>
+            <input id="email_input" type="text" placeholder="meuemail@provedor.com" />
+          </div>
+          <div class="campo">
+            <span>CPF:</span>
+            <input id="cpf_input" type="text" placeholder="00000000000" />
+          </div>
+          <div class="campo">
+            <span>Senha:</span>
+            <input id="senha_input" type="password" placeholder="******" />
+          </div>
+          <div class="campo">
+            <span>Confirmação da Senha:</span>
+            <input id="confirmacao_senha_input" type="password" placeholder="******" />
+          </div>
+          <button class="botao" onclick="cadastrar()">Cadastrar</button>
+        </div>
+        <div id="div_aguardar" class="loading-div">
+          <img src="./assets/circle-loading.gif" id="loading-gif" />
+        </div>
+
+        <div id="div_erros_login"></div>
+      </div>
+    </div>
+  </div>
+
+  footer inicio
+  <div class="footer">
+    <div class="container">
+      <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023</h4>
+      <span class="version">v1.0.0</span>
+    </div>
+  </div> -->
+  <!--footer fim-->
+
+  <!-- Header -->
+  <div class="header">
+    <div class="containerHeader">
+      <img src="assets/arcoffee.png">
+      <ul>
+        <a href="siteInstitucional.html">
+          <li>Home</li>
+        </a>
+
+        <a href="siteInstitucional.html">
+          <li>Nossos Valores</li>
+        </a>
+
+        <a href="siteInstitucional.html">
+          <li>Nossa Sede</li>
+        </a>
+        <a href="siteInstitucional.html">
+          <li>Planos</li>
+        </a>
+
+        <a href="calculadora.html">
+          <li>Orçamento</li>
+        </a>
+
+        <a href="Login.html">
+          <li>Login</li>
+        </a>
+
+        <li>|</li>
+
+        <a href="#">
+          <li>Cadastro</li>
+        </a>
+
+      </ul>
+    </div>
+  </div>
+  <!-- Fim do Header -->
+  <div class="imagem"></div>
+  <div class="cardCadastro">
+    <div style="left: 205%; top: -30%;" class="alerta_erro">
+      <div class="card_erro" id="cardErro">
+        <span id="mensagem_erro"></span>
+      </div>
+    </div>
+    <h2>Cadastro</h2>
+    <!-- <select name="empresas" id="listaEmpresas">
+      <option selected>Selecione uma empresa</option>
+    </select> -->
+     <div class="camposCadastro">
+      <i class="fa-solid fa-lock"></i>
+      <input id="inputCodigo" minLength="6" placeholder="Código Empresa">
+    </div> 
+
+
+    <div class="camposCadastro">
+      <i class="fa-solid fa-user"></i>
+      <input id="nome_input" type="text" minLength="3" placeholder="Usuário">
+    </div>
+
+    <div class="camposCadastro">
+      <i class="fa-solid fa-envelope"></i>
+      <input id="email_input" type="email" minLength="7" placeholder="Email">
+    </div>
+
+
+    <div class="camposCadastro">
+      <i class="fa-solid fa-lock"></i>
+      <input id="senha_input" type="password" placeholder="Senha">
+    </div>
+
+    <div class="camposCadastro">
+      <i class="fa-solid fa-right-to-bracket"></i>
+      <button onclick="cadastrar()">
+        Cadastre-se
+      </button>
+      <div id="div_erros_login"></div>
+      
+    </div>
+    <div id="div_aguardar" class="loading-div">
+      <img src="./assets/loading.gif" id="loading-gif" />
+    </div>
+
+  </div>
+  </div>
+ 
+
+</body>
+
+</html>
+
+<script>
+  function cadastrar() {
+    aguardar();
+
+    //Recupere o valor da nova input pelo nome do id
+    // Agora vá para o método fetch logo abaixo
+    var nomeVar = nome_input.value;
+    var emailVar = email_input.value;
+    var senhaVar = senha_input.value;
+    var empresaVar = inputCodigo.value
+
+    if (nomeVar.length < 1) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(campo nome vazio, por favor preencha todos os campos)";
+      finalizarAguardar();
+      return false;
+    }
+    else if (emailVar.indexOf('@') == -1 ||
+      emailVar.indexOf('.') == -1) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(email inválido)";
+      finalizarAguardar();
+      return false;
+    }
+    else if (senhaVar < 6) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(senha inválida. Min. 6 digitos)";
+      finalizarAguardar();
+      return false;
+    }
+    else if (
+      nomeVar == "" ||
+      emailVar == "" ||
+      senhaVar == "" ||
+      empresaVar == "" 
+    ) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(Mensagem de erro para todos os campos em branco)";
+
+      finalizarAguardar();
+      return false;
+    } else {
+      setInterval(sumirMensagem, 5000);
+    }
+
+    // Enviando o valor da nova input
+    fetch("/usuarios/cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        nomeServer: nomeVar,
+        emailServer: emailVar,
+        senhaServer: senhaVar,
+        empresaServer: empresaVar
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+          cardErro.style.display = "block";
+
+          mensagem_erro.innerHTML =
+            "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+          setTimeout(() => {
+            window.location = "login.html";
+          }, "2000");
+
+          limparFormulario();
+          finalizarAguardar();
+        } else {
+          throw "Houve um erro ao tentar realizar o cadastro!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+        finalizarAguardar();
+      });
+
+    return false;
+  }
+
+  function listar() {
+    fetch("/empresas/listar", {
+      method: "GET",
+    })
+      .then(function (resposta) {
+        resposta.json().then((empresas) => {
+          empresas.forEach((empresa) => {
+            // listaEmpresas.innerHTML += `<option value='${empresa.id}'>${empresa.cnpj}</option>`;
+          });
+        });
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+      });
+  }
+
+  function sumirMensagem() {
+    cardErro.style.display = "none";
+  }
+</script>

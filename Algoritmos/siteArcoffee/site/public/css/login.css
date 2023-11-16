@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,900&display=swap');
+
+h1 {
+    margin: 0;
+    margin-bottom: 5%;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+body {
+    background: linear-gradient(to left,
+            rgba(125, 105, 99, 1) 0%,
+            rgba(157, 141, 128, 1) 50%,
+            #b2a499 100%);
+}
+
+.header {
+    height: 5.2vw;
+    background-color: #3e2217;
+    box-shadow: 0px 0px 15px 8px #593823;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.containerHeader img {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    align-self: flex-start;
+    height: 5.5vw;
+}
+
+
+.header ul {
+    width: 700px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    color: whitesmoke;
+    font-size: medium;
+}
+
+.header ul :hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: all 0.5s;
+}
+
+.header .containerHeader {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+a {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.imagem {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../assets/imgFundoLogin3.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.login {
+    width: 250px;
+    height: 350px;
+    background-color: rgba(0, 0, 0, 0.85);
+    position: absolute;
+    color: #c4b5a9;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 50px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 1vw;
+    border: solid #ffffff5e 2px;
+
+}
+
+.background-container {
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    font-size: large;
+}
+
+.login h1 {
+    display: flex;
+    justify-content: center;
+    color: #c4b5a9;
+}
+
+.login input {
+    background-color: whitesmoke;
+    height: 2vw;
+    width: 15vw;
+    margin: 3px;
+    border-radius: 1vw;
+    border: none;
+    text-align: center;
+}
+
+.login button {
+    background-color: #4d3626;
+    border: solid black 1px;
+    padding: 15px;
+    width: 75%;
+    height: 13%;
+    border-radius: 50px;
+    cursor: pointer;
+    color: #c4b5a9;
+    font-size: 15px;
+    text-align: center;
+}
+
+.login li a {
+    text-decoration: none;
+    color: #c2b59b;
+    list-style: none;
+}
+
+.login li {
+    text-decoration: none;
+    color: rgb(247, 165, 12);
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.background-container input::placeholder {
+    color: #c2b59b;
+}

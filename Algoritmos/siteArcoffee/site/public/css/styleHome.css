@@ -1,0 +1,544 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,900&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+body {
+    background: linear-gradient(to left,
+            rgba(125, 105, 99, 1) 0%,
+            rgba(157, 141, 128, 1) 50%,
+            #b2a499 100%);
+}
+
+.header {
+    height: 5.2vw;
+    background-color: #3e2217;
+    box-shadow: 0px 0px 15px 8px #5d4c41;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.containerHeader img {
+    padding-bottom: 3px;
+    align-self: flex-start;
+    height: 5.5vw;
+}
+
+
+.header ul {
+    width: 60%;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    color: whitesmoke;
+    font-size: medium;
+}
+
+.header ul :hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: all 0.5s;
+}
+
+.header .containerHeader {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+a {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+/* ESTILIZAÇÃO IMAGENS */
+
+.bannerHome .containerHome img {
+    width: 95%;
+    height: 300px;
+    margin: auto;
+    display: flex;
+    border-radius: 20px;
+    object-fit: cover;
+    display: flex;
+    z-index: -1;
+    margin-top: 120px;
+    /* opacity: 83%; */
+}
+
+.bannerHome .containerHome {
+    display: flex;
+    position: relative;
+}
+
+.bannerHome .containerHome .filha {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    justify-content: center;
+    width: 100%;
+    z-index: 5;
+}
+
+
+/* ESTILIZAÇÃO TEXTO DA IMAGEM */
+.bannerHome .containerHome h1 {
+    background-color: #3e2217;
+    font-size: medium;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 5px;
+    width: 400px;
+    height: 80px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    text-shadow: 4px 4px 8px #593823;
+    letter-spacing: 1px;
+}
+
+/* ESTILIZAÇÃO ICONES */
+
+.conteudoH .containerH {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 100px;
+    margin-top: 80px;
+
+}
+
+.conteudoH .containerH .boxHome {
+    text-align: center;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.conteudoH .containerH .boxHome img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: 3%;
+    width: 100px;
+    height: 100px;
+
+}
+
+.boxHome p {
+    font-size: medium;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 1px;
+}
+
+/* TEXTO SOBRE NÓS */
+.text {
+    /* background-image: url(imagens/imgFundoLogin3.png); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-color: #3e2217; */
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.text p {
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+    font-size: larger;
+    color: #FFF;
+    text-shadow: 2px 2px 2px #3e2217;
+    width: 600px;
+    top: 38%;
+    justify-content: center;
+    flex-direction: column;
+    margin: 50px;
+    font-weight: 700;
+}
+
+#imgSobreNos {
+    display: flex;
+    justify-content: right;
+    align-self: flex-end;
+    width: 320px;
+    height: 320px;
+    padding-left: 10%;
+}
+
+/* Inicio pagina sustentabilidade! */
+.boxSelo {
+    background-image: url(imagens/background.png);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    background-repeat: no-repeat;
+
+
+}
+
+.boxSelo .containerSelo {
+    justify-content: space-evenly;
+    display: flex;
+    align-content: flex-end;
+    align-items: center;
+    padding-top: 100px;
+    padding-bottom: 200px;
+
+}
+
+.selo {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    width: auto;
+    margin: 50px;
+}
+
+.selo img {
+    width: 250px;
+    height: 250px;
+}
+
+.selo p {
+    text-align: center;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    color: #593823;
+}
+
+/* social thamires */
+.bannerSede {
+    display: flex;
+    background: linear-gradient(to left,
+            rgba(125, 105, 99, 1) 0%,
+            rgba(157, 141, 128, 1) 50%,
+            #b2a499 100%);
+    margin-top: 10%;
+    margin-bottom: 10%;
+    width: 100%;
+    justify-content: center;
+}
+
+.bannerSede .containerSede .imgbanner {
+    display: flex;
+    border-radius: 10px;
+    align-items: center;
+    margin-left: 10%;
+    margin-top: 5%;
+    width: 500px;
+    height: 450px;
+    box-shadow: 15px 10px 50px rgb(36, 23, 12);
+
+}
+
+/* social */
+.social {
+    display: flex;
+    margin: auto;
+
+}
+
+.social .containerSede {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 5px;
+
+}
+
+.social .containerSede ul {
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    flex-direction: row;
+}
+
+.social .containerSede .boxSede {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    border: 2px solid rgb(36, 23, 12);
+    border-radius: 30px;
+    width: 260px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.397);
+    margin-left: 5%;
+}
+
+.social .containerSede .boxSede:hover {
+    cursor: pointer;
+    box-shadow: 5px 5px 10px rgb(36, 23, 12);
+    ;
+    transform: scale(1.1);
+    transition: all 0.5s;
+}
+
+.social .containerSede img {
+    display: flex;
+    margin: 0;
+    width: 25px;
+    height: 25px;
+    flex-direction: row-reverse;
+    justify-content: center;
+}
+
+
+
+/* horario de funcionamento */
+.horario {
+    display: flex;
+}
+
+.horario .containerSede {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+    margin-left: 120px;
+    padding-top: 5px;
+
+}
+
+.horario h4 {
+    border: 2px solid rgb(36, 23, 12);
+    border-radius: 15px;
+    background-color:  rgba(36, 23, 12, 0.932);
+    height: 12%;
+    color: white;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    margin: 5px;
+    justify-content: center;
+    box-shadow: 15px 10px 10px rgb(36, 23, 12);
+}
+
+
+
+.horario .containerSede .local {
+    display: flex;
+    width: 400px;
+    border: 2px solid rgb(36, 23, 12);
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.397);
+    text-align: center;
+    justify-content: center;
+    margin-top: 5%;
+    flex-direction: row-reverse;
+    font-size: 20px;
+
+}
+
+.horario .containerSede .local:hover {
+    cursor: pointer;
+    box-shadow: 5px 5px 10px rgb(36, 23, 12);
+    transform: scale(1.1);
+    transition: all 0.5s;
+}
+
+.horario .container .local img {
+    width: 35px;
+    height: 35px;
+    margin: 0;
+    margin-top: 5px;
+    justify-content: center;
+}
+
+.endereco .container1 img {
+    width: 200px;
+    height: 200px;
+    margin: 350px;
+    margin-right: 500px;
+}
+
+#localizacao {
+    margin-top: 3%;
+    margin-left: 10px;
+    border: 1px solid rgb(36, 23, 12);
+    border-radius: 5px;
+    box-shadow: 15px 10px 10px rgb(36, 23, 12);
+
+}
+
+/* Tela planos */
+
+.section {
+    width: 100%;
+    display: flex;
+    position: absolute;
+    height: 100vh;
+    background: linear-gradient(to left,
+            rgba(125, 105, 99, 1) 0%,
+            rgba(157, 141, 128, 1) 50%,
+            #b2a499 100%);
+}
+
+.section .margemLateral {
+    width: 90vw;
+    margin: auto;
+    display: flex;
+}
+
+.textoPlanos {
+    width: 25vw;
+    color: whitesmoke;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.textoPlanos h1 {
+    font-size: 60px;
+    margin: 0;
+}
+
+.textoPlanos p {
+    font-size: 25px;
+    margin-top: 30px;
+}
+
+
+.textoOportunidade {
+    display: flex;
+    margin-top: 20px;
+}
+
+.textoOportunidade .oportunidades {
+    margin-left: 5px;
+    font-size: 20px;
+}
+
+.setaTexto {
+    display: flex;
+    margin-top: 10px;
+}
+
+.setaTexto img {
+    width: 70px;
+    height: 70px;
+}
+
+.anual {
+    margin-top: 35px;
+    font-size: 15px;
+    width: 200px;
+    text-align: center;
+}
+
+.checkimg {
+    margin-top: 5px;
+    width: 15px;
+    height: 15px;
+}
+
+
+.PlanoForma {
+    text-align: center;
+    margin-left: 25px;
+    width: 300px;
+    height: 500px;
+    background-color: #4e3828;
+    border-radius: 25px;
+    display: inline-block;
+    color: #fff;
+    box-shadow: 10px 10px 10px rgba(1, 1, 1, 0.528);
+}
+
+.centro {
+    margin-top: 10px;
+    background-color: #cccac5;
+    color: #4e3828;
+    height: 550px;
+    position: relative;
+    top: -25px;
+}
+
+.PlanoForma button {
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    width: 140px;
+    height: 50px;
+    border-width: 1px;
+    color: #4e3828;
+    border-color: #b2a499;
+    border-radius: 28px;
+    background: #b2a499;
+    cursor: pointer;
+}
+
+.conteudo {
+    display: flex;
+    padding-left: 0;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.centro button {
+    background: #4e3828;
+    border-color: #4e3828;
+    color: #b2a499;
+}
+
+.PlanoForma button:hover {
+    background: #9b8a7c;
+}
+
+.centro button:hover {
+    background: #433022;
+}
+
+.PlanoForma h1 {
+    font-size: 65px;
+    margin: 0;
+}
+
+.conteudo button:hover {
+    cursor: pointer;
+    transform: scale(1.04);
+    transition: all 1.0s;
+}
+
+#valores {
+    bottom: 103px;
+    position: relative;
+}
+
+#sede {
+    bottom: 100px;
+    position: relative;
+}
+
+.PlanoForma .conteudo img {
+    position: absolute;
+    width: 4.7vw;
+    top: 0;
+    transform: translate(-9.1vw, -65%) rotate(1.92turn);
+    z-index: 1;
+}
