@@ -63,7 +63,8 @@ create table leitura (
 create table usuario(
     idUsuario int,
 	fk_Empresa int,
-    login varchar(50),
+    nome varchar(50),
+    email varchar(255),
     senha varchar (50),
     primary key (idUsuario, fk_Empresa),
     constraint usuario_fk_Empresa foreign key (fk_Empresa) references Empresa(idEmpresa)
