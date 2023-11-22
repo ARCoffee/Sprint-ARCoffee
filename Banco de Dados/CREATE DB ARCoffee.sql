@@ -39,24 +39,15 @@ create table Armazem(
 
 
 -- Criando tabela sensor
-create table sensor(
-    idSensor int primary key auto_increment,
-    PortaArduino char(2),
+create table HistoricoLeitura(
+    idHistoricoSensor int primary key auto_increment,
+    temperatura float,
+	umidade float,
     fk_Empresa int,
     fk_Armazem int,
-    constraint sensor_fk_Empresa foreign key (fk_Empresa) references Armazem(fk_Empresa), 
-    constraint sensor_fk_Armazem foreign key (fk_Armazem) references Armazem(idArmazem)
-);
-
--- Criando tabela leitura
-create table leitura (
-    idLeitura int,
-    fk_Sensor int,
-    temperatura int,
-    umidade int,
     dataHora datetime,
-    primary key (idLeitura, fk_Sensor),
-    constraint leitura_fk_Sensor foreign key (fk_Sensor) references Sensor(idSensor)
+    constraint HistoricoLeitura_fk_Empresa foreign key (fk_Empresa) references Armazem(fk_Empresa), 
+    constraint HistoricoLeitura_fk_Armazem foreign key (fk_Armazem) references Armazem(idArmazem)
 );
 
 -- Criando tabela usuario
@@ -68,22 +59,6 @@ create table usuario(
     senha varchar (50),
     primary key (idUsuario, fk_Empresa),
     constraint usuario_fk_Empresa foreign key (fk_Empresa) references Empresa(idEmpresa)
-);
-
--- criando a tabela alerta sensor 
-create table historicoAlerta (
-	idhistoricoAlerta int,
-	temperatura1 int,
-	temperatura2 int,
-	temperatura3 int,
-	temperatura4 int,
-	temperatura5 int,
-	umidade1 int,
-	umidade2 int,
-	umidade3 int,
-	umidade4 int,
-	umidade5 int,
-	dataHora datetime
 );
 
 

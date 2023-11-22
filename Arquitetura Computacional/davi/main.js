@@ -79,6 +79,8 @@ const serial = async (
         const sensor4temp = dht11Temperatura * 1.4;
         const sensor5umi = dht11Umidade * 1.15;
         const sensor5temp = dht11Temperatura * 1.15;
+        const mediaTemp = dht11Temperatura + sensor2temp + sensor3temp + sensor4temp + sensor5temp;
+        const mediaUmi = dht11Umidade + sensor2umi + sensor3umi + sensor4umi + sensor5umi;
 
         valoresDht11Umidade.push(dht11Umidade);
         valoresDht11Temperatura.push(dht11Temperatura);
@@ -90,6 +92,8 @@ const serial = async (
         valoresDht11S4Umi.push(sensor4umi);
         valoresDht11S5Temp.push(sensor5temp);
         valoresDht11S5Umi.push(sensor5umi);
+        valoresDht11MediaTemp.push(mediaTemp);
+        valoresDht11MediaUmi.push(mediaUmi);
 
         if (HABILITAR_OPERACAO_INSERIR) {
             if (AMBIENTE == 'producao') {
@@ -122,10 +126,10 @@ const serial = async (
                 // Este insert irá inserir dados de fk_aquario id=1 (fixo no comando do insert abaixo)
                 // >> você deve ter o aquario de id 1 cadastrado.
                 await poolBancoDados.execute(
-                    'INSERT INTO historicoAlerta (temperatura1, temperatura2, temperatura3, temperatura4, temperatura5, umidade1, umidade2, umidade3, umidade4, umidade5, dataHora) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, now())',
-                    [dht11Umidade,  dht11Temperatura,  sensor2temp,  sensor2umi,  sensor3temp,  sensor3umi,  sensor4temp,  sensor4umi,  sensor5temp,  sensor5umi]
+                    'INSERT INTO HistoricoLeitura (temperatura, umidade, fk_Empresa, fk_Armazem, dataHora) VALUES (?, ?, ?, ?, now())',
+                    [mediaTemp,  mediaUmi, 1, 1]
                 );
-                console.log("valores inseridos no banco: ", dht11Umidade + ", " + dht11Temperatura + ", " + sensor2temp + ", " + sensor2umi + ", " + sensor3temp + ", " + sensor3umi + ", " + sensor4temp + ", " + sensor4umi + ", " + sensor5temp + ", " + sensor5umi)
+                console.log("valores inseridos no banco: ", mediaTemp + ", " + mediaUmi + ", " + 1 + ", " + 1)
 
             } else {
                 throw new Error('Ambiente não configurado. Verifique o arquivo "main.js" e tente novamente.');
@@ -149,7 +153,9 @@ const servidor = (
     valoresDht11S4Temp,
     valoresDht11S4Umi,
     valoresDht11S5Temp,
-    valoresDht11S5Umi
+    valoresDht11S5Umi,
+    valoresDht11MediaTemp,
+    valoresDht11MediaUmi
 ) => {
     const app = express();
     app.use((request, response, next) => {
@@ -190,6 +196,12 @@ const servidor = (
     app.get('/sensores/dht11/s5u', (_, response) => {
         return response.json(valoresDht11S5Umi);
     });
+    app.get('/sensores/dht11/mediaTemp', (_, response) => {
+        return response.json(valoresDht11MediaTemp);
+    });
+    app.get('/sensores/dht11/mediaUmi', (_, response) => {
+        return response.json(valoresDht11MediaUmi);
+    });
 }
 
 (async () => {
@@ -203,6 +215,8 @@ const servidor = (
     const valoresDht11S4Umi = [];
     const valoresDht11S5Temp = [];
     const valoresDht11S5Umi = [];
+    const valoresDht11MediaTemp = [];
+    const valoresDht11MediaUmi = [];
     await serial(
         valoresDht11Umidade,
         valoresDht11Temperatura,
@@ -213,7 +227,9 @@ const servidor = (
         valoresDht11S4Temp,
         valoresDht11S4Umi,
         valoresDht11S5Temp,
-        valoresDht11S5Umi
+        valoresDht11S5Umi,
+        valoresDht11MediaTemp,
+        valoresDht11MediaUmi
     );
     servidor(
         valoresDht11Umidade,
@@ -225,6 +241,8 @@ const servidor = (
         valoresDht11S4Temp,
         valoresDht11S4Umi,
         valoresDht11S5Temp,
-        valoresDht11S5Umi
+        valoresDht11S5Umi,
+        valoresDht11MediaTemp,
+        valoresDht11MediaUmi
     );
 })();
