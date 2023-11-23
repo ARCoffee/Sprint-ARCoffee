@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,900&display=swap');
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+hr {
+    width: 100%;
+}
+
+.bannerHelp {
+    height: 120px;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.bannerHelp p {
+    font-weight: 800;
+    display: flex;
+    font-size: x-large;
+    font-family: 'Montserrat', sans-serif;
+    margin-right: 10%;
+}
+
+.textHelp img {
+    margin: 20px 2px;
+    height: 30px;
+    width: 30px;
+}
+
+.textHelp {
+    align-items: center;
+    display: flex;
+    height: 80px;
+}
+
+.textHelp p {
+    font-weight: bolder;
+}
+
+.containerSac {
+    display: flex;
+    width: 380px;
+    height: 50px;
+    background-color: grey;
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerSac p {
+    margin: 0;
+}
+
+.containerAlertas {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.containerAlertas .alertas p {
+    color: white;
+    font-size: 110%;
+}
+
+.containerAlertas .alertas {
+    display: flex;
+    flex-direction: column;
+    background-color: #3e2217;
+    padding: 3%;
+    width: 27%;
+    border-radius: 15px;
+    justify-content: center;
+}
+
+.containerAlertas .containerGraphs {
+    display: flex;
+    border-radius: 15px;
+    height: fit-content;
+    padding: 3%;
+}
+
+.containerAlertas .containerGraphs img {
+    width: 13vw;
+    margin-left: 75px;
+    margin-right: 75px;
+}
+
+.containerAlertas .containerGraphs h2 {
+    margin: 0;
+}
+
+.containerAlertas .containerContexto {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #3e2217;
+    border-radius: 15px;
+    width: 700px;
+} 
+
+.containerAlertas .containerContexto .contTexto h2 {
+    color: white;
+}
+
+/* As bolinhas lá */
+.status{
+    margin: 5% 10%;
+    height: 19px;
+    width: 19px;
+    border-radius: 100%;
+}
+
+.ideal {
+    background-color: #2ea71e;
+}
+.alerta {
+    background-color: #ffff00;
+}
+.critico {
+    background-color: #ff0000;
+}
+
+.containerAlerta {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    justify-content: space-between;
+}
+
+.containerAlertas .status {
+    justify-content: end;
+}
+
+.containerAlertas p {
+    margin: 0;
+    width: fit-content;
+}
+
+.alertas h2 {
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 4%;
+}
+.tempo{
+    color: white;
+    font-size: larger;
+    font-weight: 600;
+}
+.legendaVertical{
+    font-size: larger;
+    font-weight: 400;
+    width: 200px;
+    height: 50px;
+    transform: rotate(-0.25turn);
+    display: flex;
+   justify-self: left;
+    color: white;
+    margin-right: 600px;
+    padding-left: 320px;
+}

@@ -2,81 +2,412 @@
 <html lang="pt-br">
 
 <head>
-    <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AquaTech | Dashboards</title>
+    <title>Dashboard</title>
 
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/dashboards.css">
+    <link rel="stylesheet" href="../css/styleDashboard.css">
     <script src="../js/sessao.js"></script>
     <script src="./../js/alerta.js"></script>
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+    <link rel="website icon" type="png" href="../assets/arcoffee.png">
+    <script src="https://kit.fontawesome.com/ce9ef0d266.js" crossorigin="anonymous"></script>
 
-    <!-- scripts do Chart.js - 2022-1 -->
+       <!-- scripts do Chart.js - 2022-1 -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <!--FONT AWESOME-->
-    <script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script>
 </head>
 
 <!-- <body onload=" atualizarFeed()"> -->
 
 <body>
 
-    <div class="janela">
-        <div class="header-left">
-            <h1>AquaTech</h1>
-
-            <div class="hello">
-                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
-            </div>
-
-            <div class="btn-nav-white">
-                <a href="./cards.html">
-                    <h3>Aquários</h3>
-                </a>
-            </div>
-
-            <div class="btn-nav">
-
-                <h3>Gráficos</h3>
-
-            </div>
-
-            <div class="btn-nav-white">
-                <a href="./mural.html">
-                    <h3>Mural de Avisos</h3>
-                </a>
-            </div>
-
-            <div class="btn-logout" onclick="limparSessao()">
-                <h3>Sair</h3>
-            </div>
-
+    <div class="sidebar">
+        <div class="conteudos">
+          <div class="icones">
+            <i class="fa-solid fa-user"></i>
+            <a href="perfil.html">
+            <p>Perfil</p>
+          </a>
+          </div>
+          <div id="aqui" class="icones">
+            <i class="fa-solid fa-house"></i>
+            <p>Armazém</p>
+          </div>
+          <div class="icones">
+            <a href="sensores.html">
+              <img src="../assets/iconeSensor.png" id="imgSensor">
+              <p>Registros</p>
+            </a>
+          </div>
+          <div class="icones">
+            <a href="ajuda.html">
+              <i class="fa-solid fa-circle-question"></i>
+              <p>Ajuda</p>
+            </a>
+          </div>
+          <div class="icones">
+            <a href="../siteInstitucional.html">
+              <i class="fa-solid fa-right-from-bracket"></i>
+              <p>Sair</p>
+            </a>
+          </div>
         </div>
-
-        <div class="dash">
-            <div id="alerta">
+      </div>
+      <!-- Fim da sidebar-->
+    
+      <div class="dash">
+        <select onchange="MudarDashArmazem()" id="selectArmazens">
+          <option value="1">Armazém 1</option>
+          <option value="2">Armazém 2</option>
+        </select>
+      </div>
+    
+    
+      <div class="graficos" id="PrimeiroArmazem">
+        <canvas id="myChart1"></canvas>
+        <canvas id="myChart2"></canvas>
+      </div>
+    
+      <div class="graficos" id="SegundoArmazem">
+        <canvas id="myChart3"></canvas>
+        <canvas id="myChart4"></canvas>
+      </div>
+    
+      <div class="espacoKPIs">
+    
+        <div class="KPI Temperatura">
+    
+          <p class="title">Temperatura Hoje</p>
+    
+          <div id="tempArmazem1">
+    
+            <div class="divisoria">
+    
+              <p>Mínima: 14°C</p>
+              <p> Horas: 05:00</p>
+    
+              <div class="status critico "></div>
+    
             </div>
-
-            <div class="btns-dash" id="btnAquario">
-                <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
+    
+            <div class="divisoria">
+    
+              <p>Máxima: 20.5°C</p>
+              <p> Horas: 13:00</p>
+    
+              <div class="status ideal"></div>
+    
             </div>
-            <div id="graficos">
+    
+          </div>
+    
+          <div id="tempArmazem2">
+    
+            <div class="divisoria">
+    
+              <p>Mínima: 14°C</p>
+              <p> Horas: 20:00</p>
+    
+              <div class="status critico "></div>
+    
             </div>
+    
+            <div class="divisoria">
+    
+              <p>Máxima: 24°C</p>
+              <p> Horas: 04:00</p>
+    
+              <div class="status critico"></div>
+    
+            </div>
+    
+          </div>
+    
         </div>
-    </div>
-
-
-</body>
-
-</html>
+    
+        <div class="KPI Umidade">
+    
+          <p class="title">Umidade Hoje</p>
+    
+          <div id="umiArmazem1">
+    
+            <div class="divisoria">
+    
+              <p>Mínima: 15.5%</p>
+              <p> Horas: 11:00</p>
+    
+              <div class="status ideal"></div>
+    
+            </div>
+    
+            <div class="divisoria">
+    
+              <p>Máxima: 18.5%</p>
+              <p> Horas: 23:00</p>
+    
+              <div class="status alerta"></div>
+    
+            </div>
+    
+          </div>
+    
+          <div id="umiArmazem2">
+    
+            <div class="divisoria">
+    
+              <p>Mínima: 10%</p>
+              <p> Horas: 16:00</p>
+    
+              <div class="status critico"></div>
+    
+            </div>
+    
+            <div class="divisoria">
+    
+              <p>Máxima: 15%</p>
+              <p> Horas: 01:00</p>
+    
+              <div class="status ideal"></div>
+    
+            </div>
+    
+          </div>
+    
+        </div>
+    
+        <div class="KPI Semanal">
+          <p class="title">Tempo Hoje Fora do Ideal</p>
+          <div id="tempoArmazem1">
+    
+            <div class="divisoria">
+    
+              <p>Temperatura:</p>
+              <p> 10 horas </p>
+              
+            </div>
+    
+            <div class="divisoria">
+              <p>Umidade: </p>
+              <p> 4 horas </p>
+            </div>
+          </div>
+    
+          <div id="tempoArmazem2">
+    
+            <div class="divisoria">
+              <p>Temperatura:</p>
+              <p> 19 horas </p>
+            </div>
+    
+            <div class="divisoria">
+              <p>Umidade: </p>
+              <p>22 horas </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      
+    </body>
+    
+    
+    </html>
+    <script>
+      const ctx1 = document.getElementById('myChart1');
+    
+      new Chart(ctx1, {
+        type: 'bar',
+        data: {
+          labels: ['seg', 'ter', 'qua', 'qui', 'sex', 'sab', 'dom'],
+          datasets: [{
+            label: 'Temperatura (em °C)',
+            data: [18, 17, 19.5, 20, 20.5, 19, 18.7],
+            borderWidth: 1,
+            borderColor: '#ca6702',
+            backgroundColor: '#ca6702',
+    
+          },
+    
+          {
+            label: 'Umidade (em %)',
+            data: [15.5, 15.9, 16, 16.5, 16.7, 17, 17],
+            borderWidth: 1,
+            borderColor: '#064f77',
+            backgroundColor: '#064f77',
+          }
+    
+          ]
+    
+        },
+        options: {
+          plugins: {
+            title: {
+              display: true,
+              text: 'Registros dos últimos 7 dias'
+            },
+          },
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+    
+      const ctx2 = document.getElementById('myChart2');
+    
+      new Chart(ctx2, {
+        type: 'line',
+        data: {
+          labels: ['01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00', '00:00'],
+          datasets: [{
+            label: 'Temperatura (em °C)',
+            data: [16, 19, 19, 19, 14, 18, 18, 20, 17, 15, 19, 20, 20.5, 15, 19, 15, 15, 15, 19, 17, 19, 19, 15],
+            borderWidth: 1,
+            borderColor: '#ca6702',
+            backgroundColor: '#ca6702',
+    
+    
+          },
+    
+          {
+            label: 'Umidade (em %)',
+            data: [16, 17, 16, 16, 18, 17, 16, 16, 17, 17, 15.5, 18, 18, 16, 17, 17, 16, 18, 18, 18, 17, 16, 18.5],
+            borderWidth: 1,
+            borderColor: '#064f77',
+            backgroundColor: '#064f77',
+          }
+    
+          ]
+    
+        },
+        options: {
+          plugins: {
+            title: {
+              display: true,
+              text: 'Status Atual'
+            },
+          },
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+    
+      // 2° parte
+      const ctx3 = document.getElementById('myChart3');
+    
+      new Chart(ctx3, {
+        type: 'bar',
+        data: {
+          labels: ['seg', 'ter', 'qua', 'qui', 'sex', 'sab', 'dom'],
+          datasets: [{
+            label: 'Temperatura (em °C)',
+            data: [20, 16, 17, 19, 21.5, 22, 18],
+            borderWidth: 1,
+            borderColor: '#ca6702',
+            backgroundColor: '#ca6702',
+    
+          },
+    
+          {
+            label: 'Umidade (em %)',
+            data: [17, 11, 15, 12, 17, 18, 12],
+            borderWidth: 1,
+            borderColor: '#064f77',
+            backgroundColor: '#064f77',
+          }
+    
+          ]
+    
+        },
+        options: {
+          plugins: {
+            title: {
+              display: true,
+              text: 'Registros dos últimos 7 dias'
+            },
+          },
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+    
+      const ctx4 = document.getElementById('myChart4');
+    
+      new Chart(ctx4, {
+        type: 'line',
+        data: {
+          labels: ['01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00', '00:00'],
+          datasets: [{
+            label: 'Temperatura (em °C)',
+            data: [20, 18, 19, 24, 23, 23, 21, 22, 21, 22, 23, 22, 21, 16, 15, 18, 17, 15, 16, 14, 15, 17.5, 16],
+            borderWidth: 1,
+            borderColor: '#ca6702',
+            backgroundColor: '#ca6702',
+    
+    
+          },
+    
+          {
+            label: 'Umidade (em %)',
+            data: [15, 11, 11, 14, 14, 12, 13, 13, 12, 13, 11, 14, 11, 12, 14, 10, 11, 11, 14, 13, 12, 13, 11],
+            borderWidth: 1,
+            borderColor: '#064f77',
+            backgroundColor: '#064f77',
+          }
+    
+          ]
+    
+        },
+        options: {
+          plugins: {
+            title: {
+              display: true,
+              text: 'Status Atual'
+            },
+          },
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+    
+      function MudarDashArmazem() {
+        var valor = selectArmazens.value
+        if (valor == '1') {
+          PrimeiroArmazem.style.display = 'flex';
+          tempArmazem1.style.display = 'block';
+          umiArmazem1.style.display = 'block';
+          SegundoArmazem.style.display = 'none';
+          tempArmazem2.style.display = 'none';
+          umiArmazem2.style.display = 'none';
+          tempoArmazem2.style.display = 'none';
+          tempoArmazem1.style.display = 'block';
+    
+        } else if (valor == '2') {
+          PrimeiroArmazem.style.display = 'none';
+          tempArmazem1.style.display = 'none';
+          umiArmazem1.style.display = 'none';
+          SegundoArmazem.style.display = 'flex';
+          tempArmazem2.style.display = 'block';
+          umiArmazem2.style.display = 'block';
+          tempoArmazem2.style.display = 'block';
+          tempoArmazem1.style.display = 'none';
+    
+        }
+      }
+    
+    </script>
 
 <script>
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
