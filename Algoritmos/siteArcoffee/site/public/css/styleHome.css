@@ -185,7 +185,7 @@ a {
 
 /* Inicio pagina sustentabilidade! */
 .boxSelo {
-    background-image: url(imagens/background.png);
+    background-image: url(assets/background.png);
     background-size: cover;
     display: flex;
     justify-content: center;
