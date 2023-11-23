@@ -52,7 +52,7 @@ create table HistoricoLeitura(
 
 -- Criando tabela usuario
 create table usuario(
-    idUsuario int,
+    idUsuario int auto_increment,
 	fk_Empresa int,
     nome varchar(50),
     email varchar(255),

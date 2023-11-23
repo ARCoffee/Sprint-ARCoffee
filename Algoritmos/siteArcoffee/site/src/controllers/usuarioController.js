@@ -63,7 +63,7 @@ function cadastrar(req, res) {
     var nome = req.body.nomeServer;
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
-    var empresaId = req.body.empresaServer;
+    var cnpj = req.body.cnpjServer;
 
     // Faça as validações dos valores
     if (nome == undefined) {
@@ -84,13 +84,13 @@ function cadastrar(req, res) {
     else if (senha < 6) {
         res.status(400).send("Sua senha precisar ter no min 6 digitos!");
     }
-    else if (empresaId == undefined) {
+    else if (cnpj == undefined) {
         res.status(400).send("Sua empresa está undefined!");
     }
     else {
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar(nome, email, senha, empresaId)
+        usuarioModel.cadastrar(nome, email, senha, cnpj)
             .then(
                 function (resultado) {
                     res.json(resultado);
