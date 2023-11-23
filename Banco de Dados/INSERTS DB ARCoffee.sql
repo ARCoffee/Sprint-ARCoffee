@@ -63,7 +63,7 @@ insert into leitura (idLeitura, fk_Sensor, temperatura, umidade, dataHora) value
     
 
 -- Inserindo valores na tabela usuario
-insert into usuario (idUsuario, fk_Empresa, login, senha) values
+insert into usuario (idUsuario, fk_Empresa, email, senha) values
     (1,1,'RenatoSantos32', 'Maria29072001'),
     (2,1,'MariaSantos11', 'Renato24071984'),
     (1,2,'Jonas192', '2991Jonas'),

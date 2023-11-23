@@ -28,7 +28,9 @@ const serial = async (
     valoresDht11S4Temp,
     valoresDht11S4Umi,
     valoresDht11S5Temp,
-    valoresDht11S5Umi
+    valoresDht11S5Umi,
+    valoresDht11MediaTemp,
+    valoresDht11MediaUmi
 ) => {
     let poolBancoDados = ''
 
@@ -79,8 +81,8 @@ const serial = async (
         const sensor4temp = dht11Temperatura * 1.4;
         const sensor5umi = dht11Umidade * 1.15;
         const sensor5temp = dht11Temperatura * 1.15;
-        const mediaTemp = dht11Temperatura + sensor2temp + sensor3temp + sensor4temp + sensor5temp;
-        const mediaUmi = dht11Umidade + sensor2umi + sensor3umi + sensor4umi + sensor5umi;
+        const mediaTemp = ((dht11Temperatura + sensor2temp + sensor3temp + sensor4temp + sensor5temp) / 5).toFixed(2);
+        const mediaUmi = ((dht11Umidade + sensor2umi + sensor3umi + sensor4umi + sensor5umi) / 5).toFixed(2);
 
         valoresDht11Umidade.push(dht11Umidade);
         valoresDht11Temperatura.push(dht11Temperatura);

@@ -1,0 +1,1 @@
+select de hora em hora com media dos 10 ultimos dados coletados, plotar media no grafico
