@@ -23,3 +23,5 @@ on fk_Empresa = idEmpresa join tipocafe on idcafe = fk_cafe where idEmpresa = 1;
 select Armazem.localizacaoEstq as Localização_Armazem, sensor.fk_Armazem as Sensor, leitura.temperatura as Temperatura, leitura.umidade as Umidade
 from Armazem join sensor on Armazem.fk_Empresa = sensor.fk_Empresa and idArmazem = fk_Armazem join leitura on idSensor = fk_Sensor
 where idArmazem = 1 and Armazem.fk_empresa = 1;
+
+
