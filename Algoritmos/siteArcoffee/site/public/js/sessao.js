@@ -6,7 +6,7 @@ function validarSessao() {
     var b_usuario = document.getElementById("b_usuario");
 
     if (email != null && nome != null) {
-        b_usuario.innerHTML = nome;
+        b_usuario.innerHTML = `<p class="pUser" id="b_usuario"> Nome da Empresa: ${nome} </p>`
     } else {
         window.location = "../login.html";
     }   

@@ -102,9 +102,9 @@ select {
 
 .graficos {
     display: flex;
-    /* margin-left: 10px; */
+    margin-left: 300px;
     margin-bottom: 20px;
-    width: 100%;
+    width: 600px;
     height: 300px;
     justify-content: center;
 }

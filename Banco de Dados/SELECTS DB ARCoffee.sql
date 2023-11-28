@@ -9,7 +9,7 @@ select * from estoque;
 
 select * from tipoCafe;
 
-select * from leitura;
+select * from historicoleitura;
 
 select * from sensor;
 

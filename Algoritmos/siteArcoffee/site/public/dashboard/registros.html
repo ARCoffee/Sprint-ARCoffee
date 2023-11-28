@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+
+  <link rel="stylesheet" href="../css/styleDashboard.css">
+  <script src="../js/sessao.js"></script>
+  <script src="./../js/alerta.js"></script>
+
+  <link rel="website icon" type="png" href="../assets/arcoffee.png">
+  <script src="https://kit.fontawesome.com/ce9ef0d266.js" crossorigin="anonymous"></script>
+
+  <!-- scripts do Chart.js - 2022-1 -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<!-- <body onload=" atualizarFeed()"> -->
+
+    <body>
+
+        <div class="sidebar">
+          <div class="conteudos">
+            <div class="icones">
+              <i class="fa-solid fa-user"></i>
+              <a href="perfil.html">
+                <p>Perfil</p>
+              </a>
+            </div>
+            <div id="aqui" class="icones">
+              <i class="fa-solid fa-house"></i>
+              <p>Armazém</p>
+            </div>
+            <div class="icones">
+              <a href="sensores.html">
+                <img src="../assets/iconeSensor.png" id="imgSensor">
+                <p>Registros</p>
+              </a>
+            </div>
+            <div class="icones">
+              <a href="ajuda.html">
+                <i class="fa-solid fa-circle-question"></i>
+                <p>Ajuda</p>
+              </a>
+            </div>
+            <div class="icones">
+              <a href="../siteInstitucional.html">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <p>Sair</p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Fim da sidebar-->
+
+        <div class="dash">
+            <select onchange="MudarDashArmazem()" id="selectArmazens">
+              <option value="1">Armazém 1</option>
+              <option value="2">Armazém 2</option>
+            </select>
+          </div>
+          <div class="graficos" id="PrimeiroArmazem">
+            <canvas id="myChart3"></canvas>
+          </div>        
+
+<script>
+     const ctx3 = document.getElementById('myChart3');
+
+new Chart(ctx3, {
+  type: 'bar',
+  data: {
+    labels: ['seg', 'ter', 'qua', 'qui', 'sex', 'sab', 'dom'],
+    datasets: [{
+      label: 'Temperatura (em °C)',
+      data: [20, 16, 17, 19, 21.5, 22, 18],
+      borderWidth: 1,
+      borderColor: '#ca6702',
+      backgroundColor: '#ca6702',
+
+    },
+
+    {
+      label: 'Umidade (em %)',
+      data: [17, 11, 15, 12, 17, 18, 12],
+      borderWidth: 1,
+      borderColor: '#064f77',
+      backgroundColor: '#064f77',
+    }
+
+    ]
+
+  },
+  options: {
+    plugins: {
+      title: {
+        display: true,
+        text: 'Registros dos últimos 7 dias'
+      },
+    },
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});
+
+function MudarDashArmazem() {
+    var valor = selectArmazens.value
+    if (valor == '1') {
+      PrimeiroArmazem.style.display = 'flex';
+      tempArmazem1.style.display = 'block';
+      umiArmazem1.style.display = 'block';
+      SegundoArmazem.style.display = 'none';
+      tempArmazem2.style.display = 'none';
+      umiArmazem2.style.display = 'none';
+      tempoArmazem2.style.display = 'none';
+      tempoArmazem1.style.display = 'block';
+
+    } else if (valor == '2') {
+      PrimeiroArmazem.style.display = 'none';
+      tempArmazem1.style.display = 'none';
+      umiArmazem1.style.display = 'none';
+      SegundoArmazem.style.display = 'flex';
+      tempArmazem2.style.display = 'block';
+      umiArmazem2.style.display = 'block';
+      tempoArmazem2.style.display = 'block';
+      tempoArmazem1.style.display = 'none';
+
+    }
+  }
+</script>
