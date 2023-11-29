@@ -104,10 +104,11 @@ select {
     display: flex;
     margin-left: 300px;
     margin-bottom: 20px;
-    width: 600px;
+    width: 780px;
     height: 300px;
     justify-content: center;
 }
+
 
 #myChart1 {
     width: 50%;
