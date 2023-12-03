@@ -1,69 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Sensores Dashboard</title>
-		<link rel="website icon" type="png" href="../assets/arcoffee.png" />
-		<link rel="stylesheet" href="../css/styleDashboard.css" />
-		<link rel="stylesheet" href="../css/stylePerfil.css" />
-		<script
-			src="https://kit.fontawesome.com/ce9ef0d266.js"
-			crossorigin="anonymous"
-		></script>
-	</head>
+<html lang="pt-br">
 
-	<body>
-		<div class="sidebar">
-			<div class="conteudos">
-				<div  id="aqui" class="icones">
-					<i class="fa-solid fa-user"></i>
-					<p>Perfil</p>
-				</div>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Perfil</title>
+	<link rel="website icon" type="png" href="../assets/arcoffee.png" />
+	<link rel="stylesheet" href="../css/styleDashboard.css" />
+	<link rel="stylesheet" href="../css/stylePerfil.css" />
+	<script src="https://kit.fontawesome.com/ce9ef0d266.js" crossorigin="anonymous"></script>
+</head>
 
-				<div class="icones">
-					<a href="dashboard.html">
-						<i class="fa-solid fa-house"></i>
-						<p>Armazém</p>
-					</a>
-				</div>
+<body>
+	<div class="sidebar">
+		<div class="conteudos">
+			<div id="aqui" class="icones">
+				<i class="fa-solid fa-user"></i>
+				<p>Perfil</p>
+			</div>
 
-				<div class="icones">
-					<a href="sensores.html">
-						<img src="../assets/iconeSensor.png" id="imgSensor" />
-						<p>Registros</p>
-					</a>
-				</div>
+			<div class="icones">
+				<a href="dashboard.html">
+					<i class="fa-solid fa-house"></i>
+					<p>Armazém</p>
+				</a>
+			</div>
 
-				<div class="icones">
-					<a href="ajuda.html">
-                        <i class="fa-solid fa-circle-question"></i>
-                        <p>Ajuda</p>
-                    </a>
-				</div>
+			<div class="icones">
+				<a href="sensores.html">
+					<i class="fa-solid fa-chart-simple"></i>
+					<p>Registros</p>
+				</a>
+			</div>
 
-				<div class="icones">
-					<a href="../index.html">
-						<i class="fa-solid fa-right-from-bracket"></i>
-						<p>Sair</p>
-					</a>
-				</div>
+			<div class="icones">
+				<a href="ajuda.html">
+					<i class="fa-solid fa-circle-question"></i>
+					<p>Ajuda</p>
+				</a>
+			</div>
+
+			<div class="icones">
+				<a href="../index.html">
+					<i class="fa-solid fa-right-from-bracket"></i>
+					<p>Sair</p>
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="box">
+		<div class="containerPerfil">
+			<h2>Informações da Empresa</h2>
+			<div class="boxDadosUser">
+				<span>Empresa: AR Coffe</span>
+				<span>CNPJ:</span>
+				<span>Email:</span>
+				<span>Plano:</span>
 			</div>
 		</div>
 
-        <div class="containerPerfil">
-            <div class="boxPerfil">
-				<div class="boxUser">
-					<img class="imagemUser" src="../assets/usericon.png" alt="">
-					<p class="pUser" id="b_usuario"> Nome da Empresa: Arcoffee </p>
-					<p class="pUser">Plano: Pro Plus</p>
-					<p class="pUser"></p>
-				</div>
-				<div class="boxDadosUser">
-					<p> Usuário: ADM </p>
-					<p> Tipo: administrador </p>
-					<p>Email: arcoffee@outlook.com </p>
-				</div>
-            </div>
-          
-        </div>
+
+
+		<div class="boxDadosFuncionario"> <br>
+			<h2>Cadastrar Funcionário
+				<i class="fa-solid fa-user-plus"></i>
+			</h2>
+			<span>Nome</span> <br>
+			<input id="user_funcionario" placeholder="nome"> <br>
+			<span>Email</span> <br>
+			<input id="email_funcionario" placeholder="exemplo@gmail.com"> <br>
+			<span>Senha</span> <br>
+			<input id="senha_funcionario" placeholder="********" type="password">
+		</div>
+	</div>
+</body>
+</html>
+		
