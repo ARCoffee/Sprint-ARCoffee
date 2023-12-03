@@ -1,49 +1,102 @@
-.containerPerfil{
-    margin: auto;
-    width: 98%;
-    height: 600px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+a {
+    text-decoration: none;
 }
+
+.box {
+    display: flex;
+    margin-top: 30px;
+}
+
+
+.containerPerfil{
+    background-color: #f9f7f3;
+    border: 2px solid #ccc; 
+    padding: 20px; 
+    width: 600px; 
+    height: 400px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    margin-top: 100px;
+    border-radius: 8px;
+}
+
+
+.containerPerfil h2 {
+    text-align: center;
+}
+
 .boxPerfil{
-    background-image: url(../assets/backgroundCoffee.png);
-    width: 900px;
-    height: 500px;
+    /* width: 900px;
+    height: 500px; */
     border-radius: 20px;
     margin-right: 20px;
     display: flex;
+    margin-top: 20px ;
+}
+
+.boxPerfil i {
+    color: #000000;
+    font-size: 80px;
+    margin-left: 30px;
     
-}
-.boxPerfil .pUser{
-    margin: 0;
-    color: rgb(0, 0, 0);
-    font-size: larger;
-    padding-left: 2%;
-}
-.boxUser{
-    display: flex;
-    justify-content: center;
-    width: 300px;
-    background-color: #b8a391; 
-    border-radius: 25px;
-    flex-direction: column;
-    margin: 15px 15px; 
-}
-.imagemUser{
-    height: 200px;
-    width: 200px;
-    align-self: center;
-    margin-bottom: 20px;
-    padding-right: 10px;
-}
+} 
+
 .boxDadosUser{
     display: flex;
-    flex-direction: column;
+    flex-direction: column;    
+  
 }
-.boxDadosUser p{
+
+.boxDadosUser span{
 padding-top: 40px;
 padding-left: 20px;
 font-size: larger;
-color: aliceblue;
+color: black;
+font-weight: 600;
+}
+
+
+/* CRIAR NOVOS USUARIOS */
+
+
+.boxDadosFuncionario {
+    background-color: #f9f7f3;
+    border: 2px solid #ccc; 
+    padding: 20px;
+    width: 600px; 
+    height: 400px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    margin-top: 100px;
+    border-radius: 8px;
+    margin-bottom: 30px; 
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+}
+
+.boxDadosFuncionario i {
+    font-size: 25px;
+    
+}
+
+.cadastroFuncionario h2 {
+    text-align: center;
+}
+
+.boxDadosFuncionario input {
+    border-radius: 5px;
+    text-align: center;
+    height: 20px;
+}
+
+.boxDadosFuncionario span{
+    font-size: medium;
+    color: black;
+    font-weight: 600;
+    }
+
+.sidebar .conteudos .icones i:hover {
+    color: goldenrod;
+    cursor: pointer;
 }

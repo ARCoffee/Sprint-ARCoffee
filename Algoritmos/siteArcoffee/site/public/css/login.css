@@ -28,20 +28,22 @@ body {
 }
 
 .containerHeader img {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    align-self: flex-start;
+    /* padding-top: 5px;
+    padding-bottom: 5px; */
+    /* align-self: flex-start; */
     height: 5.5vw;
+    margin-bottom: 10px;
 }
 
 
 .header ul {
-    width: 700px;
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    color: whitesmoke;
-    font-size: medium;
+     width: 150px;
+     list-style: none;
+     display: flex;
+     justify-content: space-between;
+     color: #d4c8c8;
+     font-size: medium;
+     font-weight: 600;   
 }
 
 .header ul :hover {
