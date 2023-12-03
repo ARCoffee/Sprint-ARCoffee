@@ -29,7 +29,7 @@ create table tipoCafe (
 create table Armazem(
     idArmazem int,
 	fk_Empresa int,
-    localizacaoEstq varchar(100),
+    localizacaoArmazem varchar(100),
 	volumeArmazem int, 
     fk_Cafe int,
     primary key (idArmazem, fk_Empresa),
