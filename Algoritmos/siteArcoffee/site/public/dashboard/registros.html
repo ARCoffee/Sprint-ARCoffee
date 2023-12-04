@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard</title>
+  <title>Registros</title>
 
   <link rel="stylesheet" href="../css/styleDashboard.css">
   <script src="../js/sessao.js"></script>
@@ -21,116 +21,298 @@
 
 <!-- <body onload=" atualizarFeed()"> -->
 
-    <body>
+<body>
 
-        <div class="sidebar">
-          <div class="conteudos">
-            <div class="icones">
-              <i class="fa-solid fa-user"></i>
-              <a href="perfil.html">
-                <p>Perfil</p>
-              </a>
-            </div>
-            <div id="aqui" class="icones">
-              <i class="fa-solid fa-house"></i>
-              <p>Armazém</p>
-            </div>
-            <div class="icones">
-              <a href="sensores.html">
-                <img src="../assets/iconeSensor.png" id="imgSensor">
-                <p>Registros</p>
-              </a>
-            </div>
-            <div class="icones">
-              <a href="ajuda.html">
-                <i class="fa-solid fa-circle-question"></i>
-                <p>Ajuda</p>
-              </a>
-            </div>
-            <div class="icones">
-              <a href="../siteInstitucional.html">
-                <i class="fa-solid fa-right-from-bracket"></i>
-                <p>Sair</p>
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- Fim da sidebar-->
+  <div class="sidebar">
+    <div class="conteudos">
+      <div class="icones">
+        <a href="perfil.html">
+          <i class="fa-solid fa-user"></i>
+          <p>Perfil</p>
+        </a>
+      </div>
 
-        <div class="dash">
-            <select onchange="MudarDashArmazem()" id="selectArmazens">
-              <option value="1">Armazém 1</option>
-              <option value="2">Armazém 2</option>
-            </select>
-          </div>
-          <div class="graficos" id="PrimeiroArmazem">
-            <canvas id="myChart3"></canvas>
-          </div>        
+      <div class="icones">
+        <a href="dashboard.html">
+        <i class="fa-solid fa-house"></i>
+        <p>Armazém</p>
+        </a>
+      </div>
 
-<script>
-     const ctx3 = document.getElementById('myChart3');
+      <div id="aqui" class="icones">
+        <i class="fa-solid fa-chart-simple"></i>
+        <p>Registros</p>
+      </div>
 
-new Chart(ctx3, {
-  type: 'bar',
-  data: {
-    labels: ['seg', 'ter', 'qua', 'qui', 'sex', 'sab', 'dom'],
-    datasets: [{
-      label: 'Temperatura (em °C)',
-      data: [20, 16, 17, 19, 21.5, 22, 18],
-      borderWidth: 1,
-      borderColor: '#ca6702',
-      backgroundColor: '#ca6702',
+      <div class="icones">
+        <a href="ajuda.html">
+          <i class="fa-solid fa-circle-question"></i>
+          <p>Ajuda</p>
+        </a>
+      </div>
 
-    },
+      <div class="icones">
+        <a href="../siteInstitucional.html">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          <p>Sair</p>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- Fim da sidebar-->
 
-    {
-      label: 'Umidade (em %)',
-      data: [17, 11, 15, 12, 17, 18, 12],
-      borderWidth: 1,
-      borderColor: '#064f77',
-      backgroundColor: '#064f77',
-    }
 
-    ]
+  <!-- Graficos -->
+  <div class="dash">
+    <select onchange="MudarDashArmazem()" id="selectArmazens">
+      <option value="1">Armazém 1</option>
+      <option value="2">Armazém 2</option>
+    </select>
+  </div>
 
-  },
-  options: {
-    plugins: {
-      title: {
-        display: true,
-        text: 'Registros dos últimos 7 dias'
+
+
+  <div class="graficos" id="primeiroArmazem">
+    <canvas id="myChart3"></canvas>
+    <canvas id="myChart4"></canvas>
+  </div>
+
+
+
+  <div id="informacao1">
+    <div class="mostrarPicos">
+      <div class="box-informacao">
+        <h2 id="maiorTemp">Temperatura mais alta da semana</h2>
+        <p>22°C - Sábado</p>
+
+        <h2 id="menorTemp">Temperatura mais baixa da semana</h2>
+        <p>11°C - Terça</p>
+      </div>
+
+
+      <div class="box-informacao">
+        <h2 id="maiorUmid">Umidade mais alta da semana</h2>
+        <p>60% - Quarta</p>
+
+        <h2 id="menorUmid">Umidade mais baixa da semana</h2>
+        <p>8% - Sábado</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="graficos" id="segundoArmazem">
+    <canvas id="myChart5"></canvas>
+    <canvas id="myChart6"></canvas>
+  </div>
+
+
+  <div id="informacao2">
+    <div class="mostrarPicos">
+      <div class="box-informacao">
+        <h2 id="maiorTemp">Temperatura mais alta da semana</h2>
+        <p>32°C - Sábado</p>
+
+        <h2 id="menorTemp">Temperatura mais baixa da semana</h2>
+        <p>5°C - Quinta</p>
+      </div>
+
+
+      <div class="box-informacao">
+        <h2 id="maiorUmid">Umidade mais alta da semana</h2>
+        <p>70% - Quinta</p>
+
+        <h2 id="menorUmid">Umidade mais baixa da semana</h2>
+        <p>15% - Quinta</p>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    const ctx3 = document.getElementById('myChart3');
+
+    new Chart(ctx3, {
+      type: 'bar',
+      data: {
+        labels: ['seg', 'ter', 'qua', 'qui', 'sex', 'sab', 'dom'],
+        datasets: [{
+          label: 'Temperatura Máxima(em °C)',
+          data: [20, 16, 17, 19, 21.5, 22, 18],
+          borderWidth: 1,
+          borderColor: '#F04A00',
+          backgroundColor: '#F04A00',
+
+        },
+
+        {
+          label: 'Temperatura Miníma (em °C)',
+          data: [17, 11, 15, 12, 17, 18, 12],
+          borderWidth: 1,
+          borderColor: '#FFEF00',
+          backgroundColor: '#FFEF00',
+        }
+
+        ]
+
       },
-    },
-    scales: {
-      y: {
-        beginAtZero: true
+      options: {
+        plugins: {
+          title: {
+            display: true,
+            text: 'Registros dos últimos 7 dias'
+          },
+        },
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+    const ctx4 = document.getElementById('myChart4');
+
+    new Chart(ctx4, {
+      type: 'bar',
+      data: {
+        labels: ['seg', 'ter', 'qua', 'qui', 'sex', 'sab', 'dom'],
+        datasets: [{
+          label: 'Umidade Máxima(em %)',
+          data: [20, 22, 60, 30, 25, 20, 55],
+          borderWidth: 1,
+          borderColor: '#064f77',
+          backgroundColor: '#064f77',
+
+        },
+
+        {
+          label: 'Umidade Miníma (em %)',
+          data: [15, 11, 18, 12, 10, 8, 15],
+          borderWidth: 1,
+          borderColor: '#FFEF00',
+          backgroundColor: '#FFEF00',
+        }
+
+        ]
+
+      },
+      options: {
+        plugins: {
+          title: {
+            display: true,
+            text: 'Registros dos últimos 7 dias'
+          },
+        },
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+    const ctx5 = document.getElementById('myChart5');
+
+    new Chart(ctx5, {
+      type: 'bar',
+      data: {
+        labels: ['seg', 'ter', 'qua', 'qui', 'sex', 'sab', 'dom'],
+        datasets: [{
+          label: 'Temperatura Máxima(em °C)',
+          data: [21, 19, 25, 11, 21, 32, 30],
+          borderWidth: 1,
+          borderColor: '#F04A00',
+          backgroundColor: '#F04A00',
+
+        },
+
+        {
+          label: 'Temperatura Miníma (em °C)',
+          data: [7, 12, 12, 5, 16, 22, 26],
+          borderWidth: 1,
+          borderColor: '#FFEF00',
+          backgroundColor: '#FFEF00',
+        }
+
+        ]
+
+      },
+      options: {
+        plugins: {
+          title: {
+            display: true,
+            text: 'Registros dos últimos 7 dias'
+          },
+        },
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+    const ctx6 = document.getElementById('myChart6');
+
+    new Chart(ctx6, {
+      type: 'bar',
+      data: {
+        labels: ['seg', 'ter', 'qua', 'qui', 'sex', 'sab', 'dom'],
+        datasets: [{
+          label: 'Umidade Máxima(em %)',
+          data: [50, 65, 62, 70, 45, 51, 67],
+          borderWidth: 1,
+          borderColor: '#064f77',
+          backgroundColor: '#064f77',
+
+        },
+
+        {
+          label: 'Umidade Miníma (em %)',
+          data: [27, 40, 35, 15, 20, 45, 21],
+          borderWidth: 1,
+          borderColor: '#FFEF00',
+          backgroundColor: '#FFEF00',
+        }
+
+        ]
+
+      },
+      options: {
+        plugins: {
+          title: {
+            display: true,
+            text: 'Registros dos últimos 7 dias'
+          },
+        },
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+    // Fim dos graficos
+
+
+
+
+    function MudarDashArmazem() {
+      var valor = selectArmazens.value
+      if (valor == '1') {
+        primeiroArmazem.style.display = 'flex';
+        informacao1.style.display = 'block';
+        segundoArmazem.style.display = 'none';
+        informacao2.style.display = 'none';
+
+      } else if (valor == '2') {
+        primeiroArmazem.style.display = 'none';
+        informacao1.style.display = 'none';
+        segundoArmazem.style.display = 'flex';
+        informacao2.style.display = 'block';
+
       }
     }
-  }
-});
-
-function MudarDashArmazem() {
-    var valor = selectArmazens.value
-    if (valor == '1') {
-      PrimeiroArmazem.style.display = 'flex';
-      tempArmazem1.style.display = 'block';
-      umiArmazem1.style.display = 'block';
-      SegundoArmazem.style.display = 'none';
-      tempArmazem2.style.display = 'none';
-      umiArmazem2.style.display = 'none';
-      tempoArmazem2.style.display = 'none';
-      tempoArmazem1.style.display = 'block';
-
-    } else if (valor == '2') {
-      PrimeiroArmazem.style.display = 'none';
-      tempArmazem1.style.display = 'none';
-      umiArmazem1.style.display = 'none';
-      SegundoArmazem.style.display = 'flex';
-      tempArmazem2.style.display = 'block';
-      umiArmazem2.style.display = 'block';
-      tempoArmazem2.style.display = 'block';
-      tempoArmazem1.style.display = 'none';
-
-    }
-  }
-</script>
+  </script>
