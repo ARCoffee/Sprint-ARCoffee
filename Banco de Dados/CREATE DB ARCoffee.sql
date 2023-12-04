@@ -9,9 +9,8 @@ use ARcoffee;
 create table Empresa (
     idEmpresa int primary key auto_increment,
     nome varchar (50),
-    cpf_cnpjEmpresa varchar(14) not null,
+    cnpj varchar(14) not null,
     contato varchar(11),
-    areaContratada float,
     Plano varchar(15)
 );
 
@@ -51,7 +50,7 @@ create table HistoricoLeitura(
 );
 
 -- Criando tabela usuario
-create table usuario(
+create table funcionario(
     idUsuario int auto_increment,
 	fk_Empresa int,
     nome varchar(50),
