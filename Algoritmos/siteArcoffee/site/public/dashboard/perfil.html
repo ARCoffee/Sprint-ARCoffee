@@ -77,4 +77,50 @@
 	</div>
 </body>
 </html>
-		
+
+<script>
+	function cadastrarFuncionario(){
+
+		var nomeVar = user_funcionario.value
+		var emailVar = email_funcionario.value
+		var senhaVar = senha_funcionario.value
+
+		fetch("/usuarios/cadastrarFuncionario", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        nomeServer: nomeVar,
+        emailServer: emailVar,
+        senhaServer: senhaVar,
+      }), 
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+          cardErro.style.display = "block";
+
+          mensagem_erro.innerHTML =
+            "Funcionário cadastrado com sucesso!";
+    
+          limparFormulario();
+          finalizarAguardar();
+        } else {
+          throw "Houve um erro ao tentar realizar o cadastro!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+        finalizarAguardar();
+      });
+
+    return false;
+  }
+
+
+	
+</script>

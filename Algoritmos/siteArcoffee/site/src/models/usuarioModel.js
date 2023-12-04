@@ -22,7 +22,16 @@ function cadastrar(nome, email, senha, cnpj) {
     return database.executar(instrucao);
 }
 
+function cadastrarFuncionario(nome, email, senha, ){
+    var instrucao = `
+        INSERT INTO usuario (nome, email, senha, fk_empresa) VALUES ('${nome}', '${email}', '${senha} ${idEmpresa}');
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    cadastrarFuncionario
 };

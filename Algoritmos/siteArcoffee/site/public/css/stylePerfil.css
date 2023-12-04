@@ -100,3 +100,22 @@ font-weight: 600;
     color: goldenrod;
     cursor: pointer;
 }
+
+button {
+    height: 30px;
+    width: 140px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: large;
+    align-self: center;
+    color: beige;
+    background-color: #3e2217;
+    margin-top: 30px;
+  
+}
+
+button:hover {
+    transition: all 0.4s;
+    transform: scale(1.1);
+}
