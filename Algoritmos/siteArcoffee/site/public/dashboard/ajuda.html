@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8" />
+		<meta charset="UTF-8" /> 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Sensores Dashboard</title>
+		<title>Ajuda</title>
 		<link rel="website icon" type="png" href="../assets/arcoffee.png" />
 		<link rel="stylesheet" href="../css/styleDashboard.css" />
 		<link rel="stylesheet" href="../css/styleAjuda.css" />
@@ -14,6 +15,7 @@
 	</head>
 
 	<body>
+
 		<div class="sidebar">
 			<div class="conteudos">
 				<div class="icones">
@@ -31,7 +33,7 @@
 				</div>
 
 				<div class="icones">
-					<a href="registros.html">
+					<a href="sensores.html">
 						<i class="fa-solid fa-chart-simple"></i>
 						<p>Registros</p>
 					</a>
@@ -53,12 +55,13 @@
 
 		<div class="bannerHelp">
 			<div class="textHelp">
-				<h1>Ajuda</h1>
-				<img src="../assets/iconeDuvidaBlack.png" />
+				<i class="fa-solid fa-circle-question"></i>
+				<h2>Ajuda</h2>
 			</div>
 
 			<div class="textHelp">
 				<div class="containerSac">
+					<i class="fa-solid fa-envelope"></i>
 					<p class="sac">support@arcoffee.atlassian.net</p>
 				</div>
 			</div>
@@ -69,25 +72,26 @@
       <div class="containerContexto">
 
         <div class="contTexto">
-          <h2>Legendas dos gráficos do armazém</h2>
+          <h2>Legendas dos Gráficos</h2>
         </div>
         <div class="containerGraphs">
           
           <div class="graphBarra">
-            <img src="../assets/graphbar.png" />
+			<img src="../assets/chartBar.png">
 			<span class="tempo">dias</span>
           </div>
           
           <div class="graphLinha">
-            <img src="../assets/graphline.png" alt="" />
-			<span class="tempo">horas</span>
+			<img src="../assets/chartLine.png">
+			 
+			  <span class="tempoHora">horas</span>
           </div>
         </div>
         <span class="legendaVertical">temperatura e umidade</span>
       </div>
 
 			<div class="alertas">
-				<h2>Tipos de Alertas:</h2>
+				<h2>Tipos de Alertas</h2>
 
 				<div class="containerAlerta">
 					<p>Alerta crítico</p>
@@ -104,12 +108,18 @@
 				<hr/>
 
 				<div class="containerAlerta">
-					<p>Temperatura/umidade ideal</p>
+					<p>Temperatura / Umidade ideal</p>
 					<div class="status ideal"></div>
 				</div>
 
 				<hr />
 			</div>
+		</div>
+		<div class="manualInstalacao">
+			<a  download="baixarManual" href="">
+				<i class="fa-solid fa-download"></i> 
+				<span>Manual de Instalação</span>
+			</a>
 		</div>
 		<script data-jsd-embedded data-key="01e7f800-8bc6-4074-a0f1-d4c28534ba1e" data-base-url="https://jsd-widget.atlassian.com" src="https://jsd-widget.atlassian.com/assets/embed.js"></script>
 	</body>
