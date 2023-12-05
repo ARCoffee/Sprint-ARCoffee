@@ -65,5 +65,4 @@ function buscarMedidasEmTempoReal(idArmazem) {
 module.exports = {
     buscarUltimasMedidas,
     buscarMedidasEmTempoReal, 
-    listar
 }
