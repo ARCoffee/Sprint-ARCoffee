@@ -3,25 +3,26 @@ use arcoffee;
 
 select * from Empresa;
 
-select * from Usuario;
+select * from funcionario;
 
-select * from estoque;
+select * from Armazem;
 
 select * from tipoCafe;
 
-select * from historicoleitura;
+select * from historicoSensor;
 
-select * from sensor;
+-- select * from sensor;
 
 -- Joins 
 
-select empresa.nome as Empresa, usuario.login as Login from empresa join usuario on fk_Empresa = idEmpresa;
+select empresa.nome as Empresa, funcionario.nome as Login from empresa join funcionario on fk_Empresa = idEmpresa;
 
-select empresa.nome as Empresa, Armazem.localizacaoEstq as Local_Armazem, tipocafe.nome as Tipo_Cafe from Empresa join Armazem 
+select empresa.nome as Empresa, Armazem.localizacaoArmazem as Local_Armazem, tipocafe.nome as Tipo_Cafe from Empresa join Armazem 
 on fk_Empresa = idEmpresa join tipocafe on idcafe = fk_cafe where idEmpresa = 1;
 
-select Armazem.localizacaoEstq as Localização_Armazem, sensor.fk_Armazem as Sensor, leitura.temperatura as Temperatura, leitura.umidade as Umidade
-from Armazem join sensor on Armazem.fk_Empresa = sensor.fk_Empresa and idArmazem = fk_Armazem join leitura on idSensor = fk_Sensor
-where idArmazem = 1 and Armazem.fk_empresa = 1;
+select Armazem.localizacaoArmazem as Localização_Armazem, historicoSensor.fk_Armazem as Sensor, historicoSensor.temperatura as Temperatura, historicoSensor.umidade as Umidade
+from Armazem join historicoSensor ON Armazem.fk_Empresa = historicoSensor.fk_Empresa
+AND Armazem.idArmazem = historicoSensor.fk_Armazem
+WHERE Armazem.idArmazem = 1 AND Armazem.fk_empresa = 1;
 
 

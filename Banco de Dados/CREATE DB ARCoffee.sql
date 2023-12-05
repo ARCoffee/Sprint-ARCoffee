@@ -38,7 +38,7 @@ create table Armazem(
 
 
 -- Criando tabela sensor
-create table HistoricoLeitura(
+create table HistoricoSensor(
     idHistoricoSensor int primary key auto_increment,
     temperatura float,
 	umidade float,
@@ -51,13 +51,13 @@ create table HistoricoLeitura(
 
 -- Criando tabela usuario
 create table funcionario(
-    idUsuario int auto_increment,
+    idFuncionario int auto_increment,
 	fk_Empresa int,
     nome varchar(50),
     email varchar(255),
     senha varchar (50),
-    primary key (idUsuario, fk_Empresa),
-    constraint usuario_fk_Empresa foreign key (fk_Empresa) references Empresa(idEmpresa)
+    primary key (idFuncionario, fk_Empresa),
+    constraint funcionario_fk_Empresa foreign key (fk_Empresa) references Empresa(idEmpresa)
 );
 
 
