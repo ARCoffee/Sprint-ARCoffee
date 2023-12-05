@@ -39,9 +39,18 @@ function cadastrarFuncionario(nome, email, senha, fk_Empresa) {
     return database.executar(instrucao);
 }
 
+function armazens(fk_Empresa) {
+    var instrucao = `
+         select * from Armazem where fk_Empresa = ${fk_Empresa};
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
 module.exports = {
     autenticar,
     cadastrar,
     cadastrarFuncionario,
-    empresa
+    empresa,
+    armazens
 };

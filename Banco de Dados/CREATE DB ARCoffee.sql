@@ -14,7 +14,6 @@ create table Empresa (
     Plano varchar(15)
 );
 
-select * from funcionario;
 -- Criando tabela tipoCafe
 create table tipoCafe (
     idCafe int primary key auto_increment,
@@ -27,7 +26,7 @@ create table tipoCafe (
 
 -- Criando tabela Armazem
 create table Armazem(
-    idArmazem int,
+    idArmazem int auto_increment,
 	fk_Empresa int,
     localizacaoArmazem varchar(100),
 	volumeArmazem int, 
@@ -36,6 +35,7 @@ create table Armazem(
     constraint Armazem_fk_Cafe foreign key (fk_Cafe) references tipoCafe(idCafe),
     constraint Armazem_fk_Empresa foreign key (fk_Empresa) references Empresa(idEmpresa)
 );
+desc Armazem;
 
 
 -- Criando tabela sensor
@@ -50,6 +50,7 @@ create table HistoricoSensor(
     constraint HistoricoLeitura_fk_Armazem foreign key (fk_Armazem) references Armazem(idArmazem)
 );
 
+
 -- Criando tabela usuario
 create table funcionario(
     idFuncionario int auto_increment,
@@ -61,6 +62,8 @@ create table funcionario(
     constraint funcionario_fk_Empresa foreign key (fk_Empresa) references Empresa(idEmpresa)
 );
 
+select * from funcionario;
+select * from empresa;
 
 
 

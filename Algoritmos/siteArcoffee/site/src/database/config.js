@@ -20,9 +20,10 @@ var mysql = require("mysql2");
 // CONEXÃO DO MYSQL WORKBENCH
 var mySqlConfig = {
     host: "localhost",
-    database: "arcoffee",
+    database: "ARcoffee",
     user: "insertGrupo10",
     password: "arcoffee2023",
+    port: 3308,
 };
 
 function executar(instrucao) {

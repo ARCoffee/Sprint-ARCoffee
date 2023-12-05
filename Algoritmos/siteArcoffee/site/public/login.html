@@ -162,7 +162,7 @@
 
 <script>
 
-
+    var fk_Empresa = "";
     function entrar() {
         aguardar();
 
@@ -205,10 +205,7 @@
                     sessionStorage.ID_EMPRESA = json.id;
                     sessionStorage.CONTATO_EMPRESA = json.contato;
                     sessionStorage.CNPJ = json.cnpj;
-
-                    setTimeout(function () {
-                        window.location = "./dashboard/dashboard.html";
-                    }, 1000); // apenas para exibir o loading
+                    
 
                 });
 
@@ -226,11 +223,54 @@
             console.log(erro);
         })
 
-        return false;
+        setTimeout(function (){
+            fk_Empresa = sessionStorage.getItem('ID_EMPRESA')
+        fetch(`/usuarios/armazens`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                fk_EmpresaServer: fk_Empresa
+            })
+           
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DA CONTAGEM DOS ARMAZENS!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(resposta => {
+                    console.log(resposta);
+                    console.log(JSON.stringify(resposta));
+                    console.log(resposta.lenght);
+
+                    for(var contador = 0; contador < resposta.length; contador ++) {
+                        sessionStorage.setItem(`idArmazem${contador + 1}`, resposta[contador].idArmazem);
+                    }
+                    
+                     setTimeout(function () {
+                         window.location = "./dashboard/dashboard.html";
+                     }, 1000); 
+
+                });
+
+            } else {
+                console.log("Houve um erro ao tentar realizar a contagem dos armazens!");
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+    }, 300) 
+
     }
 
     function sumirMensagem() {
         cardErro.style.display = "none"
     }
+
+
+
 
 </script>

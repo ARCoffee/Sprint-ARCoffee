@@ -94,6 +94,7 @@ p {
 
 select {
     background-color: #3e2217;
+    ;
     color: white;
     padding: 12px;
     width: 250px;
@@ -111,7 +112,7 @@ select {
 
 .graficos {
     display: flex;
-    margin-left: 306px;
+    margin-left: 250px;
     margin-bottom: 20px;
     width: 780px;
     height: 300px;
@@ -146,7 +147,7 @@ select {
     margin: 5px;
 }
 
-/* ESTLIZAÇÃO REGISTROS */
+/* Estilizando a parte dos registros */
 
 .mostrarPicos {
     display: flex;
@@ -159,29 +160,22 @@ select {
     display: flex;
     flex-direction: column;
     width: 35%;
+    background-color: #42261b;
+    border-radius: 15px;
+    border: 1px solid black;
+    padding-left: 1%;
+    padding-right: 1%;
     text-align: center;
-    background-color: #f9f7f3;
-    border: 2px solid #ccc; 
-    padding: 10px; 
-    height: 300px;
-    margin: 0 auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    margin-top: 100px;
-    border-radius: 8px;
-    margin-bottom: 5%;
-}
-
-.informacao1 p {
-    color: black;
+   
 }
 
 .mostrarPicos .box-informacao #maiorTemp {
-    color: #ff0000;
+    color: #ee4b00;
     font-size: 28px;
 }
 
 .mostrarPicos .box-informacao #menorTemp {
-    color: #ffb703;
+    color: #FFEF00;
     font-size: 28px;
 }
 
@@ -191,7 +185,7 @@ select {
 }
 
 .mostrarPicos .box-informacao #menorUmid {
-    color: #70a7c1;
+    color: #8ecae6;
     font-size: 28px;
 }
 
@@ -199,7 +193,7 @@ select {
     font-size: 25px;
     font-weight: 600;
     text-align: center;
-    color: black;
+    color: white;
 }
 
 #segundoArmazem {
@@ -219,7 +213,7 @@ select {
 .KPI {
     margin-top: 30px;
     background-color: #3e2217;
-    
+    ;
     width: 300px;
     height: 200px;
     border-radius: 20px;
@@ -249,7 +243,7 @@ select {
 }
 
 .alerta {
-    background-color: #ffb703;
+    background-color: #ffff00;
 }
 
 .ideal {
@@ -257,7 +251,7 @@ select {
 }
 
 .critico {
-    background-color: #ff0000; 
+    background-color: #ff0000;
 }
 
 /*Segundo Armazem*/

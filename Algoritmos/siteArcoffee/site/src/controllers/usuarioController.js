@@ -1,6 +1,10 @@
 var usuarioModel = require("../models/usuarioModel");
 var aquarioModel = require("../models/aquarioModel");
 
+
+
+
+
 function autenticar(req, res) {
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
@@ -171,10 +175,33 @@ function cadastrarFuncionario(req, res) {
     }
 }
 
+function armazens(req, res) {
+
+    var fk_Empresa = req.body.fk_EmpresaServer;
+
+    usuarioModel.armazens(fk_Empresa)
+    .then(
+        function (resultado) {
+            res.json(resultado);
+        }
+    ).catch(
+        function (erro) {
+            console.log(erro);
+            console.log(
+                "\nHouve um erro ao realizar o cadastro! Erro: ",
+                erro.sqlMessage
+            );
+            res.status(500).json(erro.sqlMessage);
+        }
+    );
+}
+
+
 
 module.exports = {
     autenticar,
     cadastrar,
     cadastrarFuncionario,
-    empresa
+    empresa,
+    armazens
 }
