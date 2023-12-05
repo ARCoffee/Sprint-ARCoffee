@@ -14,6 +14,7 @@ create table Empresa (
     Plano varchar(15)
 );
 
+select * from funcionario;
 -- Criando tabela tipoCafe
 create table tipoCafe (
     idCafe int primary key auto_increment,
@@ -59,6 +60,7 @@ create table funcionario(
     primary key (idFuncionario, fk_Empresa),
     constraint funcionario_fk_Empresa foreign key (fk_Empresa) references Empresa(idEmpresa)
 );
+
 
 
 
