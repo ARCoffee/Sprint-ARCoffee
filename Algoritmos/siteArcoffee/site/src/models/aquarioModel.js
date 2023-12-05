@@ -2,7 +2,7 @@ var database = require("../database/config");
 
 function buscarEmpresa(empresaId) {
 
-  instrucaoSql = `select * from usuario u where fk_empresa = ${empresaId}`;
+  instrucaoSql = `select * from funcionario func where fk_empresa = ${empresaId}`;
 
   console.log("Executando a instrução SQL: \n" + instrucaoSql);
   return database.executar(instrucaoSql);

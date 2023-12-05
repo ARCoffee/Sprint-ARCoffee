@@ -14,15 +14,15 @@
     href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet" />
 
-    <link rel="stylesheet" href="css/style.css">
-    
-    <title>Cadastro</title>
-    <!-- Icones importados -->
-    <link rel="website icon" type="png" href="assets/arcoffee.png">
-    <script src="https://kit.fontawesome.com/ce9ef0d266.js" crossorigin="anonymous"></script>
-  
-    <style>
-      body {
+  <link rel="stylesheet" href="css/style.css">
+
+  <title>Cadastro</title>
+  <!-- Icones importados -->
+  <link rel="website icon" type="png" href="assets/arcoffee.png">
+  <script src="https://kit.fontawesome.com/ce9ef0d266.js" crossorigin="anonymous"></script>
+
+  <style>
+    body {
       background: linear-gradient(to bottom right, #d2b48c, #6c482d) no-repeat;
       background-attachment: fixed;
 
@@ -80,11 +80,21 @@
       border: none;
       cursor: pointer;
     }
-    </style>
+
+    select {
+      height: 2vw;
+      width: 17.5vw;
+      margin: 3px;
+      padding-left: 2.3vw;
+      border-radius: 1vw;
+      border: none;
+
+    }
+  </style>
 </head>
 
-<body >
-  
+<body>
+
   <!-- Header -->
   <div class="header">
     <div class="containerHeader">
@@ -134,16 +144,22 @@
     <!-- <select name="empresas" id="listaEmpresas">
       <option selected>Selecione uma empresa</option>
     </select> -->
-     <div class="camposCadastro">
+    <div class="camposCadastro">
       <i class="fa-solid fa-lock"></i>
       <input id="inputCodigo" placeholder="CNPJ">
-    </div> 
+    </div>
 
 
     <div class="camposCadastro">
       <i class="fa-solid fa-user"></i>
-      <input id="nome_input" type="text" minLength="3" placeholder="Usuário">
+      <input id="nome_input" type="text" minLength="3" placeholder="Nome da Empresa">
     </div>
+
+    <div class="camposCadastro">
+      <i class="fa-solid fa-phone"></i>
+      <input id="telefone_input" type="text" minLength="3" placeholder="Telefone de Contato">
+    </div>
+
 
     <div class="camposCadastro">
       <i class="fa-solid fa-envelope"></i>
@@ -157,12 +173,21 @@
     </div>
 
     <div class="camposCadastro">
+      <i class="fa-solid fa-paperclip"></i>
+      <select name="" id="planos_input">
+        <option value="Basic">Plano Basic</option>
+        <option value="Pro">Plano Pro</option>
+        <option value="Pro Plus">Plano Pro Plus</option>
+      </select>
+    </div>
+
+    <div class="camposCadastro">
       <i class="fa-solid fa-right-to-bracket"></i>
       <button onclick="cadastrar()">
         Cadastre-se
       </button>
       <div id="div_erros_login"></div>
-      
+
     </div>
     <div id="div_aguardar" class="loading-div">
       <img src="./assets/loading.gif" id="loading-gif" />
@@ -170,7 +195,7 @@
 
   </div>
   </div>
- 
+
 
 </body>
 
@@ -183,8 +208,10 @@
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
     var nomeVar = nome_input.value;
+    var telefoneVar = telefone_input.value;
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
+    var planosVar = planos_input.value;
     var cnpj = inputCodigo.value
 
     if (nomeVar.length < 1) {
@@ -213,7 +240,7 @@
       nomeVar == "" ||
       emailVar == "" ||
       senhaVar == "" ||
-      cnpj == "" 
+      cnpj == ""
     ) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
@@ -226,7 +253,7 @@
     }
 
     // Enviando o valor da nova input
-    fetch("/usuarios/cadastrar", {
+    fetch("/usuarios/empresa", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -235,13 +262,26 @@
         // crie um atributo que recebe o valor recuperado aqui
         // Agora vá para o arquivo routes/usuario.js
         nomeServer: nomeVar,
-        emailServer: emailVar,
-        senhaServer: senhaVar,
+        telefoneServer: telefoneVar,
+        planoServer: planosVar,
         cnpjServer: cnpj
-      }), 
+      }),
     })
       .then(function (resposta) {
         console.log("resposta: ", resposta);
+        fetch("/usuarios/cadastrar", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            // crie um atributo que recebe o valor recuperado aqui
+            // Agora vá para o arquivo routes/usuario.js
+            nomeServer: nomeVar,
+            emailServer: emailVar,
+            senhaServer: senhaVar
+          }),
+        })
 
         if (resposta.ok) {
           cardErro.style.display = "block";

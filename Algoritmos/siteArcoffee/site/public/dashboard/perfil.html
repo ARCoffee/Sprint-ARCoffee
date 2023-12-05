@@ -11,7 +11,7 @@
 	<script src="https://kit.fontawesome.com/ce9ef0d266.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body onload="listarEmpresa()">
 	<div class="sidebar">
 		<div class="conteudos">
 			<div id="aqui" class="icones">
@@ -47,16 +47,16 @@
 				</a>
 			</div>
 		</div>
-	</div> 
+	</div>
 
 	<div class="box">
 		<div class="containerPerfil">
 			<h2>Informações da Empresa</h2>
 			<div class="boxDadosUser">
-				<span>Empresa: AR Coffee</span>
-				<span>CNPJ:</span>
-				<span>Email:</span>
-				<span>Plano:</span>
+				<span>Empresa:  <span id="nomeempresa"></span></span>
+				<span>CNPJ:  <span id="cnpjEmpresa"></span></span>
+				<span>Contato: <span id="contatoEmpresa"></span></span>
+				<span>Plano:  <span id="planoEmpresa"></span></span>
 			</div>
 		</div>
 
@@ -66,7 +66,7 @@
 			<h2>Cadastrar Funcionário
 				<i class="fa-solid fa-user-plus"></i>
 			</h2>
-			<span>Nome</span> <br>
+			<span>Nome</span><br>
 			<input id="user_funcionario" placeholder="nome"> <br>
 			<span>Email</span> <br>
 			<input id="email_funcionario" placeholder="exemplo@gmail.com"> <br>
@@ -76,51 +76,65 @@
 		</div>
 	</div>
 </body>
+
 </html>
 
 <script>
-	function cadastrarFuncionario(){
+	function listarEmpresa() {
+		var plano = sessionStorage.PLANO_USUARIO;
+		var nome = sessionStorage.NOME_EMPRESA;
+		var contato = sessionStorage.CONTATO_EMPRESA;
+		var cnpjemp = sessionStorage.CNPJ;
+
+		nomeempresa.innerHTML = nome;
+		cnpjEmpresa.innerHTML = cnpjemp;
+		planoEmpresa.innerHTML = plano;
+		contatoEmpresa.innerHTML = contato;
+		
+
+	}
+	function cadastrarFuncionario() {
 
 		var nomeVar = user_funcionario.value
 		var emailVar = email_funcionario.value
 		var senhaVar = senha_funcionario.value
 
 		fetch("/usuarios/cadastrarFuncionario", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        // crie um atributo que recebe o valor recuperado aqui
-        // Agora vá para o arquivo routes/usuario.js
-        nomeServer: nomeVar,
-        emailServer: emailVar,
-        senhaServer: senhaVar,
-      }), 
-    })
-      .then(function (resposta) {
-        console.log("resposta: ", resposta);
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({
+				// crie um atributo que recebe o valor recuperado aqui
+				// Agora vá para o arquivo routes/usuario.js
+				nomeServer: nomeVar,
+				emailServer: emailVar,
+				senhaServer: senhaVar,
+			}),
+		})
+			.then(function (resposta) {
+				console.log("resposta: ", resposta);
 
-        if (resposta.ok) {
-          cardErro.style.display = "block";
+				if (resposta.ok) {
+					cardErro.style.display = "block";
 
-          mensagem_erro.innerHTML =
-            "Funcionário cadastrado com sucesso!";
-    
-          limparFormulario();
-          finalizarAguardar();
-        } else {
-          throw "Houve um erro ao tentar realizar o cadastro!";
-        }
-      })
-      .catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-        finalizarAguardar();
-      });
+					mensagem_erro.innerHTML =
+						"Funcionário cadastrado com sucesso!";
 
-    return false;
-  }
+					limparFormulario();
+					finalizarAguardar();
+				} else {
+					throw "Houve um erro ao tentar realizar o cadastro!";
+				}
+			})
+			.catch(function (resposta) {
+				console.log(`#ERRO: ${resposta}`);
+				finalizarAguardar();
+			});
+
+		return false;
+	}
 
 
-	
+
 </script>
