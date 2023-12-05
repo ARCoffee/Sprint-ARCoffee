@@ -24,7 +24,8 @@ function buscarMedidasEmTempoReal(idArmazem) {
         umidade,
                 DATE_FORMAT(dataHora,'%H:%i:%s') as momento_grafico, 
                 fk_Armazem 
-                from medida where fk_Armazem = ${idArmazem} 
+                from historicoSensor 
+                where fk_Armazem = ${idArmazem} 
                 order by idHistoricoSensor desc limit 1`;
 
 

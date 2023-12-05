@@ -32,7 +32,7 @@ function buscarMedidasEmTempoReal(req, res) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {
-            res.status(204).send("Nenhum resultado encontrado!")
+            res.status(204).send("Nenhum resultado encontrado na atualização da tabela!")
         }
     }).catch(function (erro) {
         console.log(erro);

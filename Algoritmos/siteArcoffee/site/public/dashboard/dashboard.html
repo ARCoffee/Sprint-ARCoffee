@@ -467,7 +467,7 @@
 
 		let myChart2 = new Chart(document.getElementById(`myChart2`), config2);
 
-	  setTimeout(() => atualizarGrafico(idArmazem, dados, myChart, myChart2), 2000);
+	  setTimeout(() => atualizarGrafico(idArmazem, dados, dados2, myChart, myChart2), 2000);
 	}
 
 	// Esta função *atualizarGrafico* atualiza o gráfico que foi renderizado na página,
@@ -475,7 +475,7 @@
 
 	//   //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
 	//   //     Para ajustar o "select", ajuste o comando sql em src/models
-	function atualizarGrafico(idArmazem, dados, myChart, myChart2) {
+	function atualizarGrafico(idArmazem, dados, dados2, myChart, myChart2) {
 		fetch(`/medidas/tempo-real/${idArmazem}`, { cache: "no-store" })
 			.then(function (response) {
 				if (response.ok) {
@@ -485,6 +485,7 @@
 						console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
 						console.log(`Dados atuais do gráfico:`);
 						console.log(dados);
+						console.log(dados2);
 
 						let avisoCaptura = document.getElementById(
 							`avisoCaptura${idArmazem}`
