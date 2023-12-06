@@ -1,214 +1,169 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Dashboard</title>
 
-		<link rel="stylesheet" href="../css/styleDashboard.css" />
-		<script src="../js/sessao.js"></script>
-		<script src="./../js/alerta.js"></script>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Dashboard</title>
 
-		<link rel="website icon" type="png" href="../assets/arcoffee.png" />
-		<script
-			src="https://kit.fontawesome.com/ce9ef0d266.js"
-			crossorigin="anonymous"
-		></script>
+	<link rel="stylesheet" href="../css/styleDashboard.css" />
+	<script src="../js/sessao.js"></script>
+	<script src="./../js/alerta.js"></script>
+	<script src="../js/dashboardKPI.js"></script>
 
-		<!-- scripts do Chart.js - 2022-1 -->
-		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-	</head>
+	<link rel="website icon" type="png" href="../assets/arcoffee.png" />
+	<script src="https://kit.fontawesome.com/ce9ef0d266.js" crossorigin="anonymous"></script>
 
-	<!-- <body onload=" atualizarFeed()"> -->
+	<!-- scripts do Chart.js - 2022-1 -->
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
 
-	<body onload="">
-		<div class="sidebar">
-			<div class="conteudos">
-				<div class="icones">
-					<i class="fa-solid fa-user"></i>
-					<a href="perfil.html">
-						<p>Perfil</p>
-					</a>
-				</div>
-				<div id="aqui" class="icones">
-					<i class="fa-solid fa-house"></i>
-					<p>Armazém</p>
-				</div>
-				<div class="icones">
-					<a href="registros.html">
-						<i class="fa-solid fa-chart-simple" style="color: #ffffff"></i>
-						<p>Registros</p>
-					</a>
-				</div>
-				<div class="icones">
-					<a href="ajuda.html">
-						<i class="fa-solid fa-circle-question"></i>
-						<p>Ajuda</p>
-					</a>
-				</div>
-				<div class="icones">
-					<a href="../siteInstitucional.html">
-						<i class="fa-solid fa-right-from-bracket"></i>
-						<p>Sair</p>
-					</a>
-				</div>
+<!-- <body onload=" atualizarFeed()"> -->
+
+<body onload="loadkpi()">
+	<div class="sidebar">
+		<div class="conteudos">
+			<div class="icones">
+				<i class="fa-solid fa-user"></i>
+				<a href="perfil.html">
+					<p>Perfil</p>
+				</a>
+			</div>
+			<div id="aqui" class="icones">
+				<i class="fa-solid fa-house"></i>
+				<p>Armazém</p>
+			</div>
+			<div class="icones">
+				<a href="registros.html">
+					<i class="fa-solid fa-chart-simple" style="color: #ffffff"></i>
+					<p>Registros</p>
+				</a>
+			</div>
+			<div class="icones">
+				<a href="ajuda.html">
+					<i class="fa-solid fa-circle-question"></i>
+					<p>Ajuda</p>
+				</a>
+			</div>
+			<div class="icones">
+				<a href="../siteInstitucional.html">
+					<i class="fa-solid fa-right-from-bracket"></i>
+					<p>Sair</p>
+				</a>
 			</div>
 		</div>
-		<!-- Fim da sidebar-->
+	</div>
+	<!-- Fim da sidebar-->
 
-		<div class="dash">
-			<select onchange="exibirGraficos()" id="selectArmazens">
-				<!-- <option value="1">Armazém 1</option>
+	<div class="dash">
+		<select onchange="exibirGraficos()" id="selectArmazens">
+			<!-- <option value="1">Armazém 1</option>
         <option value="2">Armazém 2</option> -->
-			</select>
+		</select>
+	</div>
+
+	<div class="dadosAtuais">
+		<div class="temp">
+			<h2>Temperatura:</h2>
+			<span id="temperaturaAtual"></span>
 		</div>
-
-		<div class="dadosAtuais">
-			<div class="temp">
-				<h2>Temperatura:</h2>
-				<span id="temperaturaAtual"></span>
-			</div>
-			<div class="temp">
-				<h2>Umidade:</h2>
-				<span id="umidadeAtual"></span>
-			</div>
+		<div class="temp">
+			<h2>Umidade:</h2>
+			<span id="umidadeAtual"></span>
 		</div>
+	</div>
 
-		<div class="graficos" id="PrimeiroArmazem">
-			<!-- <canvas id="myChart1"></canvas> -->
+	<div class="graficos" id="PrimeiroArmazem">
+		<!-- <canvas id="myChart1"></canvas> -->
 
-		</div>
+	</div>
 
-		<div class="graficos" id="SegundoArmazem">
-			<canvas id="myChart3"></canvas>
-		</div>
+	<div class="graficos" id="SegundoArmazem">
+		<canvas id="myChart3"></canvas>
+	</div>
 
-		<div class="diagramas">
-			<div class="diagrama">
-				<h3>Temperatura</h3>
-				<div class="cores">
-					<div class="critico">14.0</div>
-					<div class="alerta">16.0 - 17.0</div>
-					<div class="ideal">18.0 - 20.5</div>
-					<div class="alerta">21.0 - 22.0</div>
-					<div class="critico">24.0</div>
-				</div>
-			</div>
-
-			<div class="diagrama">
-				<h3>Umidade</h3>
-				<div class="cores">
-					<div class="critico">10%</div>
-					<div class="alerta">13.5%</div>
-					<div class="ideal">15.5% á 17%</div>
-					<div class="alerta">18.5%</div>
-					<div class="critico">19%</div>
-				</div>
+	<div class="diagramas">
+		<div class="diagrama">
+			<h3>Temperatura</h3>
+			<div class="cores">
+				<div class="critico">14.0</div>
+				<div class="alerta">16.0 - 17.0</div>
+				<div class="ideal">18.0 - 20.5</div>
+				<div class="alerta">21.0 - 22.0</div>
+				<div class="critico">24.0</div>
 			</div>
 		</div>
 
-		<div class="espacoKPIs">
-			<div class="KPI Temperatura">
-				<p class="title">Temperatura Hoje</p>
-
-				<div id="tempArmazem1">
-					<div class="divisoria">
-						<p>Mínima: 14°C</p>
-						<p>Horário: 05:00</p>
-
-						<div class="status critico"></div>
-					</div>
-
-					<div class="divisoria">
-						<p>Máxima: 20.5°C</p>
-						<p>Horário: 13:00</p>
-
-						<div class="status ideal"></div>
-					</div>
-				</div>
-
-				<div id="tempArmazem2">
-					<div class="divisoria">
-						<p>Mínima: 14°C</p>
-						<p>Horário: 20:00</p>
-
-						<div class="status critico"></div>
-					</div>
-
-					<div class="divisoria">
-						<p>Máxima: 24°C</p>
-						<p>Horário: 04:00</p>
-
-						<div class="status critico"></div>
-					</div>
-				</div>
+		<div class="diagrama">
+			<h3>Umidade</h3>
+			<div class="cores">
+				<div class="critico">10%</div>
+				<div class="alerta">13.5%</div>
+				<div class="ideal">15.5% á 17%</div>
+				<div class="alerta">18.5%</div>
+				<div class="critico">19%</div>
 			</div>
+		</div>
+	</div>
 
-			<div class="KPI Umidade">
-				<p class="title">Umidade Hoje</p>
+	<div class="espacoKPIs">
+		<div class="KPI Temperatura">
+			<p class="title">Temperatura Hoje</p>
 
-				<div id="umiArmazem1">
-					<div class="divisoria">
-						<p>Mínima: 15.5%</p>
-						<p>Horário: 11:00</p>
+			<div id="tempArmazem1">
+				<div class="divisoria">
+					<p>Mínima: <span id="kpi1min">14</span>°C</p>
+					<p>Horário: <span id="kpi1time1"> 05:00</span></p>
 
-						<div class="status ideal"></div>
-					</div>
-
-					<div class="divisoria">
-						<p>Máxima: 18.5%</p>
-						<p>Horário: 23:00</p>
-
-						<div class="status alerta"></div>
-					</div>
+					<div class="status critico" id="alerta1time1"></div>
 				</div>
 
-				<div id="umiArmazem2">
-					<div class="divisoria">
-						<p>Mínima: 10%</p>
-						<p>Horário: 16:00</p>
+				<div class="divisoria">
+					<p>Máxima: <span id="kpi1max">20.5</span>°C</p>
+					<p>Horário: <span id="kpi1time2">13:00</span></p>
 
-						<div class="status critico"></div>
-					</div>
-
-					<div class="divisoria">
-						<p>Máxima: 15%</p>
-						<p>Horário: 01:00</p>
-
-						<div class="status ideal"></div>
-					</div>
-				</div>
-			</div>
-
-			<div class="KPI Semanal">
-				<p class="title">Tempo Hoje Fora do Ideal</p>
-				<div id="tempoArmazem1">
-					<div class="divisoria">
-						<p>Temperatura:</p>
-						<p>10 horas</p>
-					</div>
-
-					<div class="divisoria">
-						<p>Umidade:</p>
-						<p>4 horas</p>
-					</div>
-				</div>
-
-				<div id="tempoArmazem2">
-					<div class="divisoria">
-						<p>Temperatura:</p>
-						<p>19 horas</p>
-					</div>
-
-					<div class="divisoria">
-						<p>Umidade:</p>
-						<p>22 horas</p>
-					</div>
+					<div class="status ideal" id="alerta1time2"></div>
 				</div>
 			</div>
 		</div>
-	</body>
+		<div class="KPI Umidade">
+			<p class="title">Umidade Hoje</p>
+
+			<div id="umiArmazem1">
+				<div class="divisoria">
+					<p>Mínima: <span id="kpi2min">15.5</span>%</p>
+					<p>Horário: <span id="kpi2time1">11:00</span></p>
+
+					<div class="status ideal" id="alerta2time1"></div>
+				</div>
+
+				<div class="divisoria">
+					<p>Máxima: <span id="kpi2max">18.5</span>%</p>
+					<p>Horário: <span id="kpi2time2">23:00</span></p>
+
+					<div class="status alerta" id="alerta2time2"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="KPI Semanal">
+			<p class="title">Tempo Hoje Fora do Ideal</p>
+			<div id="tempoArmazem1">
+				<div class="divisoria">
+					<p>Temperatura:</p>
+					<p><span id="kpi3hour1">10</span> horas</p>
+				</div>
+
+				<div class="divisoria">
+					<p>Umidade:</p>
+					<p><span id="kpi3hour2">4</span> horas</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
 </html>
 <script>
 	// // 2° parte
@@ -338,7 +293,7 @@
 	let proximaAtualizacao;
 	var idArmazem = sessionStorage.getItem("idArmazem1");
 
-  window.onload(listarArmazem());
+	window.onload(listarArmazem());
 
 	//   // O gráfico é construído com três funções:
 	//   // 1. obterDadosGrafico -> Traz dados do Banco de Dados para montar o gráfico da primeira vez
@@ -355,11 +310,11 @@
 	function obterDadosGrafico() {
 		// Esse vai buscar na function buscarUltimasMedidas dentro do model medidas.
 
-	if (proximaAtualizacao != undefined) {
-		   clearTimeout(proximaAtualizacao);
-		 }
+		if (proximaAtualizacao != undefined) {
+			clearTimeout(proximaAtualizacao);
+		}
 
-      idArmazem = selectArmazens.value
+		idArmazem = selectArmazens.value
 
 		fetch(`/medidas/ultimas/${idArmazem}`, { cache: "no-store" })
 			.then(function (response) {
@@ -368,7 +323,7 @@
 						console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
 						resposta.reverse();
 
-            plotarGrafico(resposta, idArmazem)
+						plotarGrafico(resposta, idArmazem)
 					});
 				} else {
 					console.error("Nenhum dado encontrado ou erro na API");
@@ -381,22 +336,22 @@
 			});
 	}
 
-  function exibirGraficos() {
-    PrimeiroArmazem.innerHTML = `
+	function exibirGraficos() {
+		PrimeiroArmazem.innerHTML = `
       <canvas id="myChart1"></canvas>
 			<canvas id="myChart2"></canvas>
     `
-    setTimeout(()=> {
-      obterDadosGrafico()
-    }, 100)
-  }
+		setTimeout(() => {
+			obterDadosGrafico()
+		}, 100)
+	}
 
 	//   // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
 	//   // Configura o gráfico (cores, tipo, etc), materializa-o na página e,
 	//   // A função *plotarGrafico* também invoca a função *atualizarGrafico*
 	function plotarGrafico(resposta, idArmazem) {
 		console.log("iniciando plotagem do gráfico...");
-    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+		console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
 
 		//     // Criando estrutura para plotar gráfico - labels
 		let labels = [];
@@ -415,7 +370,7 @@
 			],
 		};
 
-    let dados2 = {
+		let dados2 = {
 			labels: labels,
 			datasets: [
 				{
@@ -467,7 +422,7 @@
 
 		let myChart2 = new Chart(document.getElementById(`myChart2`), config2);
 
-	  setTimeout(() => atualizarGrafico(idArmazem, dados, dados2, myChart, myChart2), 2000);
+		setTimeout(() => atualizarGrafico(idArmazem, dados, dados2, myChart, myChart2), 2000);
 	}
 
 	// Esta função *atualizarGrafico* atualiza o gráfico que foi renderizado na página,
@@ -570,14 +525,14 @@
 						console.log(JSON.stringify(json));
 
 						for (var contador = 0; contador < json.length; contador++) {
-              selectArmazens.innerHTML += `
-                <option value='${sessionStorage.getItem(`idArmazem${contador+1}`)}'>Armazém ${contador+1}</option>
+							selectArmazens.innerHTML += `
+                <option value='${sessionStorage.getItem(`idArmazem${contador + 1}`)}'>Armazém ${contador + 1}</option>
               `
 						}
 
-            setTimeout(()=> {
-              exibirGraficos();
-            }, 100)
+						setTimeout(() => {
+							exibirGraficos();
+						}, 100)
 					});
 				} else {
 					console.log(

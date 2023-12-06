@@ -33,9 +33,16 @@ function buscarMedidasEmTempoReal(idArmazem) {
     return database.executar(instrucaoSql);
     
 }
-
+function buscarKPI(){
+    instrucaoSql = ``
+    instrucaoSql = 'select * from vw_tempUmiMinMax;'
+    
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
 
 module.exports = {
     buscarUltimasMedidas,
     buscarMedidasEmTempoReal,
+    buscarKPI
 }

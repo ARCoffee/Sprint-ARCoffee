@@ -40,9 +40,21 @@ function buscarMedidasEmTempoReal(req, res) {
         res.status(500).json(erro.sqlMessage);
     });
 }
-
+function buscarKPI(req, res){
+    console.log(`Recuperando medidas em tempo real`);
+    
+    medidaModel.buscarKPI()
+    .then(function (resultado) {
+        res.status(200).json(resultado);
+        
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar as ultimas medidas.", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+}
 module.exports = {
     buscarUltimasMedidas,
-    buscarMedidasEmTempoReal
-
+    buscarMedidasEmTempoReal,
+    buscarKPI
 }
