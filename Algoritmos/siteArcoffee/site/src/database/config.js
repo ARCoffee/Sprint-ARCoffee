@@ -23,7 +23,7 @@ var mySqlConfig = {
     database: "ARcoffee",
     user: "insertGrupo10",
     password: "arcoffee2023",
-    port: 3308,
+    port: 3306,
 };
 
 function executar(instrucao) {

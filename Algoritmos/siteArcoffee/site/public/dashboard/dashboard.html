@@ -25,8 +25,8 @@
 	<div class="sidebar">
 		<div class="conteudos">
 			<div class="icones">
-				<i class="fa-solid fa-user"></i>
 				<a href="perfil.html">
+				<i class="fa-solid fa-user"></i>
 					<p>Perfil</p>
 				</a>
 			</div>
@@ -47,7 +47,7 @@
 				</a>
 			</div>
 			<div class="icones">
-				<a href="../siteInstitucional.html">
+				<a href="../index.html">
 					<i class="fa-solid fa-right-from-bracket"></i>
 					<p>Sair</p>
 				</a>
@@ -65,12 +65,12 @@
 
 	<div class="dadosAtuais">
 		<div class="temp">
-			<h2>Temperatura:</h2>
-			<span id="temperaturaAtual"></span>
+			<h2>Temperatura: <span id="temperaturaAtual"></span></h2>
+			
 		</div>
 		<div class="temp">
-			<h2>Umidade:</h2>
-			<span id="umidadeAtual"></span>
+			<h2>Umidade: <span id="umidadeAtual"></span></h2>
+			
 		</div>
 	</div>
 
@@ -265,28 +265,7 @@
 	//   },
 	// });
 
-	function MudarDashArmazem() {
-		var valor = selectArmazens.value;
-		if (valor == "1") {
-			PrimeiroArmazem.style.display = "flex";
-			tempArmazem1.style.display = "block";
-			umiArmazem1.style.display = "block";
-			SegundoArmazem.style.display = "none";
-			tempArmazem2.style.display = "none";
-			umiArmazem2.style.display = "none";
-			tempoArmazem2.style.display = "none";
-			tempoArmazem1.style.display = "block";
-		} else if (valor == "2") {
-			PrimeiroArmazem.style.display = "none";
-			tempArmazem1.style.display = "none";
-			umiArmazem1.style.display = "none";
-			SegundoArmazem.style.display = "flex";
-			tempArmazem2.style.display = "block";
-			umiArmazem2.style.display = "block";
-			tempoArmazem2.style.display = "block";
-			tempoArmazem1.style.display = "none";
-		}
-	}
+
 </script>
 
 <script>
@@ -436,7 +415,7 @@
 				if (response.ok) {
 					response.json().then(function (novoRegistro) {
 						obterdados(idArmazem);
-						alertar(novoRegistro, idArmazem);
+						// alertar(novoRegistro, idArmazem);
 						console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
 						console.log(`Dados atuais do gráfico:`);
 						console.log(dados);
@@ -445,7 +424,7 @@
 						let avisoCaptura = document.getElementById(
 							`avisoCaptura${idArmazem}`
 						);
-						avisoCaptura.innerHTML = "";
+						// avisoCaptura.innerHTML = "";
 
 						if (
 							novoRegistro[0].momento_grafico ==
@@ -457,8 +436,8 @@
 							console.log(
 								"Como não há dados novos para captura, o gráfico não atualizará."
 							);
-							avisoCaptura.innerHTML =
-								"<i class='fa-solid fa-triangle-exclamation'></i> Foi trazido o dado mais atual capturado pelo sensor. <br> Como não há dados novos a exibir, o gráfico não atualizará.";
+							// avisoCaptura.innerHTML =
+							// 	"<i class='fa-solid fa-triangle-exclamation'></i> Foi trazido o dado mais atual capturado pelo sensor. <br> Como não há dados novos a exibir, o gráfico não atualizará.";
 							console.log("Horário do novo dado capturado:");
 							console.log(novoRegistro[0].momento_grafico);
 							console.log("Horário do último dado capturado:");
@@ -471,18 +450,20 @@
 							dados.labels.shift(); // apagar o primeiro
 							dados.labels.push(novoRegistro[0].momento_grafico); // incluir um novo momento
 
-							dados.datasets[0].data.shift(); // apagar o primeiro de umidade
-							dados.datasets[0].data.push(novoRegistro[0].umidade); // incluir uma nova medida de umidade
+							dados2.datasets[0].data.shift(); // apagar o primeiro de umidade
+							dados2.datasets[0].data.push(novoRegistro[0].umidade); // incluir uma nova medida de umidade
 
-							dados.datasets[1].data.shift(); // apagar o primeiro de temperatura
-							dados.datasets[1].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de temperatura
-
+							dados.datasets[0].data.shift(); // apagar o primeiro de temperatura
+							dados.datasets[0].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de temperatura
+							umidadeAtual.innerHTML = (novoRegistro[0].umidade);
+							temperaturaAtual.innerHTML = (novoRegistro[0].temperatura);
 							myChart.update();
+							myChart2.update();
 						}
 
 						// Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
 						proximaAtualizacao = setTimeout(
-							() => atualizarGrafico(idArmazem, dados, myChart),
+							() => atualizarGrafico(idArmazem, dados, dados2, myChart,myChart2),
 							2000
 						);
 					});
@@ -490,7 +471,7 @@
 					console.error("Nenhum dado encontrado ou erro na API");
 					// Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
 					proximaAtualizacao = setTimeout(
-						() => atualizarGrafico(idArmazem, dados, myChart),
+						() => atualizarGrafico(idArmazem, dados,dados2, myChart),
 						2000
 					);
 				}

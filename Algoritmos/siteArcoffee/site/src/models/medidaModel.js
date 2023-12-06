@@ -7,7 +7,7 @@ function buscarUltimasMedidas(idArmazem, limite_linhas) {
         umidade,
         dataHora,
                 DATE_FORMAT(dataHora,'%H:%i:%s') as momento_grafico
-                from historicoSensor
+                from historicoLeitura
                 where fk_Armazem = ${idArmazem}
                 order by idHistoricoSensor desc limit ${limite_linhas}`;
     
@@ -24,7 +24,7 @@ function buscarMedidasEmTempoReal(idArmazem) {
         umidade,
                 DATE_FORMAT(dataHora,'%H:%i:%s') as momento_grafico, 
                 fk_Armazem 
-                from historicoSensor 
+                from historicoLeitura 
                 where fk_Armazem = ${idArmazem} 
                 order by idHistoricoSensor desc limit 1`;
 
